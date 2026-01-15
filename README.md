@@ -5,7 +5,7 @@ This project is being developed as part of the BCIT practicum course. The goal i
 
 ## Team Members
 - Ramandeep Kaur
-- Aibyn
+- Aibyn Dalel
 - Jiahong X.
 
 ## Technologies
