@@ -1,10 +1,191 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document1</title>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyrie Contracting Inc.</title>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+        scroll-behavior: smooth;
+        }
+    </style>
+    <!-- Bootstrap (for hamburger toggle only) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Overlay -->
+    <div id ="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Slide‑In Call Panel -->
+    <div id="callPanel" class="fixed top-0 right-[-320px] w-80 h-full bg-white shadow-xl z-50 transition-all duration-300 p-6 overflow-y-auto">
+
+        <!-- Logo Placeholder -->
+        <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded">
+                <span class="text-xl font-bold">E</span>
+            </div>
+            <div>
+                <p class="text-lg font-bold text-gray-800">Eyrie Contracting Inc.</p>
+                <p class="text-xs text-gray-500">General Contractors</p>
+            </div>
+        </div>
+
+        <!-- Construction Image -->
+        <img 
+            src="https://solesourceconstruction.com/wp-content/uploads/2021/03/generalcontractor-1024x683.jpeg"
+            alt="Construction Site"
+            class="w-full h-40 object-cover rounded mb-4"
+        >
+
+        <h2 class="text-2xl font-bold text-gray-800">Contact Us</h2>
+        <p class="mt-2 text-gray-600">We’re here to help with your next project.</p>
+
+        <!-- Random Address -->
+        <div class="mt-4 text-gray-700 text-sm space-y-1">
+            <p class="font-semibold text-gray-900">Office</p>
+            <p>7726 Cariboo Road</p>
+            <p>Buraby, BC V3N 4B5</p>
+            <p class="mt-2">604‑996-7786</p>
+            <p>info@eyriecontracting.com</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 space-y-4">
+            <a href="tel:6049967786" class="block bg-orange-500 text-white text-center py-3 rounded">
+                Call: 604‑996-7786
+            </a>
+
+            <a href="mailto:info@eyriecontracting.com" class="block bg-gray-200 text-gray-800 text-center py-3 rounded">
+                Email Us
+            </a>
+        </div>
+
+        <button onclick="closePanel()" class="mt-8 text-gray-500 hover:text-gray-800">
+            Close
+        </button>
+    </div>
+
+    <!-- STICKY HEADER -->
+    <header class="sticky top-0 z-50 bg-white shadow">
+        <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+
+            <!-- Logo + Company Name -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-orange-500 text-white flex items-center justify-center rounded">
+                    <span class="text-xl font-bold">E</span>
+                </div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800">
+                    EYRIE CONTRACTING INC.
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <li><a href="#" class="hover:text-orange-500">Home</a></li>
+                <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+
+                <!-- DESKTOP SERVICES (HOVER DROPDOWN) -->
+                <li class="relative group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50">
+                        <a href="#" class="block hover:text-orange-500">Construction</a>
+                        <a href="#" class="block hover:text-orange-500">Design‑Build</a>
+                        <a href="#" class="block hover:text-orange-500">Project Management</a>
+                        <a href="#" class="block hover:text-orange-500">HVAC / Roofing / Flooring</a>
+                    </div>
+                </li>
+
+                <li><a href="#" class="hover:text-orange-500">General Contractors</a></li>
+                <li><a href="#" class="hover:text-orange-500">Gallery</a></li>
+            </ul>
+
+            <!-- CTA -->
+            <button onclick="openPanel(event)" class="hidden md:block bg-orange-500 text-white px-4 py-2 rounded">
+                Get in Touch
+            </button>
+
+            <!-- Hamburger -->
+            <button class="md:hidden" onclick="toggleMenu()">
+                <span class="text-3xl">&#9776;</span>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
+            <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+
+                <!-- MOBILE SERVICES DROPDOWN -->
+                <li>
+                    <button onclick="toggleMobileServices()" class="w-full text-left flex justify-between items-center">
+                        Services
+                        <span>▼</span>
+                    </button>
+
+                    <ul id="mobileServicesDropdown" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
+                        <li><a href="#" class="block">Construction</a></li>
+                        <li><a href="#" class="block">Design‑Build</a></li>
+                        <li><a href="#" class="block">Project Management</a></li>
+                        <li><a href="#" class="block">HVAC / Roofing / Flooring</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">General Contractors</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li>
+                    <button 
+                        onclick="openPanel(event); toggleMenu();" 
+                        class="bg-orange-500 text-white px-4 py-2 rounded block w-full text-center">
+                        Contact Us
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center h-[85vh] bg-hero">
+
+        <style>
+            .bg-hero {
+                background-image: url('https://keiter.com/wp-content/uploads/2021/05/homepage-legacy.jpg');
+            }
+        </style>
+
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10">
+            <h1 class="text-white text-4xl md:text-6xl font-bold max-w-3xl">
+                Building Strong Foundations for Residential & Commercial Projects
+            </h1>
+
+            <p class="text-gray-200 mt-4 max-w-xl">
+                Structural design, fabrication, project coordination, HVAC, roofing, flooring, and complete general contracting services.
+            </p>
+
+            <div class="mt-6 flex space-x-4">
+                <a href="#" class="bg-orange-500 text-white px-6 py-3 rounded shadow">
+                    Request a Free Quote
+                </a>
+                <a href="#" class="bg-gray-200 text-gray-800 px-6 py-3 rounded shadow">
+                    Browse Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
+
