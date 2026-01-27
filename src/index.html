@@ -39,7 +39,7 @@
         </div>
 
         <!-- Construction Image -->
-        <img 
+        <img
             src="https://solesourceconstruction.com/wp-content/uploads/2021/03/generalcontractor-1024x683.jpeg"
             alt="Construction Site"
             class="w-full h-40 object-cover rounded mb-4"
@@ -73,86 +73,8 @@
         </button>
     </div>
 
-    <!-- STICKY HEADER -->
-    <header class="sticky top-0 z-50 bg-white shadow">
-        <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+    <div id="menu-placeholder"></div>
 
-            <!-- Logo + Company Name -->
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-orange-500 text-white flex items-center justify-center rounded">
-                    <span class="text-xl font-bold">E</span>
-                </div>
-                <div class="text-xl md:text-2xl font-bold text-gray-800">
-                    EYRIE CONTRACTING INC.
-                </div>
-            </div>
-
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
-                <li><a href="#" class="hover:text-orange-500">Home</a></li>
-                <li><a href="#" class="hover:text-orange-500">About Us</a></li>
-
-                <!-- DESKTOP SERVICES (HOVER DROPDOWN) -->
-                <li class="relative group">
-                    <button type="button" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </button>
-                    <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50">
-                        <a href="#" class="block hover:text-orange-500">Construction</a>
-                        <a href="#" class="block hover:text-orange-500">Design‑Build</a>
-                        <a href="#" class="block hover:text-orange-500">Project Management</a>
-                        <a href="#" class="block hover:text-orange-500">HVAC / Roofing / Flooring</a>
-                    </div>
-                </li>
-
-                <li><a href="#" class="hover:text-orange-500">General Contractors</a></li>
-                <li><a href="#" class="hover:text-orange-500">Gallery</a></li>
-            </ul>
-
-            <!-- CTA -->
-            <button onclick="openPanel(event)" class="hidden md:block bg-orange-500 text-white px-4 py-2 rounded">
-                Get in Touch
-            </button>
-
-            <!-- Hamburger -->
-            <button class="md:hidden" onclick="toggleMenu()">
-                <span class="text-3xl">&#9776;</span>
-            </button>
-        </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
-            <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-
-                <!-- MOBILE SERVICES DROPDOWN -->
-                <li>
-                    <button onclick="toggleMobileServices()" class="w-full text-left flex justify-between items-center">
-                        Services
-                        <span>▼</span>
-                    </button>
-
-                    <ul id="mobileServicesDropdown" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
-                        <li><a href="#" class="block">Construction</a></li>
-                        <li><a href="#" class="block">Design‑Build</a></li>
-                        <li><a href="#" class="block">Project Management</a></li>
-                        <li><a href="#" class="block">HVAC / Roofing / Flooring</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">General Contractors</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li>
-                    <button 
-                        onclick="openPanel(event); toggleMenu();" 
-                        class="bg-orange-500 text-white px-4 py-2 rounded block w-full text-center">
-                        Contact Us
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </header>
 
     <!-- HERO SECTION -->
     <section class="relative bg-cover bg-center h-[85vh] bg-hero">
@@ -175,7 +97,7 @@
             </p>
 
             <div class="mt-6 flex space-x-4">
-                <a href="#" class="bg-orange-500 text-white px-6 py-3 rounded shadow">
+                <a href="contact.html" class="bg-orange-500 text-white px-6 py-3 rounded shadow">
                     Request a Free Quote
                 </a>
                 <a href="#" class="bg-gray-200 text-gray-800 px-6 py-3 rounded shadow">

@@ -57,3 +57,11 @@ document.querySelectorAll("#mobileMenu a").forEach(link => {
     document.getElementById("mobileMenu").classList.add("hidden");
   });
 });
+
+
+// share header with all other pages
+fetch("header.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("menu-placeholder").innerHTML = html;
+  });
