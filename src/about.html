@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Eyrie Contracting Inc.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- Bootstrap (hamburger toggle only) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Slide-In Call Panel -->
+    <div id="callPanel"
+        class="fixed top-0 right-[-320px] w-80 h-full bg-white shadow-xl z-50 transition-all duration-300 p-6 overflow-y-auto">
+
+        <!-- Logo Placeholder -->
+        <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded">
+                <span class="text-xl font-bold">E</span>
+            </div>
+            <div>
+                <p class="text-lg font-bold text-gray-800">Eyrie Contracting Inc.</p>
+                <p class="text-xs text-gray-500">General Contractors</p>
+            </div>
+        </div>
+
+        <img src="https://solesourceconstruction.com/wp-content/uploads/2021/03/generalcontractor-1024x683.jpeg"
+            alt="Construction Site" class="w-full h-40 object-cover rounded mb-4">
+
+        <h2 class="text-2xl font-bold text-gray-800">Contact Us</h2>
+        <p class="mt-2 text-gray-600">We’re here to help with your next project.</p>
+
+        <div class="mt-4 text-gray-700 text-sm space-y-1">
+            <p class="font-semibold text-gray-900">Office</p>
+            <p>33942 McPhee Place</p>
+            <p>Mission, BC V2V 0E7</p>
+            <p class="mt-2">604-996-7586</p>
+            <p>admin@eyriecontracting.com</p>
+        </div>
+
+        <div class="mt-6 space-y-4">
+            <a href="tel:6049967586" class="block bg-orange-500 text-white text-center py-3 rounded">
+                Call: 604-996-7586
+            </a>
+
+            <a href="mailto:admin@eyriecontracting.com"
+                class="block bg-gray-200 text-gray-800 text-center py-3 rounded">
+                Email Us
+            </a>
+        </div>
+
+        <button onclick="closePanel()" class="mt-8 text-gray-500 hover:text-gray-800">
+            Close
+        </button>
+    </div>
+
+    <!-- Header Menu Placeholder -->
+    <div id="menu-placeholder"></div>
+
+
+ <section class="container mx-auto px-6 pt-24 pb-10 text-center">
+    <h1 class="text-5xl font-extrabold text-gray-800 tracking-wide uppercase">
+        About Us
+    </h1>
+    <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 mb-6"></div>
+
+    <h2 class="text-3xl font-bold text-gray-700 mt-4">
+        Eyrie Contracting Inc.
+    </h2>
+
+    <p class="text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed text-lg">
+        Trusted Construction, Welding, and Fabrication Services Across British Columbia.
+    </p>
+</section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="bg-white py-16 shadow-inner">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- LEFT: Image -->
+            <div class="p-4">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                    class="rounded-lg shadow-lg w-full object-cover" alt="Construction team working">
+            </div>
+
+            <!-- RIGHT: Text -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800">Who We Are</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Eyrie Contracting Inc. is a full-service general contracting company dedicated to delivering
+                    high-quality workmanship, structural integrity, and reliable project coordination.
+                    From residential construction to commercial renovations and industrial support, our team
+                    brings years of experience across carpentry, fabrication, HVAC, steelwork, foundations, roofing,
+                    flooring, and project management.
+                </p>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    We combine expert craftsmanship with modern building practices and transparent communication —
+                    ensuring every project is delivered with care and built to last.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MISSION SECTION -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- LEFT: Text -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Our Mission</h2>
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        At Eyrie Contracting Inc., we are committed to delivering exceptional construction, welding, and
+                        fabrication services with a foundation built on integrity, quality, and community. We take pride
+                        in every project, big or small, and approach each one with a dedication to craftsmanship and
+                        safety. Our goal is to build lasting relationships with our clients by understanding their
+                        needs, exceeding their expectations, and contributing positively to the communities we serve.
+                        Through collaboration, innovation, and a strong commitment to ethical practices, we strive to
+                        make a meaningful impact in every project we undertake.
+                    </p>
+
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        From planning to execution, we prioritize integrity, safety, communication, and excellence
+                        — delivering projects that stand the test of time.
+                    </p>
+                </div>
+
+                <!-- RIGHT: Image -->
+                <div>
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                        class="rounded-lg shadow-lg w-full object-cover" alt="404">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 shadow-inner">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- LEFT: Image -->
+            <div class="p-4">
+                <img src="https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&w=900&q=80"
+                    alt="Welding and fabrication history" class="rounded-lg shadow-lg w-full object-cover">
+            </div>
+
+            <!-- RIGHT: Text -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800">Our History</h2>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Eyrie Contracting Inc. was founded in 2018 and quickly established itself as a trusted provider
+                    of construction, welding, and fabrication services throughout British Columbia. With over
+                    <span class="font-semibold text-gray-800">25 years of combined industry experience</span>, our team
+                    delivers deep expertise and a strong commitment to excellence in every project.
+                </p>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    From residential and commercial builds to specialized welding, we have built a reputation for
+                    delivering high-quality results with precision, integrity, and reliability.
+                </p>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Our attention to detail, strong safety culture, and dedication to craftsmanship have earned
+                    us long-standing trust from clients and the respect of peers across the industry. As we grow,
+                    we remain focused on delivering exceptional service, building strong relationships, and
+                    contributing to the success of every community we serve.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-gray-800">Our Core Values</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+
+            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500">
+                <h3 class="text-xl font-bold text-gray-900">Quality</h3>
+                <p class="text-gray-600 mt-2">
+                    Every project is completed to the highest construction standards.
+                </p>
+            </div>
+
+            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500">
+                <h3 class="text-xl font-bold text-gray-900">Integrity</h3>
+                <p class="text-gray-600 mt-2">
+                    Honest communication, dependable service, and transparent work.
+                </p>
+            </div>
+
+            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500">
+                <h3 class="text-xl font-bold text-gray-900">Safety</h3>
+                <p class="text-gray-600 mt-2">
+                    We uphold strict safety standards for our crew and clients.
+                </p>
+            </div>
+
+            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500">
+                <h3 class="text-xl font-bold text-gray-900">Commitment</h3>
+                <p class="text-gray-600 mt-2">
+                    We follow through on promises and deliver results that last.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/header.js"></script>
+</body>
+
+</html>
