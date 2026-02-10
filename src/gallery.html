@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Eyrie Contracting Inc.</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* Smooth zoom animation */
+        #lightboxImg {
+            transform: scale(0.95);
+            opacity: 0;
+            transition: all 0.25s ease;
+        }
+        #lightbox.show #lightboxImg {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+
+<body class="bg-gray-100">
+
+    <!-- HEADER (injected) -->
+    <div id="menu-placeholder"></div>
+    <div id="panel-placeholder"></div>
+
+    <!-- ====================================================== -->
+    <!-- GALLERY INTRO SECTION -->
+    <!-- ====================================================== -->
+    <section class="container mx-auto px-6 pt-24 pb-10 text-center">
+        <h1 class="text-5xl font-extrabold text-gray-800 tracking-wide uppercase">
+            Our Work
+        </h1>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 mb-6"></div>
+
+        <h2 class="text-3xl font-bold text-gray-700 mt-4">
+            Gallery
+        </h2>
+
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed text-lg">
+            Welcome to our gallery, where every frame captures the essence of our commitment 
+            to shaping spaces and building dreams.
+        </p>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- GALLERY GRID -->
+    <!-- ====================================================== -->
+    <div class="container mx-auto px-6 pb-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <img src="images/gallery1.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="0">
+            <img src="images/gallery2.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="1">
+            <img src="images/gallery3.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="2">
+            <img src="images/gallery4.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="3">
+            <img src="images/gallery5.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="4">
+            <img src="images/gallery6.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="5">
+            <img src="images/gallery7.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="6">
+            <img src="images/gallery8.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="7">
+            <img src="images/gallery9.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="8">
+            <img src="images/gallery10.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="9">
+            <img src="images/gallery11.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="10">
+            <img src="images/gallery12.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="11">
+            <img src="images/gallery13.jpg" class="gallery-img rounded-xl shadow-lg cursor-pointer" data-index="12">
+
+        </div>
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- LIGHTBOX -->
+    <!-- ====================================================== -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 hidden z-50 
+        flex items-center justify-center p-4">
+
+        <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+
+        <button id="prevBtn" class="absolute left-6 text-white text-4xl">&#10094;</button>
+        <button id="nextBtn" class="absolute right-6 text-white text-4xl">&#10095;</button>
+
+        <img id="lightboxImg" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl object-contain">
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- CTA SECTION -->
+    <!-- ====================================================== -->
+    <section class="relative h-[55vh] bg-cover bg-center mt-24"
+        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
+
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
+                Ready to Start Your Project
+            </h2>
+            <div class="w-24 h-1 bg-orange-500 mt-4 mb-6"></div>
+
+            <p class="text-gray-200 max-w-xl leading-relaxed text-lg">
+                Let’s bring your vision to life with quality craftsmanship and reliable service.
+            </p>
+
+            <div class="mt-8 flex space-x-4">
+                <a href="contact.html" class="bg-orange-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                    Request a Free Quote
+                </a>
+                <a href="services.html" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS FILES -->
+    <script src="js/header.js"></script>
+    <script src="js/gallery.js"></script>
+
+</body>
+</html>
