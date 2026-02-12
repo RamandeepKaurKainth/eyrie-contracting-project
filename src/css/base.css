@@ -1,10 +1,32 @@
 :root {
-  --color-primary: #f97316;
-  --color-primary-hover: #ea580c;
+  --color-primary: #ea580c;
+  --color-primary-hover: #f97316;
   --color-dark: #1f2937;
   --color-mid: #374151;
   --color-muted: #6b7280;
-  --color-light: #e5e7eb;
-  --color-light-hover: #d1d5db;
+  --color-light: #d1d5db;
+  --color-light-hover: #e5e7eb;
   --color-white: #ffffff;
+}
+
+.mobile-services-toggle {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hover-grow {
+  transition: transform 0.1s ease;
+  transform: scale(1);
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
 }
