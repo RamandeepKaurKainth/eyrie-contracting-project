@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,10 +9,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Bootstrap CSS (this defines the font) -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
 
   <!-- Optional: ensure everything inherits Bootstrap font -->
   <style>
@@ -23,65 +23,55 @@
 
 
 <body>
-    <div id="menu-placeholder"></div>
+  <div id="menu-placeholder"></div>
 
   <div class="container-fluid py-5 px-4">
-     <div class="row g-4">
+    <div class="row g-4">
 
-    <!-- LEFT: Contact Form -->
-    <div class="col-12 col-lg-7" >
-      <div>
-        <div class="card-body p-4">
+      <!-- LEFT: Contact Form -->
+      <div class="col-12 col-lg-7">
+        <div>
+          <div class="card-body p-4">
 
             <h2 class="mb-3 text-start display-6">Request a Quote</h2>
 
             <form id="contactForm" enctype="multipart/form-data">
-                <div class="row">
+              <div class="row">
 
-              <!-- Inquiry -->
-              <div class="col-md-6 mb-3">
-                <label class="form-label">Select Inquiry*</label>
-                <select class="form-select" required>
-                  <option value="">Select</option>
-                  <option value="quote">Request a Quote</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Support</option>
-                </select>
-              </div>
+                <!-- Inquiry -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Select Inquiry*</label>
+                  <select class="form-select" required>
+                    <option value="">Select</option>
+                    <option value="quote">Request a Quote</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Support</option>
+                  </select>
+                </div>
 
-              <!-- Category -->
-              <div class="col-md-6 mb-3">
-                <label class="form-label">Select Category*</label>
-                <select class="form-select" required>
-                  <option value="">Select</option>
-                  <option value="residential">Residential</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="other">Other</option>
-                </select>
+                <!-- Category -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Select Category*</label>
+                  <select class="form-select" required>
+                    <option value="">Select</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
-               </div>
 
               <div class="row">
                 <!-- First Name -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">First Name*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="e.g. John"
-                    required
-                  />
+                  <input type="text" class="form-control" placeholder="e.g. John" required />
                 </div>
 
                 <!-- Last Name -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Last Name*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="e.g. Smith"
-                    required
-                  />
+                  <input type="text" class="form-control" placeholder="e.g. Smith" required />
                 </div>
               </div>
 
@@ -89,45 +79,26 @@
                 <!-- Phone -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Phone Number*</label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    placeholder="e.g. +132437436"
-                    required
-                  />
+                  <input type="tel" class="form-control" placeholder="e.g. +132437436" required />
                 </div>
 
                 <!-- Email -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Email Address*</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="e.g. john@youremail.com"
-                    required
-                  />
+                  <input type="email" class="form-control" placeholder="e.g. john@youremail.com" required />
                 </div>
               </div>
 
               <!-- Description -->
               <div class="mb-3">
                 <label class="form-label">Description*</label>
-                <textarea
-                  class="form-control"
-                  rows="4"
-                  placeholder="Tell us about your project..."
-                  required
-                ></textarea>
+                <textarea class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
               </div>
 
               <!-- Attachment -->
               <div class="mb-4">
                 <label class="form-label">Attachment (optional)</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  accept=".jpg,.png,.pdf,.doc,.docx"
-                />
+                <input type="file" class="form-control" accept=".jpg,.png,.pdf,.doc,.docx" />
                 <div class="form-text">
                   Accepted formats: JPG, PNG, PDF, DOC, DOCX
                 </div>
@@ -146,46 +117,46 @@
         </div>
 
       </div>
-    <!-- RIGHT: Company Info -->
-    <div class="col-12 col-lg-5">
-      <div>
-        <div class="card-body p-4">
-        <h2 class="mb-3 text-start display-6">Our Office</h2>
+      <!-- RIGHT: Company Info -->
+      <div class="col-12 col-lg-5">
+        <div>
+          <div class="card-body p-4">
+            <h2 class="mb-3 text-start display-6">Our Office</h2>
 
-          <h4 class="mb-3">Eyrie Contracting Inc.</h4>
-          <p class="mb-3">
-           Canada
-          </p>
+            <h4 class="mb-3">Eyrie Contracting Inc.</h4>
+            <p class="mb-3">
+              Canada
+            </p>
 
-          <div class="mb-3">
-            <strong>Office</strong><br>
-            7726 Cariboo Road<br>
-            Burnaby, BC<br>
-            V3N 4B5
+            <div class="mb-3">
+              <strong>Office</strong><br>
+              7726 Cariboo Road<br>
+              Burnaby, BC<br>
+              V3N 4B5
+            </div>
+
+            <div class="mb-3">
+              <strong>Phone</strong><br>
+              <a href="tel:6049967786" class="text-link">604-996-7786</a>
+            </div>
+
+            <div class="mb-3">
+              <strong>Email</strong><br>
+              <a href="mailto:info@eyriecontracting.com" class="text-link">
+                info@eyriecontracting.com
+              </a>
+            </div>
+
+            <hr>
+
+            <p class="text-muted small">
+              Business Hours<br>
+              Mon–Fri: 8:00 AM – 5:00 PM
+            </p>
+
           </div>
-
-          <div class="mb-3">
-            <strong>Phone</strong><br>
-            <a href="tel:6049967786">604-996-7786</a>
-          </div>
-
-          <div class="mb-3">
-            <strong>Email</strong><br>
-            <a href="mailto:info@eyriecontracting.com">
-              info@eyriecontracting.com
-            </a>
-          </div>
-
-          <hr>
-
-          <p class="text-muted small">
-            Business Hours<br>
-            Mon–Fri: 8:00 AM – 5:00 PM
-          </p>
-
         </div>
       </div>
-    </div>
 
     </div>
   </div>
