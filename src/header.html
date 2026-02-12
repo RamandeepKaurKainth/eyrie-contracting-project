@@ -12,32 +12,32 @@
                 </div>
             </div>
 
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
-                <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
-                <li><a href="about.html" class="hover:text-orange-500">About Us</a></li>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <li><a href="#" class="nav-link hover-grow">Home</a></li>
+            <li><a href="#" class="nav-link hover-grow">About Us</a></li>
 
-                <!-- DESKTOP SERVICES (HOVER DROPDOWN) -->
-                <li class="relative group">
-                    <button type="button" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </button>
-                    <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50">
-                        <a href="#" class="block hover:text-orange-500">Construction</a>
-                        <a href="#" class="block hover:text-orange-500">Design‑Build</a>
-                        <a href="#" class="block hover:text-orange-500">Project Management</a>
-                        <a href="#" class="block hover:text-orange-500">HVAC / Roofing / Flooring</a>
-                    </div>
-                </li>
+            <!-- DESKTOP SERVICES (HOVER DROPDOWN) -->
+            <li class="relative group">
+                <button type="button" aria-haspopup="true" aria-expanded="false" class="nav-link hover-grow ">
+                    Services
+                </button>
+                <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50">
+                    <a href="#" class="nav-link nav-link-block hover-grow">Construction</a>
+                    <a href="#" class="nav-link nav-link-block hover-grow">Design‑Build</a>
+                    <a href="#" class="nav-link nav-link-block hover-grow">Project Management</a>
+                    <a href="#" class="nav-link nav-link-block hover-grow">HVAC / Roofing / Flooring</a>
+                </div>
+            </li>
 
-                <li><a href="#" class="hover:text-orange-500">General Contractors</a></li>
-                <li><a href="gallery.html" class="hover:text-orange-500">Gallery</a></li>
-            </ul>
+            <li><a href="#" class="nav-link hover-grow">General Contractors</a></li>
+            <li><a href="#" class="nav-link hover-grow">Gallery</a></li>
+        </ul>
 
-            <!-- CTA -->
-            <button onclick="openPanel(event)" class="hidden md:block bg-orange-500 text-white px-4 py-2 rounded">
-                Get in Touch
-            </button>
+        <!-- CTA -->
+        <button onclick="openPanel(event)" class="hidden md:block btn btn-primary btn-sm hover-grow">
+            Get in Touch
+        </button>
 
             <!-- Hamburger -->
             <button class="md:hidden" onclick="toggleMenu()">
@@ -45,36 +45,34 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
-            <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
+        <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About Us</a></li>
 
-                <!-- MOBILE SERVICES DROPDOWN -->
-                <li>
-                    <button onclick="toggleMobileServices()" class="w-full text-left flex justify-between items-center">
-                        Services
-                        <span>▼</span>
-                    </button>
+            <!-- MOBILE SERVICES DROPDOWN -->
+            <li>
+                <button onclick="toggleMobileServices()" class="mobile-services-toggle">
+                    Services
+                    <span>▼</span>
+                </button>
 
-                    <ul id="mobileServicesDropdown" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
-                        <li><a href="#" class="block">Construction</a></li>
-                        <li><a href="#" class="block">Design‑Build</a></li>
-                        <li><a href="#" class="block">Project Management</a></li>
-                        <li><a href="#" class="block">HVAC / Roofing / Flooring</a></li>
-                    </ul>
-                </li>
+                <ul id="mobileServicesDropdown" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
+                    <li><a href="#" class="nav-link nav-link-block">Construction</a></li>
+                    <li><a href="#" class="nav-link nav-link-block">Design‑Build</a></li>
+                    <li><a href="#" class="nav-link nav-link-block">Project Management</a></li>
+                    <li><a href="#" class="nav-link nav-link-block">HVAC / Roofing / Flooring</a></li>
+                </ul>
+            </li>
 
-                <li><a href="#">General Contractors</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li>
-                    <button
-                        onclick="openPanel(event); toggleMenu();"
-                        class="bg-orange-500 text-white px-4 py-2 rounded block w-full text-center">
-                        Contact Us
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </header>
+            <li><a href="#" class="nav-link">General Contractors</a></li>
+            <li><a href="#" class="nav-link">Gallery</a></li>
+            <li>
+                <button onclick="openPanel(event); toggleMenu();" class="btn btn-primary btn-sm btn-block">
+                    Contact Us
+                </button>
+            </li>
+        </ul>
+    </div>
+</header>
