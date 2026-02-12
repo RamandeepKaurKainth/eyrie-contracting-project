@@ -39,7 +39,7 @@
                 <!-- Inquiry -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Select Inquiry*</label>
-                  <select class="form-select" required>
+                  <select name="inquiry" class="form-select" required>
                     <option value="">Select</option>
                     <option value="quote">Request a Quote</option>
                     <option value="general">General Inquiry</option>
@@ -50,7 +50,7 @@
                 <!-- Category -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Select Category*</label>
-                  <select class="form-select" required>
+                  <select name="category" class="form-select" required>
                     <option value="">Select</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
@@ -59,17 +59,13 @@
                 </div>
               </div>
 
-              <!-- How Did You Hear About Us -->
-              <div class="col-md-12 mb-3">
+              <div class="mb-4">
                 <label class="form-label">How did you hear about us?</label>
-                <select class="form-select">
+                <select name="hear_about_us" class="form-select">
                   <option value="">Select</option>
-                  <option value="google">Google Search</option>
-                  <option value="facebook">Facebook</option>
-                  <option value="instagram">Instagram</option>
-                  <option value="friend">Friend / Family Referral</option>
-                  <option value="contractor">Contractor Referral</option>
-                  <option value="drive-by">Saw Our Work / Vehicles</option>
+                  <option value="friend">Friend</option>
+                  <option value="social">Social Media</option>
+                  <option value="search">Search Engine</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -79,13 +75,13 @@
                 <!-- First Name -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">First Name*</label>
-                  <input type="text" class="form-control" placeholder="e.g. John" required />
+                  <input type="text" name="first_name" class="form-control" placeholder="e.g. John" required />
                 </div>
 
                 <!-- Last Name -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Last Name*</label>
-                  <input type="text" class="form-control" placeholder="e.g. Smith" required />
+                  <input type="text" name="last_name" class="form-control" placeholder="e.g. Smith" required />
                 </div>
               </div>
 
@@ -93,26 +89,28 @@
                 <!-- Phone -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Phone Number*</label>
-                  <input type="tel" class="form-control" placeholder="e.g. +132437436" required />
+                  <input type="tel" name="phone" class="form-control" placeholder="e.g. +132437436" required />
                 </div>
 
                 <!-- Email -->
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Email Address*</label>
-                  <input type="email" class="form-control" placeholder="e.g. john@youremail.com" required />
+                  <input type="email" name="email" class="form-control" placeholder="e.g. john@youremail.com"
+                    required />
                 </div>
               </div>
 
               <!-- Description -->
               <div class="mb-3">
                 <label class="form-label">Description*</label>
-                <textarea class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+                <textarea name="description" class="form-control" rows="4" placeholder="Tell us about your project..."
+                  required></textarea>
               </div>
 
               <!-- Attachment -->
               <div class="mb-4">
                 <label class="form-label">Attachment (optional)</label>
-                <input type="file" class="form-control" accept=".jpg,.png,.pdf,.doc,.docx" />
+                <input type="file" name="attachment" class="form-control" accept=".jpg,.png,.pdf,.doc,.docx" />
                 <div class="form-text">
                   Accepted formats: JPG, PNG, PDF, DOC, DOCX
                 </div>

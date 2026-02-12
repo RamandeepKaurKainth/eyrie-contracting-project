@@ -1,14 +1,23 @@
- document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
 
-      alert("Thank you! Your request has been submitted.");
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-      // Later: send form data to backend using fetch()
-      // const formData = new FormData(this);
-      // fetch('/api/contact', { method: 'POST', body: formData });
+  const formData = new FormData(e.target);
+  console.log(formData);
 
-      this.reset();
-    });
+  const response = await fetch("http://localhost:3000/send-email", {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await response.json();
+  if (result.success) {
+    alert("Your request has been sent!");
+  } else {
+    alert("Error sending message");
+  }
+});
+
 
 fetch("header.html")
   .then(res => res.text())
