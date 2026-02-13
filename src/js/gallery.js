@@ -32,6 +32,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 track.appendChild(img);
             });
 
+            const controls = document.createElement("div");
+            controls.className = "gallery-controls";
+            
+            // dim on hover to make arrows and dot nav more visible
+            const dim = document.createElement("div");
+            dim.className = "gallery-dim";
+
+            const leftArrow = document.createElement("button");
+            leftArrow.className = "gallery-arrow gallery-arrow-left";
+            leftArrow.type = "button";
+            leftArrow.dataset.action = "prev";
+            leftArrow.innerHTML = "&#10094;";
+
+            const rightArrow = document.createElement("button");
+            rightArrow.className = "gallery-arrow gallery-arrow-right";
+            rightArrow.type = "button";
+            rightArrow.dataset.action = "next";
+            rightArrow.innerHTML = "&#10095;";
+
+            const dots = document.createElement("div");
+            dots.className = "gallery-dots";
+            imageList.forEach((_, dotIndex) => {
+                const dot = document.createElement("button");
+                dot.type = "button";
+                dot.className = "gallery-dot" + (dotIndex === 0 ? " is-active" : "");
+                dot.dataset.dotIndex = dotIndex.toString();
+                dots.appendChild(dot);
+            });
+
             const content = document.createElement("div");
             content.className = "md:col-span-1";
 
@@ -46,6 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
             content.appendChild(heading);
             content.appendChild(text);
             viewport.appendChild(track);
+            controls.appendChild(dim);
+            controls.appendChild(leftArrow);
+            controls.appendChild(rightArrow);
+            controls.appendChild(dots);
+            viewport.appendChild(controls);
             media.appendChild(viewport);
             if (index % 2 === 0) {
                 wrapper.appendChild(media);
@@ -116,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const view = new GalleryView(data, listElement);
     view.render();
 
-    const cards = document.querySelectorAll(".gallery-card");
     const tracks = document.querySelectorAll(".gallery-track");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
@@ -127,21 +160,58 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentProjectIndex = 0;
     let currentImageIndex = 0;
 
-    function startImageRotation(trackElement) {
+    const rotationTimers = new WeakMap();
+
+    // update dot nav active state for a track
+    function updateDots(trackElement, activeIndex) {
+        const dots = trackElement.parentElement?.querySelectorAll(".gallery-dot") || [];
+        dots.forEach((dot) => {
+            const dotIndex = parseInt(dot.dataset.dotIndex || "0");
+            if (dotIndex === activeIndex) {
+                dot.classList.add("is-active");
+            } else {
+                dot.classList.remove("is-active");
+            }
+        });
+    }
+
+    // rotate to specific image index for a track
+    function rotateTo(trackElement, activeIndex) {
+        const list = trackElement.dataset.images ? trackElement.dataset.images.split(",") : [];
+        if (list.length === 0) {
+            return;
+        }
+        const safeIndex = ((activeIndex % list.length) + list.length) % list.length;
+        trackElement.dataset.activeIndex = safeIndex.toString();
+        trackElement.style.transform = `translateX(-${safeIndex * 100}%)`;
+        updateDots(trackElement, safeIndex);
+    }
+
+    // schedule automatic rotation for a track with specified delay
+    function scheduleRotation(trackElement, delay) {
         const list = trackElement.dataset.images ? trackElement.dataset.images.split(",") : [];
         if (list.length <= 1) {
             return;
         }
 
-        let activeIndex = 0;
-        setInterval(() => {
-            activeIndex = (activeIndex + 1) % list.length;
-            trackElement.dataset.activeIndex = activeIndex.toString();
-            trackElement.style.transform = `translateX(-${activeIndex * 100}%)`;
-        }, 3000);
+        // clear any existing timer for this track before scheduling a new one
+        if (rotationTimers.has(trackElement)) {
+            clearTimeout(rotationTimers.get(trackElement));
+        }
+
+        // set a new timer to rotate to the next image after the specified delay
+        const timerId = setTimeout(() => {
+            const current = parseInt(trackElement.dataset.activeIndex || "0");
+            rotateTo(trackElement, current + 1);
+            scheduleRotation(trackElement, 3000);
+        }, delay);
+
+        // store the timer ID in the WeakMap so it can be cleared later if needed
+        rotationTimers.set(trackElement, timerId);
     }
 
-    tracks.forEach((track) => startImageRotation(track));
+    // start automatic rotation for all tracks with a 3 second delay
+    tracks.forEach((track) => scheduleRotation(track, 3000));
 
     // Open lightbox when clicking a project image
     listElement.addEventListener("click", (event) => {
@@ -150,8 +220,26 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const projectIndex = parseInt(card.dataset.projectIndex || "0");
+        const action = event.target.dataset.action;
+        const dotIndex = event.target.dataset.dotIndex;
         const track = card.querySelector(".gallery-track");
+        
+        // 5 second delay before auto rotation resumes after manual navigation
+        if (action && track) {
+            const current = parseInt(track.dataset.activeIndex || "0");
+            const nextIndex = action === "next" ? current + 1 : current - 1;
+            rotateTo(track, nextIndex);
+            scheduleRotation(track, 5000);
+            return;
+        }
+        // same here for dot navigation
+        if (dotIndex && track) {
+            rotateTo(track, parseInt(dotIndex));
+            scheduleRotation(track, 5000);
+            return;
+        }
+
+        const projectIndex = parseInt(card.dataset.projectIndex || "0");
         const activeIndex = parseInt(track?.dataset.activeIndex || "0");
 
         currentProjectIndex = projectIndex;
