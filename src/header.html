@@ -7,7 +7,7 @@
                 <img src="images/logo/logo.png" 
                         alt="Eyrie Contracting Logo" 
                         class="h-16 w-auto drop-shadow-xl relative top-[5px] hover:scale-105 transition-transform duration-300 left-[25px]">
-                <div class="text-xl md:text-2xl font-bold text-gray-800 tracking-wide leading-none">
+                <div class="text-xl md:text-2xl font-bold text-gray-800 tracking-wide leading-none nav-link hover-grow">
                     EYRIE CONTRACTING INC.
                 </div>
             </div>
@@ -19,7 +19,7 @@
 
             <!-- DESKTOP SERVICES (HOVER DROPDOWN) -->
             <li class="relative group">
-                <button type="button" aria-haspopup="true" aria-expanded="false" class="nav-link hover-grow ">
+                <button type="button" aria-haspopup="true" aria-expanded="false" class="nav-link block hover-grow">
                     Services
                 </button>
                 <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50">
@@ -48,12 +48,12 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
         <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="index.html" class="nav-link hover-grow">Home</a></li>
+            <li><a href="about.html" class="nav-link hover-grow">About Us</a></li>
 
             <!-- MOBILE SERVICES DROPDOWN -->
             <li>
-                <button onclick="toggleMobileServices()" class="mobile-services-toggle">
+                <button onclick="toggleMobileServices()" class="mobile-services-toggle nav-link block w-full text-left hover-grow">
                     Services
                     <span>▼</span>
                 </button>
