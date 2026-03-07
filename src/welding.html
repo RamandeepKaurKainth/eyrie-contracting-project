@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>welding-and-fabrication| Eyrie Contracting Inc.</title>
+    <title>welding-and-fabrication | Eyrie Contracting Inc.</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
     <style>
-        html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
         }
     </style>
 
-    <!-- Bootstrap (hamburger toggle only) -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -24,23 +30,25 @@
 
 <body class="bg-gray-100">
 
-    <!-- Correct placeholders -->
+    <!-- HEADER + PANEL -->
     <div id="header-placeholder"></div>
     <div id="panel-placeholder"></div>
 
-    <!-- HERO SECTION (PARALLAX) -->
-    <!-- HERO SECTION (Responsive) -->
-    <section class="relative min-h-[60vh] md:min-h-[85vh] bg-gray-800 flex items-center"
-        style="background-image: url('images/designbuild.png'); background-size: cover; background-position: center;">
+    <!-- HERO SECTION (PARALLAX + ANIMATION) -->
+    <section class="relative min-h-[60vh] md:min-h-[85vh] parallax flex items-center"
+        style="background-image: url('images/designbuild.png');">
+
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full max-w-4xl">
+
+        <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full max-w-4xl"
+             data-aos="fade-up" data-aos-duration="1200">
+
             <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Welding and Fabrication
             </h1>
 
             <p class="text-gray-200 mt-4 text-base sm:text-lg md:text-xl leading-relaxed">
-                Where vision becomes structure — one unified team delivering design, planning, and construction with
-                precision.
+                Where vision becomes structure — one unified team delivering design, planning, and construction with precision.
             </p>
 
             <div class="mt-6">
@@ -52,93 +60,84 @@
         </div>
     </section>
 
-
     <!-- INTRO SECTION -->
     <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-6 text-center"
+             data-aos="fade-up" data-aos-duration="1000">
+
             <h2 class="text-4xl font-bold text-gray-800">Our Approach</h2>
             <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
 
             <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                At Eyrie Contracting, we take a meticulous and client-focused approach to every welding and fabrication
-                project, combining advanced techniques with a deep commitment to quality, safety, and craftsmanship. Our
-                team of skilled professionals employs state-of-the-art equipment and rigorous quality control measures
-                to ensure that every project meets the highest standards of precision and durability. We prioritize
-                safety at every stage, adhering to industry-leading protocols to protect both our team and clients. With
-                a focus on delivering reliable, long-lasting solutions, we consistently exceed expectations through
-                expert craftsmanship and unwavering attention to detail.
+                At Eyrie Contracting, we take a meticulous and client-focused approach to every welding and fabrication project...
             </p>
         </div>
     </section>
 
-    <!-- ALTERNATING SERVICES (Responsive) -->
+    <!-- ALTERNATING SERVICES -->
     <section class="container mx-auto px-4 md:px-6 py-16 space-y-20">
 
-        <!-- Process Piping (Left Image) -->
+        <!-- Process Piping -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg">
-                <img src="images/welding/process-piping-placeholder.webp" alt="Process Piping"
-                    class="w-full h-full object-cover">
+
+            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
+                 data-aos="fade-right">
+                <img src="images/welding/process-piping-placeholder.webp"
+                     alt="Process Piping" class="w-full h-full object-cover">
             </div>
-            <div>
+
+            <div data-aos="fade-left">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Process Piping</h2>
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    We specialize in providing high-quality process piping solutions for industrial applications. Our
-                    services include expert installations, maintenance, and repairs, ensuring efficient and reliable
-                    piping systems for a wide range of industries. With a commitment to safety, precision, and
-                    durability, we deliver top-notch results that meet the highest standards.
+                    We specialize in providing high-quality process piping solutions...
                 </p>
             </div>
         </div>
 
-        <!-- Structural Steel (Right Image) -->
+        <!-- Structural Steel -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div class="md:order-2 h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg">
-                <img src="images/welding/structural-steel-placeholder.webp" alt="Structural Steel"
-                    class="w-full h-full object-cover">
+
+            <div class="md:order-2 h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
+                 data-aos="fade-left">
+                <img src="images/welding/structural-steel-placeholder.webp"
+                     alt="Structural Steel" class="w-full h-full object-cover">
             </div>
-            <div class="md:order-1">
+
+            <div class="md:order-1" data-aos="fade-right">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Structural Steel</h2>
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    We specialize in the fabrication and installation of high-quality structural steel for diverse
-                    construction projects. Whether it's for commercial buildings, industrial facilities, or
-                    large-scale infrastructure, we provide custom-engineered steel solutions designed for strength,
-                    durability, and safety. Our skilled team is committed to delivering precision-crafted structures
-                    that meet the highest industry standards, ensuring timely completion and exceptional performance
-                    for every project.
+                    We specialize in the fabrication and installation of high-quality structural steel...
                 </p>
             </div>
         </div>
 
-        <!-- Sanitary Stainless (Left Image) -->
+        <!-- Sanitary Stainless -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg">
-                <img src="images/welding/sanitary-stainless-placeholder.webp" alt="Sanitary Stainless"
-                    class="w-full h-full object-cover">
+
+            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
+                 data-aos="fade-right">
+                <img src="images/welding/sanitary-stainless-placeholder.webp"
+                     alt="Sanitary Stainless" class="w-full h-full object-cover">
             </div>
-            <div>
+
+            <div data-aos="fade-left">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Sanitary Stainless</h2>
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    We specialize in custom stainless steel fabrication for critical sanitary applications in industries
-                    such as food processing, pharmaceuticals, and more. Our team delivers precision engineered solutions
-                    that meet the highest standards of hygiene, safety, and regulatory compliance. With a focus on
-                    durability and corrosion resistance, we provide seamless, high-quality stainless steel systems
-                    designed to maintain product integrity and optimize operational efficiency. Trust us to deliver
-                    reliable, sanitary solutions tailored to your unique requirements.
+                    We specialize in custom stainless steel fabrication for critical sanitary applications...
                 </p>
             </div>
         </div>
 
     </section>
 
-    <!-- UNIFIED CTA SECTION -->
+    <!-- CTA SECTION (PARALLAX + ANIMATION) -->
     <section class="relative h-[55vh] bg-cover bg-center mt-24 parallax"
         style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
 
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" data-aos="fade-up"
-            data-aos-duration="1200">
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
+             data-aos="fade-up" data-aos-duration="1200">
 
             <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
                 Ready to Bring Your Vision to Life?
@@ -165,7 +164,10 @@
         </div>
     </section>
 
+    <!-- SCRIPTS -->
     <script src="js/header.js"></script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 
+</body>
 </html>
