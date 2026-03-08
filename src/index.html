@@ -31,15 +31,19 @@
 
 
     <!-- HERO SECTION -->
-    <section class="relative bg-cover bg-center h-[85vh] bg-hero">
+    <section class="relative h-[85vh] overflow-hidden">
+        
+        <!-- BG VIDEO -->
+        <video 
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay 
+            muted 
+            loop 
+            playsinline>
+            <source src="videos/construction.mp4" type="video/mp4">
+        </video>
 
-        <style>
-            .bg-hero {
-                background-image: url('https://keiter.com/wp-content/uploads/2021/05/homepage-legacy.jpg');
-            }
-        </style>
-
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
         <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10">
             <h1 class="text-white text-4xl md:text-6xl font-bold max-w-3xl">
