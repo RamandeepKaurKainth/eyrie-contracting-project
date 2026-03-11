@@ -1,173 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | Request a Quote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Eyrie Contracting Inc.</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Bootstrap CSS (this defines the font) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Optional: ensure everything inherits Bootstrap font -->
-  <style>
-    body {
-      font-family: inherit;
-    }
-  </style>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/links.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 
+<body class="bg-gray-100 text-gray-800">
 
-<body>
-  <div id="menu-placeholder"></div>
+  <!-- HEADER + PANEL -->
+  <div id="header-placeholder"></div>
+  <div id="panel-placeholder"></div>
 
-  <div class="container-fluid py-5 px-4">
-    <div class="row g-4">
+  <!-- HERO -->
+  <section class="relative contact-hero min-h-[55vh] flex items-center">
+    <div class="absolute inset-0 bg-black/65"></div>
 
-      <!-- LEFT: Contact Form -->
-      <div class="col-12 col-lg-7">
-        <div>
-          <div class="card-body p-4">
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <h1 class="text-white text-4xl md:text-5xl font-bold">
+        Request a Quote
+      </h1>
 
-            <h2 class="mb-3 text-start display-6">Request a Quote</h2>
+      <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
 
-            <form id="contactForm" enctype="multipart/form-data">
-              <div class="row">
+      <p class="text-gray-200 mt-6 max-w-2xl mx-auto text-lg">
+        Tell us about your project and our team will contact you shortly.
+      </p>
+    </div>
+  </section>
 
-                <!-- Inquiry -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Select Inquiry*</label>
-                  <select class="form-select" required>
-                    <option value="">Select</option>
-                    <option value="quote">Request a Quote</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Support</option>
-                  </select>
-                </div>
+  <!-- CONTACT SECTION -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-10">
 
-                <!-- Category -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Select Category*</label>
-                  <select class="form-select" required>
-                    <option value="">Select</option>
-                    <option value="residential">Residential</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
+        <!-- FORM -->
+        <div class="lg:col-span-2 contact-card p-8 md:p-10">
 
-              <div class="row">
-                <!-- First Name -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">First Name*</label>
-                  <input type="text" class="form-control" placeholder="e.g. John" required />
-                </div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">
+            Let’s Talk About Your Project
+          </h2>
 
-                <!-- Last Name -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Last Name*</label>
-                  <input type="text" class="form-control" placeholder="e.g. Smith" required />
-                </div>
-              </div>
-
-              <div class="row">
-                <!-- Phone -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Phone Number*</label>
-                  <input type="tel" class="form-control" placeholder="e.g. +132437436" required />
-                </div>
-
-                <!-- Email -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Email Address*</label>
-                  <input type="email" class="form-control" placeholder="e.g. john@youremail.com" required />
-                </div>
-              </div>
-
-              <!-- Description -->
-              <div class="mb-3">
-                <label class="form-label">Description*</label>
-                <textarea class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
-              </div>
-
-              <!-- Attachment -->
-              <div class="mb-4">
-                <label class="form-label">Attachment (optional)</label>
-                <input type="file" class="form-control" accept=".jpg,.png,.pdf,.doc,.docx" />
-                <div class="form-text">
-                  Accepted formats: JPG, PNG, PDF, DOC, DOCX
-                </div>
-              </div>
-
-              <!-- Submit -->
-              <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">
-                  Submit Request
-                </button>
-              </div>
-
-            </form>
-
+          <!-- SUCCESS MESSAGE -->
+          <div id="formSuccess"
+               class="hidden mb-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800 font-medium">
+            ✔ Your inquiry has been submitted successfully. Our team will contact you soon.
           </div>
+
+          <form id="contactForm" enctype="multipart/form-data" class="space-y-5">
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Inquiry Type*</label>
+                <select class="contact-select" required>
+                  <option value="">Select</option>
+                  <option>Request a Quote</option>
+                  <option>General Inquiry</option>
+                  <option>Support</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Project Category*</label>
+                <select class="contact-select" required>
+                  <option value="">Select</option>
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                  <option>Industrial</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+              <div>
+                <label class="block text-sm font-medium mb-2">First Name*</label>
+                <input type="text"
+                       class="contact-input"
+                       placeholder="e.g. John"
+                       required>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Last Name*</label>
+                <input type="text"
+                       class="contact-input"
+                       placeholder="e.g. Smith"
+                       required>
+              </div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Phone*</label>
+                <input type="tel"
+                       class="contact-input"
+                       placeholder="+1 234 567 8901"
+                       required>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Email*</label>
+                <input type="email"
+                       class="contact-input"
+                       placeholder="john@email.com"
+                       required>
+              </div>
+
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Project Description*</label>
+              <textarea rows="6"
+                        class="contact-textarea"
+                        placeholder="Tell us about your project..."
+                        required></textarea>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Attachment (optional)</label>
+              <input type="file"
+                     class="contact-input"
+                     accept=".jpg,.png,.pdf,.doc,.docx">
+              <p class="text-sm text-gray-500 mt-2">
+                Accepted formats: JPG, PNG, PDF, DOC, DOCX
+              </p>
+            </div>
+
+            <button id="submitBtn"
+                    type="submit"
+                    class="btn btn-primary btn-lg w-full">
+              Submit Request
+            </button>
+
+          </form>
         </div>
 
-      </div>
-      <!-- RIGHT: Company Info -->
-      <div class="col-12 col-lg-5">
-        <div>
-          <div class="card-body p-4">
-            <h2 class="mb-3 text-start display-6">Our Office</h2>
+        <!-- OFFICE INFO -->
+        <div class="space-y-8">
 
-            <h4 class="mb-3" id="companyName"></h4>
-            <p class="mb-3" id="country"></p>
+          <div class="info-card text-white rounded-2xl shadow-xl p-8">
 
-            <!-- Office Address -->
-            <div class="mb-3">
-              <strong>Office</strong><br>
-              <span id="address1"></span><br>
-              <span id="city"></span>, <span id="province"></span><br>
-              <span id="postalCode"></span>
+            <h3 class="text-2xl font-bold mb-6">
+              Our Office
+            </h3>
+
+            <div class="space-y-4 text-sm md:text-base">
+
+              <div>
+                <p class="text-orange-400 font-semibold">Company</p>
+                <p>Eyrie Contracting Inc.</p>
+              </div>
+
+              <div>
+                <p class="text-orange-400 font-semibold">Address</p>
+                <p>33942 McPhee Place</p>
+                <p>Mission, BC</p>
+                <p>V2V 0E7</p>
+              </div>
+
+              <div>
+                <p class="text-orange-400 font-semibold">Phone</p>
+                <a href="tel:6049967586"
+                   class="hover:text-orange-300 transition">
+                  604-996-7586
+                </a>
+              </div>
+
+              <div>
+                <p class="text-orange-400 font-semibold">Email</p>
+                <a href="mailto:admin@eyriecontracting.com"
+                   class="hover:text-orange-300 transition break-all">
+                  admin@eyriecontracting.com
+                </a>
+              </div>
+
+              <div>
+                <p class="text-orange-400 font-semibold">Business Hours</p>
+                <p>Monday – Friday</p>
+              </div>
+
             </div>
 
-            <!-- Phone -->
-            <div class="mb-3">
-              <strong>Phone</strong><br>
-              <a id="phoneLink" href="#" class="text-link">
-                <span id="phone"></span>
+            <div class="mt-8 space-y-4">
+
+              <a href="tel:6049967586"
+                 class="block bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition">
+                Call Us
               </a>
-            </div>
 
-            <!-- Email -->
-            <div class="mb-3">
-              <strong>Email</strong><br>
-              <a id="emailLink" href="#" class="text-link">
-                <span id="email"></span>
+              <a href="mailto:admin@eyriecontracting.com"
+                 class="block bg-white/10 text-white text-center py-3 rounded-lg font-semibold hover:bg-white/20 transition">
+                Email Us
               </a>
+
             </div>
 
-            <hr>
-
-            <p class="text-muted small">
-              Business Hours<br>
-            <p id="officeHour"></p>
-            </p>
           </div>
+
+          <!-- WHY US -->
+          <div class="contact-card p-8">
+
+            <h3 class="text-2xl font-bold mb-5">
+              Why Work With Eyrie?
+            </h3>
+
+            <div class="space-y-4 text-gray-600">
+
+              <div class="flex gap-3">
+                <span class="contact-check">✔</span>
+                <p>Reliable residential & commercial experience</p>
+              </div>
+
+              <div class="flex gap-3">
+                <span class="contact-check">✔</span>
+                <p>Precision and craftsmanship</p>
+              </div>
+
+              <div class="flex gap-3">
+                <span class="contact-check">✔</span>
+                <p>Clear communication throughout the project</p>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Simple JS handler -->
-  <script type="module" src="js/contact.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/contact.js"></script>
 
 </body>
-
 </html>

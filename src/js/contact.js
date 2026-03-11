@@ -35,10 +35,3 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 });
 
 
-fetch("header.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("menu-placeholder").innerHTML = html;
-  });
-
-
