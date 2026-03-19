@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         .parallax {
             background-attachment: fixed;
@@ -41,8 +44,8 @@
 
         <div class="absolute inset-0 bg-black/60"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" data-aos="fade-up"
+            data-aos-duration="1200">
             <h1 class="text-white text-5xl md:text-6xl font-extrabold uppercase tracking-wide">
                 Our Work
             </h1>
@@ -57,72 +60,34 @@
 
     <!-- GALLERY GRID -->
     <section class="container mx-auto px-6 py-20">
-        <div id="gallery-list"
-             class="space-y-10"
-             data-aos="fade-up"
-             data-aos-duration="1000"></div>
+        <div id="gallery-list" class="space-y-10" data-aos="fade-up" data-aos-duration="1000"></div>
     </section>
 
     <!-- LIGHTBOX -->
-    <div id="lightbox"
-         class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4">
+    <div id="lightbox" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4">
 
-        <button id="closeBtn"
-                class="absolute top-6 right-6 text-white text-4xl">
+        <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl">
             &times;
         </button>
 
-        <button id="prevBtn"
-                class="absolute left-6 text-white text-4xl">
+        <button id="prevBtn" class="absolute left-6 text-white text-4xl">
             &#10094;
         </button>
 
-        <button id="nextBtn"
-                class="absolute right-6 text-white text-4xl">
+        <button id="nextBtn" class="absolute right-6 text-white text-4xl">
             &#10095;
         </button>
 
-        <img id="lightboxImg"
-             class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl object-contain"
-             alt="Gallery preview">
+        <img id="lightboxImg" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl object-contain"
+            alt="Gallery preview">
     </div>
 
     <!-- CTA -->
-    <section class="relative h-[55vh] bg-cover bg-center mt-24 parallax"
-             style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
-
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
-
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
-
-            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
-                Ready to Start Your Project?
-            </h2>
-
-            <div class="w-24 h-1 bg-orange-500 mt-4 mb-6"></div>
-
-            <p class="text-gray-200 max-w-xl leading-relaxed text-lg">
-                Let’s bring your vision to life with quality craftsmanship and reliable service.
-            </p>
-
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <button onclick="openPanel(event)"
-                        class="btn btn-primary btn-shadow hover-grow">
-                    Request a Free Quote
-                </button>
-
-                <a href="designbuild.html"
-                   class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
-                    Explore Our Services
-                </a>
-            </div>
-
-        </div>
-    </section>
+    <div id="footer-placeholder"></div>
 
     <!-- JS FILES -->
     <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <script src="js/gallery.js"></script>
 
     <!-- AOS -->
@@ -132,4 +97,5 @@
     </script>
 
 </body>
+
 </html>

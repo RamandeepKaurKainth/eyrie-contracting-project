@@ -162,47 +162,45 @@
 
               <div>
                 <p class="text-orange-400 font-semibold">Company</p>
-                <p>Eyrie Contracting Inc.</p>
+                <p id="companyName"></p>
               </div>
 
               <div>
                 <p class="text-orange-400 font-semibold">Address</p>
-                <p>33942 McPhee Place</p>
-                <p>Mission, BC</p>
-                <p>V2V 0E7</p>
+                <span id="address1"></span><br>
+              <span id="city"></span>, <span id="province"></span><br>
+              <span id="postalCode"></span>
               </div>
 
               <div>
                 <p class="text-orange-400 font-semibold">Phone</p>
-                <a href="tel:6049967586"
-                   class="hover:text-orange-300 transition">
-                  604-996-7586
+                <a class="hover:text-orange-300 transition" id = "phone">
                 </a>
               </div>
 
               <div>
                 <p class="text-orange-400 font-semibold">Email</p>
-                <a href="mailto:admin@eyriecontracting.com"
+                <a id="email"
                    class="hover:text-orange-300 transition break-all">
-                  admin@eyriecontracting.com
+
                 </a>
               </div>
 
               <div>
                 <p class="text-orange-400 font-semibold">Business Hours</p>
-                <p>Monday – Friday</p>
+                <p id="officeHour"></p>
               </div>
 
             </div>
 
             <div class="mt-8 space-y-4">
 
-              <a href="tel:6049967586"
+              <a id ="phoneLink"
                  class="block bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition">
                 Call Us
               </a>
 
-              <a href="mailto:admin@eyriecontracting.com"
+              <a id = "emailLink"
                  class="block bg-white/10 text-white text-center py-3 rounded-lg font-semibold hover:bg-white/20 transition">
                 Email Us
               </a>
@@ -245,8 +243,11 @@
     </div>
   </section>
 
+<div id="footer-placeholder"></div>
+
   <script src="js/header.js"></script>
-  <script src="js/contact.js"></script>
+   <script src="js/footer.js"></script>
+  <script type="module" src="js/contact.js"></script>
 
 </body>
 </html>
