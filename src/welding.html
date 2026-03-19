@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         .parallax {
             background-attachment: fixed;
@@ -41,19 +44,19 @@
         <div class="absolute inset-0 bg-black/50"></div>
 
         <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full max-w-4xl"
-             data-aos="fade-up" data-aos-duration="1200">
+            data-aos="fade-up" data-aos-duration="1200">
 
             <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Welding & Fabrication
             </h1>
 
             <p class="text-gray-200 mt-4 text-base sm:text-lg md:text-xl leading-relaxed">
-                Precision-driven welding and fabrication solutions for structural, industrial, and sanitary applications.
+                Precision-driven welding and fabrication solutions for structural, industrial, and sanitary
+                applications.
             </p>
 
             <div class="mt-6">
-                <button onclick="openPanel(event)"
-                        class="btn btn-primary btn-shadow hover-grow">
+                <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
                     Request a Quote
                 </button>
             </div>
@@ -62,15 +65,16 @@
 
     <!-- INTRO SECTION -->
     <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center"
-             data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
 
             <h2 class="text-4xl font-bold text-gray-800">Our Approach</h2>
             <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
 
             <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                At Eyrie Contracting, we take a meticulous and client-focused approach to every welding and fabrication project.
-                From concept to completion, we focus on safety, quality, precision, and dependable execution across every stage of work.
+                At Eyrie Contracting, we take a meticulous and client-focused approach to every welding and fabrication
+                project.
+                From concept to completion, we focus on safety, quality, precision, and dependable execution across
+                every stage of work.
             </p>
         </div>
     </section>
@@ -81,11 +85,9 @@
         <!-- Process Piping -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
-                 data-aos="fade-right">
-                <img src="images/welding/process-piping-placeholder.webp"
-                     alt="Process Piping"
-                     class="w-full h-full object-cover">
+            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-right">
+                <img src="images/welding/process-piping-placeholder.webp" alt="Process Piping"
+                    class="w-full h-full object-cover">
             </div>
 
             <div data-aos="fade-left">
@@ -101,18 +103,17 @@
         <!-- Structural Steel -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-            <div class="md:order-2 h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
-                 data-aos="fade-left">
-                <img src="images/welding/structural-steel-placeholder.webp"
-                     alt="Structural Steel"
-                     class="w-full h-full object-cover">
+            <div class="md:order-2 h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-left">
+                <img src="images/welding/structural-steel-placeholder.webp" alt="Structural Steel"
+                    class="w-full h-full object-cover">
             </div>
 
             <div class="md:order-1" data-aos="fade-right">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Structural Steel</h2>
                 <div class="w-16 h-1 bg-orange-500 mt-3 mb-5"></div>
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    We specialize in the fabrication and installation of structural steel for commercial and industrial projects,
+                    We specialize in the fabrication and installation of structural steel for commercial and industrial
+                    projects,
                     delivering strength, reliability, and clean workmanship.
                 </p>
             </div>
@@ -121,11 +122,9 @@
         <!-- Sanitary Stainless -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg"
-                 data-aos="fade-right">
-                <img src="images/welding/sanitary-stainless-placeholder.webp"
-                     alt="Sanitary Stainless"
-                     class="w-full h-full object-cover">
+            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-right">
+                <img src="images/welding/sanitary-stainless-placeholder.webp" alt="Sanitary Stainless"
+                    class="w-full h-full object-cover">
             </div>
 
             <div data-aos="fade-left">
@@ -140,46 +139,17 @@
 
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="relative h-[55vh] bg-cover bg-center mt-24 parallax"
-        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+    <div id="footer-placeholder"></div>
 
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
-
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
-
-            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
-                Ready to Bring Your Vision to Life?
-            </h2>
-
-            <div class="w-24 h-1 bg-orange-500 mt-4 mb-6"></div>
-
-            <p class="text-gray-200 max-w-xl leading-relaxed text-lg">
-                Let’s design, plan, and build something exceptional together.
-            </p>
-
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <button onclick="openPanel(event)"
-                        class="btn btn-primary btn-shadow hover-grow">
-                    Start Your Project
-                </button>
-
-                <a href="designbuild.html"
-                   class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
-                    Explore Our Services
-                </a>
-            </div>
-
-        </div>
-    </section>
 
     <!-- SCRIPTS -->
     <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
 
 </body>
+
 </html>
