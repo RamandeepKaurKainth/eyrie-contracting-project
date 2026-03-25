@@ -16,11 +16,16 @@
     <!-- AOS (scroll animations) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+    <!-- A-Frame (360 video support) -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         /* Parallax effect */
         .parallax {
@@ -40,22 +45,17 @@
 
     <!-- HERO (VIDEO) -->
     <section class="relative h-[70vh] overflow-hidden">
-        
+
         <!-- BG VIDEO -->
-        <video 
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay 
-            muted 
-            loop 
-            playsinline>
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
             <source src="videos/placeholder_video2.mp4" type="video/mp4">
         </video>
 
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black/60"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" data-aos="fade-up"
+            data-aos-duration="1200">
             <h1 class="text-white text-5xl md:text-6xl font-extrabold uppercase tracking-wide">
                 Our Work
             </h1>
@@ -70,8 +70,7 @@
 
     <!-- GALLERY GRID -->
     <section class="container mx-auto px-6 py-20">
-        <div id="gallery-list" class="space-y-10"
-             data-aos="fade-up" data-aos-duration="1000"></div>
+        <div id="gallery-list" class="space-y-10" data-aos="fade-up" data-aos-duration="1000"></div>
     </section>
 
 
@@ -84,18 +83,18 @@
         <button id="prevBtn" class="absolute left-6 text-white text-4xl">&#10094;</button>
         <button id="nextBtn" class="absolute right-6 text-white text-4xl">&#10095;</button>
 
-        <img id="lightboxImg" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl object-contain">
+        <div id="lightboxMedia" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl overflow-hidden"></div>
     </div>
 
 
     <!-- UNIFIED CTA SECTION -->
     <section class="relative h-[55vh] bg-cover bg-center mt-24 parallax"
-             style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
 
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" data-aos="fade-up"
+            data-aos-duration="1200">
 
             <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
                 Ready to Start Your Project?
@@ -109,12 +108,12 @@
 
             <div class="mt-8 flex space-x-4">
                 <a href="contact.html"
-                   class="bg-orange-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                    class="bg-orange-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-orange-600 transition">
                     Request a Free Quote
                 </a>
 
                 <a href="services.html"
-                   class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
+                    class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
                     Explore Our Services
                 </a>
             </div>
@@ -132,4 +131,5 @@
     <script>AOS.init();</script>
 
 </body>
+
 </html>
