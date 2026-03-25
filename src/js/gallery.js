@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
           img.src = mediaItem.src;
           img.alt = this.title;
           img.className = "gallery-img";
+          img.loading = "eager";
+          img.decoding = "async";
           slide.appendChild(img);
         } else if (mediaItem.type === "video") {
           const video = createVideoElement(mediaItem.src, mediaItem.poster);
@@ -193,6 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
     registerManagedVideo(video);
   });
 
+  preloadGalleryImages(data);
+
   const tracks = document.querySelectorAll(".gallery-track");
   tracks.forEach((track) => {
     const current = parseInt(track.dataset.activeIndex || "0", 10);
@@ -204,6 +208,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createVideoVisibilityObserver();
   setupFullscreenScrollLock();
+
+  function preloadGalleryImages(items) {
+    const imageSources = new Set();
+
+    items.forEach((item) => {
+      item.media.forEach((mediaItem) => {
+        if (mediaItem.type === "image" && mediaItem.src) {
+          imageSources.add(mediaItem.src);
+        }
+      });
+    });
+
+    imageSources.forEach((src) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.src = src;
+
+      if (typeof image.decode === "function") {
+        image.decode().catch(() => { });
+      }
+    });
+  }
 
   function createVideoElement(src, poster) {
     const video = document.createElement("video");
