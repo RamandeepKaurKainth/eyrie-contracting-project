@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const data = [
     new GalleryItem(
       "Project 1",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
+      "Example with just images.",
       [
         { type: "image", src: "gallery-projects/project1-a/gallery1.jpg" },
         { type: "image", src: "gallery-projects/project1-a/gallery2.jpg" },
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
     new GalleryItem(
       "Project 2",
-      "Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.",
+      "Example with video, clickable to pause and play, it will always be first and not switch to other pictures unless user manually does so.",
       [
         { type: "image", src: "gallery-projects/project2-b/gallery8.jpg" },
         { type: "video", src: "gallery-projects/project2-b/placeholder_video1.mp4" },
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
     new GalleryItem(
       "Project 3",
-      "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.",
+      "Example with 360 video, can click and drag to look around, it will always be first and not switch to other pictures unless user manually does so.",
       [
         { type: "image", src: "gallery-projects/project3-c/main.jpg" },
         { type: "video360", src: "gallery-projects/project3-c/360 video example.mp4" },
