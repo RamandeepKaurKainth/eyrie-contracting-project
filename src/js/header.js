@@ -1,49 +1,87 @@
-// Load PANEL
-fetch("panel.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("panel-placeholder").innerHTML = html;
-  });
+Promise.all([
+  fetch("panel.html").then(res => res.text()),
+  fetch("header.html").then(res => res.text())
+])
+.then(([panelHtml, headerHtml]) => {
+  document.getElementById("panel-placeholder").innerHTML = panelHtml;
+  document.getElementById("header-placeholder").innerHTML = headerHtml;
+  initHeaderFunctions();
+})
+.catch(err => console.error("Error loading header/panel:", err));
 
-// Load HEADER
-fetch("header.html")
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("header-placeholder").innerHTML = html;
-    initHeaderFunctions();
-  });
-
-// Initialize header + panel functions
 function initHeaderFunctions() {
+  let panelOpen = false;
 
   window.toggleMenu = function () {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (mobileMenu) {
+      mobileMenu.classList.toggle("hidden");
+    }
   };
 
   window.toggleMobileServices = function () {
-    document.getElementById("mobileServicesDropdown").classList.toggle("hidden");
+    const mobileDropdown = document.getElementById("mobileServicesDropdown");
+    if (mobileDropdown) {
+      mobileDropdown.classList.toggle("hidden");
+    }
   };
 
   window.openPanel = function (event) {
-    if (event) event.stopPropagation();
-    document.getElementById("callPanel").style.right = "0";
-    document.getElementById("overlay").classList.remove("hidden");
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    const panel = document.getElementById("callPanel");
+    const overlay = document.getElementById("overlay");
+
+    if (panel) panel.style.right = "0";
+    if (overlay) overlay.classList.remove("hidden");
+
+    panelOpen = true;
   };
 
   window.closePanel = function () {
-    document.getElementById("callPanel").style.right = "-320px";
-    document.getElementById("overlay").classList.add("hidden");
+    const panel = document.getElementById("callPanel");
+    const overlay = document.getElementById("overlay");
+
+    if (panel) panel.style.right = "-100%";
+    if (overlay) overlay.classList.add("hidden");
+
+    panelOpen = false;
   };
 
-  document.addEventListener("click", (e) => {
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.addEventListener("click", closePanel);
+  }
+
+  const callPanel = document.getElementById("callPanel");
+  if (callPanel) {
+    callPanel.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  document.addEventListener("click", function (e) {
     const panel = document.getElementById("callPanel");
-    if (panel && panel.style.right === "0px" && !panel.contains(e.target)) {
+
+    if (
+      panelOpen &&
+      panel &&
+      !panel.contains(e.target)
+    ) {
       closePanel();
     }
   });
 
-  const callPanel = document.getElementById("callPanel");
-  if (callPanel) {
-    callPanel.addEventListener("click", (e) => e.stopPropagation());
-  }
+  let scrollTimeout;
+  window.addEventListener("scroll", function () {
+    if (!panelOpen) return;
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      closePanel();
+    }, 80);
+  }, { passive: true });
 }

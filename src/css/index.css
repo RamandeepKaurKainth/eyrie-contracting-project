@@ -1,0 +1,61 @@
+.hero-bg {
+  background-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #ea580c;
+  margin: 10px auto 0;
+  border-radius: 999px;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.partner-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.partner-card.fade-out {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.partner-card.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
