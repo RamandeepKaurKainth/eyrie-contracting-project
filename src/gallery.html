@@ -19,6 +19,9 @@
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+    <!-- A-Frame for 360 video support -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -40,22 +43,14 @@
 
     <!-- HERO (VIDEO) -->
     <section class="relative h-[70vh] overflow-hidden">
-        
-        <!-- BG VIDEO -->
-        <video 
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay 
-            muted 
-            loop 
-            playsinline>
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
             <source src="videos/placeholder_video2.mp4" type="video/mp4">
         </video>
 
-        <!-- Overlay -->
         <div class="absolute inset-0 bg-black/60"></div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6" data-aos="fade-up"
-            data-aos-duration="1200">
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
+            data-aos="fade-up" data-aos-duration="1200">
             <h1 class="text-white text-5xl md:text-6xl font-extrabold uppercase tracking-wide">
                 Our Work
             </h1>
@@ -75,7 +70,6 @@
 
     <!-- LIGHTBOX -->
     <div id="lightbox" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4">
-
         <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl">
             &times;
         </button>
@@ -88,11 +82,43 @@
             &#10095;
         </button>
 
-        <img id="lightboxImg" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl object-contain"
-            alt="Gallery preview">
+        <div id="lightboxMedia" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl overflow-hidden"></div>
     </div>
 
-    <!-- CTA -->
+    <!-- CTA SECTION -->
+    <section class="relative h-[55vh] bg-cover bg-center mt-24 parallax"
+        style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
+
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
+            data-aos="fade-up" data-aos-duration="1200">
+
+            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
+                Ready to Start Your Project?
+            </h2>
+
+            <div class="w-24 h-1 bg-orange-500 mt-4 mb-6"></div>
+
+            <p class="text-gray-200 max-w-xl leading-relaxed text-lg">
+                Let’s bring your vision to life with quality craftsmanship and reliable service.
+            </p>
+
+            <div class="mt-8 flex space-x-4">
+                <a href="contact.html"
+                    class="bg-orange-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                    Request a Free Quote
+                </a>
+
+                <a href="services.html"
+                    class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
     <!-- JS FILES -->
