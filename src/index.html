@@ -6,7 +6,7 @@
   <title>Great Vancouver Constrction | Eyrie Contracting Inc.</title>
   <meta name="description" content="Eyrie Contracting Inc. provides residential, commercial, and industrial construction services in BC. Trusted, reliable, and professional.">
 
-  <!-- Optional Meta Keywords (not critical but can help) -->
+  <!-- Optional Meta Keywords -->
   <meta name="keywords" content="Vancouver contractor, residential construction, commercial construction, industrial construction, BC construction services">
 
   <!-- Social Sharing / Open Graph -->
@@ -15,7 +15,6 @@
   <meta property="og:image" content="images/designbuild.png">
   <meta property="og:url" content="https://eyriecontracting.com/">
   <meta property="og:type" content="website">
-
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -33,11 +32,23 @@
   <div id="header-placeholder"></div>
   <div id="panel-placeholder"></div>
 
-  <!-- HERO -->
-  <section class="relative hero-bg min-h-screen flex items-center parallax">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40"></div>
+  <!-- HERO SECTION (VIDEO) -->
+  <section class="relative h-[85vh] overflow-hidden">
+    
+    <!-- BG VIDEO -->
+    <video 
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay 
+      muted 
+      loop 
+      playsinline>
+      <source src="videos/construction.mp4" type="video/mp4">
+    </video>
 
-    <div class="container mx-auto px-6 relative z-10">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40 z-10"></div>
+
+    <div class="container mx-auto px-6 relative z-20 h-full flex items-center">
       <div class="max-w-3xl glass-box rounded-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-duration="1200">
         <p class="uppercase tracking-[0.25em] text-orange-400 text-sm font-semibold mb-4">
           Eyrie Contracting Inc.
