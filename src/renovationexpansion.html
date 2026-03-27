@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design-Build | Eyrie Contracting Inc.</title>
+    <title>Renovations & Expansions | Eyrie Contracting Inc.</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,9 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         .parallax {
             background-attachment: fixed;
@@ -39,39 +36,24 @@
     <!-- PANEL INCLUDE -->
     <div id="panel-placeholder"></div>
 
-  
-    <section class="relative h-[85vh] overflow-hidden">
-
-        <!-- BG VIDEO -->
-        <video 
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay 
-            muted 
-            loop 
-            playsinline>
-            <source src="videos/placeholder_video1.mp4" type="video/mp4">
-        </video>
-
-        <!-- Overlay -->
+    <!-- HERO SECTION -->
+    <section class="relative h-[85vh] parallax"
+        style="background-image: url('images/renovations-hero.jpg');">
         <div class="absolute inset-0 bg-black/50"></div>
 
         <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10"
              data-aos="fade-up" data-aos-duration="1200">
-
-
- 
             <h1 class="text-white text-5xl md:text-6xl font-bold max-w-3xl leading-tight">
-                Integrated Design & Build Solutions
+                Renovations & Expansions Built for How You Live and Work
             </h1>
 
             <p class="text-gray-200 mt-4 max-w-xl text-lg">
-                Where vision becomes structure — one unified team delivering design, planning, and construction with
-                precision.
+                From homes to warehouses, we upgrade, expand, and modernize spaces with precision, safety, and clean execution.
             </p>
 
             <div class="mt-6">
                 <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
-                    Start Your Project
+                    Start Your Renovation
                 </button>
             </div>
         </div>
@@ -80,14 +62,13 @@
     <!-- INTRO SECTION -->
     <section class="bg-white py-20">
         <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="text-4xl font-bold text-gray-800">Design & Build</h2>
+            <h2 class="text-4xl font-bold text-gray-800">Renovations & Expansions</h2>
             <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
 
             <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                At Eyrie Contracting Inc., we combine expert architectural design with flawless construction execution.
-                Our integrated design-build model gives you a seamless experience from the first sketch to the final
-                walkthrough —
-                faster decisions, tighter coordination, and exceptional results.
+                Eyrie Contracting provides renovation and expansion services for residential and commercial spaces,
+                schools, offices, warehouses, and industrial kitchens. We focus on clean, efficient delivery that
+                upgrades your space without unnecessary disruption.
             </p>
         </div>
     </section>
@@ -96,45 +77,42 @@
     <section class="container mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
 
         <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Design</h3>
+             data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Residential Renovations</h3>
             <p class="text-gray-600 mt-3 leading-relaxed">
-                Architectural layouts, 3D concepts, interior detailing, and complete blueprint packages tailored to your
-                project.
+                Kitchens, bathrooms, additions, full home updates, and layout reconfigurations designed to match how you live today.
             </p>
         </div>
 
         <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Planning</h3>
+             data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Commercial & Office Upgrades</h3>
             <p class="text-gray-600 mt-3 leading-relaxed">
-                Engineering coordination, drafting, permitting, compliance, scheduling, and resource planning — handled
-                start to finish.
+                Tenant improvements, office re-planning, accessibility upgrades, and expansions that keep your business moving.
             </p>
         </div>
 
         <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="300">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Build</h3>
+             data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Industrial & Specialized Spaces</h3>
             <p class="text-gray-600 mt-3 leading-relaxed">
-                Seamless construction delivery backed by skilled trades, fabrication capabilities, and strict quality
-                control.
+                Warehouses, industrial kitchens, production areas, and back-of-house upgrades with a focus on safety and flow.
             </p>
         </div>
 
     </section>
 
-    <!-- WHY DESIGN-BUILD WORKS -->
+    <!-- WHY RENOVATE WITH EYRIE -->
     <section class="bg-gray-100 py-20">
         <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-800">Why Design-Build Works</h2>
+            <h2 class="text-3xl font-bold text-gray-800">Why Renovations & Expansions with Eyrie</h2>
             <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-gray-700 text-lg">
-                <div data-aos="zoom-in" data-aos-delay="100">Faster Timelines</div>
-                <div data-aos="zoom-in" data-aos-delay="200">Cost-Controlled Execution</div>
-                <div data-aos="zoom-in" data-aos-delay="300">Unified Communication</div>
-                <div data-aos="zoom-in" data-aos-delay="400">No Gaps Between Design & Construction</div>
+                <div data-aos="zoom-in" data-aos-delay="100">Minimal Disruption</div>
+                <div data-aos="zoom-in" data-aos-delay="200">Cost-Controlled Planning</div>
+                <div data-aos="zoom-in" data-aos-delay="300">Integrated Design & Build</div>
+                <div data-aos="zoom-in" data-aos-delay="400">Clean, Safe Worksites</div>
                 <div data-aos="zoom-in" data-aos-delay="500">Full Accountability</div>
             </div>
         </div>
@@ -145,8 +123,9 @@
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
             <div data-aos="fade-right">
-                <img src="images/designbuild.png" class="rounded-lg shadow-lg w-full object-cover"
-                    alt="Design and planning">
+                <img src="images/renovations-approach.jpg"
+                     class="rounded-lg shadow-lg w-full object-cover"
+                     alt="Renovation and expansion planning">
             </div>
 
             <div data-aos="fade-left">
@@ -154,25 +133,23 @@
                 <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
 
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    We manage every detail of your project with precision — from structural elements to interior
-                    finishes.
-                    Our team collaborates with talented interior designers to refine every aspect, including materials,
-                    colors,
-                    furniture, and staging.
+                    We begin by understanding how your space needs to function—then plan structural changes,
+                    layout improvements, and finishes around that. Our team coordinates design, engineering,
+                    permitting, and construction so every phase moves smoothly.
                 </p>
 
                 <p class="text-gray-600 mt-4 leading-relaxed">
-                    Whether you need full project management or support for specific phases, we tailor our services to
-                    your needs.
-                    We thrive on creative, unique, and technically demanding projects — delivering craftsmanship,
-                    innovation,
-                    and care at every step.
+                    Whether you’re expanding a warehouse, refreshing an office, or modernizing a home,
+                    we manage details, timelines, and trades with precision. You get a clear plan,
+                    predictable progress, and a space that works better from day one.
                 </p>
             </div>
 
         </div>
     </section>
-    <div id="footer-placeholder"></div>
+
+  <div id="footer-placeholder"></div>
+
     <!-- SCRIPTS -->
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
@@ -182,5 +159,4 @@
     </script>
 
 </body>
-
 </html>
