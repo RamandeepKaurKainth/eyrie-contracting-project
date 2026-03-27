@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management | Eyrie Contracting Inc.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Shared Site CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/links.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- HEADER INCLUDE -->
+    <div id="header-placeholder"></div>
+
+    <!-- PANEL INCLUDE -->
+    <div id="panel-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[85vh] parallax"
+        style="background-image: url('images/project-management-approach.png');">
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10"
+             data-aos="fade-up" data-aos-duration="1200">
+            <h1 class="text-white text-5xl md:text-6xl font-bold max-w-3xl leading-tight">
+                Project Management That Keeps Your Build on Track
+            </h1>
+
+            <p class="text-gray-200 mt-4 max-w-xl text-lg">
+                Organized planning, clear communication, and dependable oversight from start to finish.
+            </p>
+
+            <div class="mt-6">
+                <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
+                    Start Your Project
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-4xl font-bold text-gray-800">Project Management</h2>
+            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
+
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+                Eyrie Contracting project management services ensure that your project is completed on time and within budget.
+                We work closely with you to ensure that your project is a success from start to finish.
+            </p>
+        </div>
+    </section>
+
+    <!-- THREE-COLUMN SERVICES -->
+    <section class="container mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+
+        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
+             data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Planning & Scheduling</h3>
+            <p class="text-gray-600 mt-3 leading-relaxed">
+                We help organize timelines, key milestones, and project phases so the work moves forward in a clear and efficient way.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
+             data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Budget & Scope Control</h3>
+            <p class="text-gray-600 mt-3 leading-relaxed">
+                Our team keeps close attention on scope, priorities, and cost considerations to support smoother decisions throughout the project.
+            </p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
+             data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Coordination & Communication</h3>
+            <p class="text-gray-600 mt-3 leading-relaxed">
+                We work closely with clients, consultants, suppliers, and trades to keep communication organized and progress aligned.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- WHY PROJECT MANAGEMENT WITH EYRIE -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800">Why Project Management with Eyrie</h2>
+            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-gray-700 text-lg">
+                <div data-aos="zoom-in" data-aos-delay="100">Clear Communication</div>
+                <div data-aos="zoom-in" data-aos-delay="200">Timeline Focused</div>
+                <div data-aos="zoom-in" data-aos-delay="300">Budget Awareness</div>
+                <div data-aos="zoom-in" data-aos-delay="400">Coordinated Delivery</div>
+                <div data-aos="zoom-in" data-aos-delay="500">Full Accountability</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+            <div data-aos="fade-right">
+                <img src="images/project-management.jpg"
+                     class="rounded-lg shadow-lg w-full object-cover"
+                     alt="Project management planning">
+            </div>
+
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-bold text-gray-800">Our Approach</h2>
+                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    We begin by understanding the project goals, timeline, and priorities so every stage starts with a clear direction.
+                    From early planning to final delivery, we focus on keeping teams aligned and work progressing smoothly.
+                </p>
+
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    With consistent communication, practical coordination, and close oversight of schedule and budget,
+                    we help create a project experience that feels organized, efficient, and dependable from start to finish.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- SCRIPTS -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
