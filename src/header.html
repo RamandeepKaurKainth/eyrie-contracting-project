@@ -1,149 +1,81 @@
-<!-- STICKY HEADER -->
-<header class="sticky top-0 z-50 bg-white shadow">
-    <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+<header class="site-header">
 
-        <!-- Logo + Company Name -->
-        <div class="flex items-center space-x-3">
+  <!-- TOP BRAND BAR -->
+  <div class="brand-bar">
+    <div class="container mx-auto px-4 flex items-center justify-between">
 
-            <img src="images/logo/logo.png"
-                 alt="Eyrie Contracting Logo"
-                 class="h-14 w-auto drop-shadow-xl hover:scale-105 transition-transform duration-300">
-
-            <div class="text-lg md:text-xl font-bold text-gray-800 whitespace-nowrap nav-link hover-grow" onclick="window.location.href='index.html'">
-                EYRIE CONTRACTING INC.
-            </div>
-
+      <!-- Logo + Brand -->
+      <div class="flex items-center space-x-3">
+        <img src="images/logo/logo.png" alt="Eyrie Contracting Logo">
+        <div class="brand-title cursor-pointer" onclick="window.location.href='index.html'">
+          EYRIE CONTRACTING INC.
         </div>
+      </div>
 
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
-
-            <li><a href="index.html" class="nav-link hover-grow">Home</a></li>
-
-            <li><a href="about.html" class="nav-link hover-grow">About Us</a></li>
-
-            <!-- SERVICES DROPDOWN -->
-            <li class="relative group">
-                <button type="button" aria-haspopup="true" aria-expanded="false" class="nav-link block hover-grow">
-                    Services
-                </button>
-
-                <div class="absolute hidden group-hover:block bg-white shadow-xl p-4 space-y-2 z-50 min-w-[220px]">
-
-                    <a href="projectmanagement.html" class="nav-link nav-link-block hover-grow">
-                        Project Management
-                    </a>
-
-                    <a href="construction.html" class="nav-link nav-link-block hover-grow">
-                        Construction
-                    </a>
-
-                    <a href="renovationexpansion.html" class="nav-link nav-link-block hover-grow">
-                        Renovations and Expansions
-                    </a>
-
-                    <a href="welding.html" class="nav-link nav-link-block hover-grow">
-                        Welding & Fabrication
-                    </a>
-
-                </div>
-            </li>
-
-            <li><a href="designbuild.html" class="nav-link hover-grow">Design-Build</a></li>
-
-            <li><a href="gallery.html" class="nav-link hover-grow">Gallery</a></li>
-
-        </ul>
-
-        <!-- CTA BUTTON -->
-        <button onclick="openPanel(event)"
-                class="hidden md:block btn btn-primary btn-sm hover-grow">
-            Get in Touch
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <button onclick="openPanel(event)" class="btn btn-primary btn-sm hover-grow">
+          Get in Touch
         </button>
+      </div>
 
-        <!-- MOBILE HAMBURGER -->
-        <button class="md:hidden" onclick="toggleMenu()">
-            <span class="text-3xl">&#9776;</span>
-        </button>
-
-    </nav>
-
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden bg-white shadow-md md:hidden">
-
-        <ul class="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
-
-            <li>
-                <a href="index.html" class="nav-link hover-grow">Home</a>
-            </li>
-
-            <li>
-                <a href="about.html" class="nav-link hover-grow">About Us</a>
-            </li>
-
-            <!-- MOBILE SERVICES -->
-            <li>
-
-                <button onclick="toggleMobileServices()"
-                        class="mobile-services-toggle nav-link block w-full text-left hover-grow">
-                    Services
-                    <span>▼</span>
-                </button>
-
-                <ul id="mobileServicesDropdown"
-                    class="hidden pl-4 mt-2 space-y-2 text-gray-600">
-
-                    <li>
-                        <a href="projectmanagement.html" class="nav-link nav-link-block hover-grow">
-                            Project Management
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="construction.html" class="nav-link nav-link-block hover-grow">
-                            Construction
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="renovationexpansion.html"
-                           class="nav-link nav-link-block hover-grow">
-                           Renovations and Expansions
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="welding.html"
-                           class="nav-link nav-link-block hover-grow">
-                           Welding & Fabrication
-                        </a>
-                    </li>
-
-                </ul>
-
-            </li>
-
-            <li>
-                <a href="designbuild.html" class="nav-link hover-grow">
-                    Design-Build
-                </a>
-            </li>
-
-            <li>
-                <a href="gallery.html" class="nav-link hover-grow">
-                    Gallery
-                </a>
-            </li>
-
-            <li>
-                <button onclick="openPanel(event); toggleMenu();"
-                        class="btn btn-primary btn-sm btn-block">
-                    Contact Us
-                </button>
-            </li>
-
-        </ul>
+      <!-- Mobile Hamburger -->
+      <button class="md:hidden text-white text-3xl leading-none" onclick="toggleMenu()">
+        &#9776;
+      </button>
 
     </div>
+  </div>
+
+  <!-- ADD THIS SHAPE DIV -->
+  <div class="header-shape"></div>
+
+  <!-- DESKTOP NAV -->
+  <nav class="hidden md:block">
+    <div class="container mx-auto px-4 flex items-center justify-center">
+      <ul class="flex items-center space-x-10 text-white font-semibold">
+
+        <li><a href="index.html" class="header-link">Home</a></li>
+
+        <li><a href="about.html" class="header-link">About Us</a></li>
+
+        <li class="group relative">
+          <button class="header-link" type="button">Services</button>
+
+          <div class="dropdown-menu space-y-2">
+            <a href="projectmanagement.html" class="nav-link-block">Project Management</a>
+            <a href="construction.html" class="nav-link-block">Construction</a>
+            <a href="renovationexpansion.html" class="nav-link-block">Renovations &amp; Expansions</a>
+            <a href="welding.html" class="nav-link-block">Welding &amp; Fabrication</a>
+          </div>
+        </li>
+
+        <li><a href="designbuild.html" class="header-link">Design-Build</a></li>
+        <li><a href="gallery.html" class="header-link">Gallery</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden">
+    <ul class="flex flex-col space-y-4 text-white font-medium">
+      <li><a href="index.html" class="header-link">Home</a></li>
+      <li><a href="about.html" class="header-link">About Us</a></li>
+
+      <li>
+        <div class="header-link">Services</div>
+        <div class="mobile-services mt-2 space-y-1">
+          <a href="projectmanagement.html">Project Management</a>
+          <a href="construction.html">Construction</a>
+          <a href="renovationexpansion.html">Renovations &amp; Expansions</a>
+          <a href="welding.html">Welding &amp; Fabrication</a>
+        </div>
+      </li>
+
+      <li><a href="designbuild.html" class="header-link">Design-Build</a></li>
+      <li><a href="gallery.html" class="header-link">Gallery</a></li>
+    </ul>
+  </div>
 
 </header>

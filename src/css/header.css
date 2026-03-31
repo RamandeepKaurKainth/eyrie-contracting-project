@@ -1,0 +1,241 @@
+body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER WRAPPER
+========================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b1a34;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  overflow: visible;
+  padding-bottom: 42px; /* important: space for shape */
+}
+
+/* =========================
+   TOP BRAND BAR
+========================= */
+.brand-bar {
+  position: relative;
+  background: #0b1a34;
+  padding: 0.95rem 0 1rem 0;
+  z-index: 3;
+}
+
+/* V SHAPE */
+.brand-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -42px;   /* push shape downward */
+  width: 100%;
+  height: 70px;
+  background: #0b1a34;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 30%,
+    72% 100%,
+    0 45%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* keep content above shape */
+.brand-bar .container,
+.site-header nav,
+#mobileMenu {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   NAV BAR
+========================= */
+.site-header nav {
+  background: transparent;
+  margin-top: -8px;
+  padding: 0.35rem 0 0.7rem 0;
+  overflow: visible;
+}
+
+.site-header nav .container {
+  background: transparent;
+}
+
+/* =========================
+   LOGO + BRAND
+========================= */
+.site-header img {
+  height: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.site-header img:hover {
+  transform: scale(1.05);
+}
+
+.brand-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.header-link {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.header-link:hover {
+  color: #fb923c;
+  transform: translateY(-1px);
+}
+
+.header-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #f97316, #fb923c);
+  border-radius: 999px;
+  transition: width 0.28s ease;
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.group {
+  position: relative;
+}
+
+.group::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 18px;
+}
+
+.group > .dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 270px;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: #102446;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 50;
+}
+
+.group:hover > .dropdown-menu,
+.group:focus-within > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-link-block {
+  display: block;
+  padding: 0.5rem 0.25rem;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.nav-link-block:hover {
+  color: #fb923c;
+  transform: translateX(4px);
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.site-header .btn-primary {
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.34);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+#mobileMenu {
+  background: #0b1a34;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+#mobileMenu .header-link {
+  display: inline-block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .site-header {
+    padding-bottom: 28px;
+  }
+
+  .brand-bar::after {
+    bottom: -28px;
+    height: 48px;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 35%,
+      72% 100%,
+      0 58%
+    );
+  }
+
+  .site-header nav {
+    display: none;
+  }
+
+  .site-header img {
+    height: 2.55rem;
+  }
+
+  .brand-title {
+    font-size: 1.1rem;
+  }
+}
