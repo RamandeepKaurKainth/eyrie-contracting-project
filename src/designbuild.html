@@ -39,14 +39,27 @@
     <!-- PANEL INCLUDE -->
     <div id="panel-placeholder"></div>
 
-    <!-- HERO SECTION -->
-    <section class="relative h-[85vh] parallax" style="background-image: url('images/designbuild.png');">
+  
+    <section class="relative h-[85vh] overflow-hidden">
 
+        <!-- BG VIDEO -->
+        <video 
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay 
+            muted 
+            loop 
+            playsinline>
+            <source src="videos/placeholder_video1.mp4" type="video/mp4">
+        </video>
+
+        <!-- Overlay -->
         <div class="absolute inset-0 bg-black/50"></div>
 
-        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10" data-aos="fade-up"
-            data-aos-duration="1200">
+        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10"
+             data-aos="fade-up" data-aos-duration="1200">
 
+
+ 
             <h1 class="text-white text-5xl md:text-6xl font-bold max-w-3xl leading-tight">
                 Integrated Design & Build Solutions
             </h1>

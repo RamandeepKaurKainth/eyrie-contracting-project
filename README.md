@@ -21,7 +21,7 @@ This project is being developed as part of the BCIT practicum course. The goal i
 - /assets – Images and static files
 
 ## Mailbox intergration
-- Generate your Gmail app password 
+- Generate your Gmail app password
 (reference guide: https://chatgpt.com/share/698f7c37-8f7c-800e-868e-181cfecb57aa).
 - Update the .env file with:
 EMAIL_USER (the sender email)
@@ -30,3 +30,13 @@ RECEIVE_TO (the email that should receive the form submissions)
 Then save the file.
 - Open the command prompt and run: node server.js
 - Open the Contact Us page, submit a request, and confirm that the RECEIVE_TO email successfully receives it.
+
+
+# how to run test script in local
+pip install below package
+- selenium
+- pytest
+- webdriver-manager
+
+cd to test folder
+run cmd - pytest -v test_header/test_contact_contact.py or python -v to run all test cases

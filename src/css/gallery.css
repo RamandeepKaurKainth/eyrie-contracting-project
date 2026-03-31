@@ -1,11 +1,11 @@
 /* Smooth zoom animation */
-#lightboxImg {
+#lightboxMedia {
   transform: scale(0.95);
   opacity: 0;
   transition: all 0.25s ease;
 }
 
-#lightbox.show #lightboxImg {
+#lightbox.show #lightboxMedia {
   transform: scale(1);
   opacity: 1;
 }
@@ -26,12 +26,35 @@
   will-change: transform;
 }
 
-.gallery-track img {
+.gallery-slide {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   flex: 0 0 100%;
+}
+
+.gallery-track img,
+.gallery-track video,
+.gallery-track .gallery-360 {
+  width: 100%;
+  height: 100%;
   display: block;
+}
+
+.gallery-track img,
+.gallery-track video {
+  object-fit: cover;
+}
+
+.gallery-video {
+  background: #111;
+}
+
+.gallery-360 {
+  background: #111;
+}
+
+.gallery-360 .a-canvas {
+  outline: none;
 }
 
 .gallery-controls {
@@ -45,6 +68,7 @@
 .gallery-viewport:hover .gallery-controls {
   opacity: 1;
 }
+
 
 .gallery-dim {
   position: absolute;
