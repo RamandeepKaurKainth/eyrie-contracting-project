@@ -5,7 +5,7 @@
     <div class="container mx-auto px-4 flex items-center justify-between">
 
       <!-- Logo + Brand -->
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center brand-wrap">
         <img src="images/logo/logo.png" alt="Eyrie Contracting Logo">
         <div class="brand-title cursor-pointer" onclick="window.location.href='index.html'">
           EYRIE CONTRACTING INC.
@@ -14,29 +14,28 @@
 
       <!-- CTA -->
       <div class="hidden md:block">
-        <button onclick="openPanel(event)" class="btn btn-primary btn-sm hover-grow">
+        <button onclick="openPanel(event)" class="btn btn-primary btn-sm hover-grow header-cta-btn">
           Get in Touch
         </button>
       </div>
 
       <!-- Mobile Hamburger -->
-      <button class="md:hidden text-white text-3xl leading-none" onclick="toggleMenu()">
+      <button class="md:hidden mobile-toggle-btn" onclick="toggleMenu()" aria-label="Open menu">
         &#9776;
       </button>
 
     </div>
   </div>
 
-  <!-- ADD THIS SHAPE DIV -->
+  <!-- DECORATIVE SHAPE -->
   <div class="header-shape"></div>
 
   <!-- DESKTOP NAV -->
   <nav class="hidden md:block">
     <div class="container mx-auto px-4 flex items-center justify-center">
-      <ul class="flex items-center space-x-10 text-white font-semibold">
+      <ul class="flex items-center space-x-10 text-white font-semibold nav-list">
 
         <li><a href="index.html" class="header-link">Home</a></li>
-
         <li><a href="about.html" class="header-link">About Us</a></li>
 
         <li class="group relative">
@@ -52,6 +51,7 @@
 
         <li><a href="designbuild.html" class="header-link">Design-Build</a></li>
         <li><a href="gallery.html" class="header-link">Gallery</a></li>
+        <li><a href="contact.html" class="header-link">Contact</a></li>
 
       </ul>
     </div>
@@ -59,23 +59,26 @@
 
   <!-- MOBILE MENU -->
   <div id="mobileMenu" class="hidden md:hidden">
-    <ul class="flex flex-col space-y-4 text-white font-medium">
-      <li><a href="index.html" class="header-link">Home</a></li>
-      <li><a href="about.html" class="header-link">About Us</a></li>
+    <div class="mobile-menu-inner">
+      <ul class="flex flex-col space-y-4 text-white font-medium">
+        <li><a href="index.html" class="header-link">Home</a></li>
+        <li><a href="about.html" class="header-link">About Us</a></li>
 
-      <li>
-        <div class="header-link">Services</div>
-        <div class="mobile-services mt-2 space-y-1">
-          <a href="projectmanagement.html">Project Management</a>
-          <a href="construction.html">Construction</a>
-          <a href="renovationexpansion.html">Renovations &amp; Expansions</a>
-          <a href="welding.html">Welding &amp; Fabrication</a>
-        </div>
-      </li>
+        <li>
+          <div class="header-link mobile-services-title">Services</div>
+          <div class="mobile-services mt-2 space-y-1">
+            <a href="projectmanagement.html">Project Management</a>
+            <a href="construction.html">Construction</a>
+            <a href="renovationexpansion.html">Renovations &amp; Expansions</a>
+            <a href="welding.html">Welding &amp; Fabrication</a>
+          </div>
+        </li>
 
-      <li><a href="designbuild.html" class="header-link">Design-Build</a></li>
-      <li><a href="gallery.html" class="header-link">Gallery</a></li>
-    </ul>
+        <li><a href="designbuild.html" class="header-link">Design-Build</a></li>
+        <li><a href="gallery.html" class="header-link">Gallery</a></li>
+        <li><a href="contact.html" class="header-link">Contact</a></li>
+      </ul>
+    </div>
   </div>
 
 </header>

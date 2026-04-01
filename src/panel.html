@@ -1,16 +1,16 @@
 <!-- Overlay -->
-<div id="overlay" class="fixed inset-0 bg-black/60 hidden z-40"></div>
+<div id="overlay" class="fixed inset-0 bg-black/60 hidden z-[1900]"></div>
 
 <!-- Slide Panel -->
 <div id="callPanel"
-     class="fixed top-0 right-[-100%] w-80 h-screen bg-white shadow-2xl z-50 transition-all duration-500 ease-out flex flex-col">
+     class="fixed right-[-100%] bg-white shadow-2xl z-[2000] transition-all duration-500 ease-out flex flex-col call-panel-shell">
 
-  <!-- Scrollable Content -->
-  <div class="p-5 flex-1 overflow-y-auto space-y-6">
+  <div class="p-5 flex-1 overflow-y-auto space-y-6 relative">
 
     <!-- Close Button -->
     <button onclick="closePanel()"
-            class="absolute top-4 right-4 text-white/90 hover:text-white text-2xl z-10">
+            class="absolute top-4 right-4 text-white hover:text-orange-200 text-2xl z-20"
+            aria-label="Close panel">
       &times;
     </button>
 
