@@ -21,7 +21,10 @@ function initCounters() {
       started = true;
 
       counters.forEach((counter) => {
-        const target = Number(counter.getAttribute("data-target"));
+        const target = parseFloat(counter.getAttribute("data-target"));
+        const suffix = counter.getAttribute("data-suffix") || "";
+        const isDecimal = counter.getAttribute("data-decimal") === "true";
+
         let count = 0;
         const increment = target / 80;
 
@@ -29,10 +32,15 @@ function initCounters() {
           count += increment;
 
           if (count < target) {
-            counter.textContent = Math.floor(count);
+            counter.textContent = isDecimal
+              ? count.toFixed(1) + suffix
+              : Math.floor(count) + suffix;
+
             requestAnimationFrame(update);
           } else {
-            counter.textContent = target + (target === 10 ? "+" : "%");
+            counter.textContent = isDecimal
+              ? target.toFixed(1) + suffix
+              : Math.floor(target) + suffix;
           }
         }
 
@@ -57,29 +65,37 @@ function initPartnerLogos() {
 
   if (cards.some(card => !card)) return;
 
-  const logosA = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Home_Depot_logo.svg/512px-Home_Depot_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Costco_Wholesale_logo_2010-10-26.svg/512px-Costco_Wholesale_logo_2010-10-26.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/RONA_logo.svg/512px-RONA_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Canadian_Tire_Logo.svg/512px-Canadian_Tire_Logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Walmart_logo.svg/512px-Walmart_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Best_Buy_Logo.svg/512px-Best_Buy_Logo.svg.png"
+  const partnersA = [
+    { name: "Amazon" },
+    { name: "FedEx" },
+    { name: "Royal Columbian Hospital" },
+    { name: "City of Vancouver" },
+    { name: "Starbucks" },
+    { name: "Chevron" }
   ];
 
-  const logosB = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Safeway_logo.svg/512px-Safeway_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Loblaws_logo.svg/512px-Loblaws_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Staples_2019.svg/512px-Staples_2019.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/7-Eleven_logo.svg/512px-7-Eleven_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/IKEA_logo.svg/512px-IKEA_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Target_logo.svg/512px-Target_logo.svg.png"
+  const partnersB = [
+    { name: "Saputo" },
+    { name: "HTEC" },
+    { name: "Dorigo Systems Ltd." },
+    { name: "McAsphalt Industries Limited" },
+    { name: "Columbia Fuels" },
+    { name: "Top Producers Realty Property Management" }
   ];
 
   let showingA = true;
 
-  function setPartnerLogos(logos) {
+  function renderPartner(partner) {
+    return `
+      <div class="partner-tile partner-text-tile premium-partner-tile">
+        <span>${partner.name}</span>
+      </div>
+    `;
+  }
+
+  function setPartnerLogos(partners) {
     cards.forEach((card, i) => {
-      card.innerHTML = `<img src="${logos[i]}" alt="Partner logo" class="w-full h-20 object-contain">`;
+      card.innerHTML = renderPartner(partners[i]);
     });
   }
 
@@ -90,7 +106,7 @@ function initPartnerLogos() {
     });
 
     setTimeout(() => {
-      const newSet = showingA ? logosB : logosA;
+      const newSet = showingA ? partnersB : partnersA;
       setPartnerLogos(newSet);
 
       cards.forEach((card) => {
@@ -99,9 +115,9 @@ function initPartnerLogos() {
       });
 
       showingA = !showingA;
-    }, 500);
+    }, 400);
   }
 
-  setPartnerLogos(logosA);
+  setPartnerLogos(partnersA);
   setInterval(swapPartnerLogos, 5000);
 }
