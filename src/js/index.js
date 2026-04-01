@@ -7,50 +7,63 @@ function initCounters() {
   const counters = document.querySelectorAll(".counter");
   if (!counters.length) return;
 
-  let started = false;
+  const counterSection = counters[0].closest("section");
+  if (!counterSection) return;
 
-  function animateCounters() {
-    if (started) return;
+  let hasAnimated = false;
 
-    const section = counters[0].closest("section");
-    if (!section) return;
+  function animateValue(counter, target, suffix, isDecimal, duration = 1800) {
+    let startTimestamp = null;
 
-    const sectionTop = section.getBoundingClientRect().top;
+    function step(timestamp) {
+      if (!startTimestamp) startTimestamp = timestamp;
 
-    if (sectionTop < window.innerHeight - 100) {
-      started = true;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
 
-      counters.forEach((counter) => {
-        const target = parseFloat(counter.getAttribute("data-target"));
-        const suffix = counter.getAttribute("data-suffix") || "";
-        const isDecimal = counter.getAttribute("data-decimal") === "true";
+      // easeOutCubic
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = target * easedProgress;
 
-        let count = 0;
-        const increment = target / 80;
+      counter.textContent = isDecimal
+        ? currentValue.toFixed(1) + suffix
+        : Math.floor(currentValue) + suffix;
 
-        function update() {
-          count += increment;
-
-          if (count < target) {
-            counter.textContent = isDecimal
-              ? count.toFixed(1) + suffix
-              : Math.floor(count) + suffix;
-
-            requestAnimationFrame(update);
-          } else {
-            counter.textContent = isDecimal
-              ? target.toFixed(1) + suffix
-              : Math.floor(target) + suffix;
-          }
-        }
-
-        update();
-      });
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        counter.textContent = isDecimal
+          ? target.toFixed(1) + suffix
+          : Math.floor(target) + suffix;
+      }
     }
+
+    requestAnimationFrame(step);
   }
 
-  window.addEventListener("scroll", animateCounters);
-  animateCounters();
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+
+          counters.forEach((counter) => {
+            const target = parseFloat(counter.getAttribute("data-target")) || 0;
+            const suffix = counter.getAttribute("data-suffix") || "";
+            const isDecimal = counter.getAttribute("data-decimal") === "true";
+
+            animateValue(counter, target, suffix, isDecimal);
+          });
+
+          obs.unobserve(counterSection);
+        }
+      });
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  observer.observe(counterSection);
 }
 
 function initPartnerLogos() {
@@ -63,7 +76,7 @@ function initPartnerLogos() {
     document.getElementById("partner6")
   ];
 
-  if (cards.some(card => !card)) return;
+  if (cards.some((card) => !card)) return;
 
   const partnersA = [
     { name: "Amazon" },
@@ -84,40 +97,63 @@ function initPartnerLogos() {
   ];
 
   let showingA = true;
+  let intervalId = null;
 
   function renderPartner(partner) {
     return `
-      <div class="partner-tile partner-text-tile premium-partner-tile">
-        <span>${partner.name}</span>
+      <div class="partner-tile premium-partner-tile">
+        <div class="partner-badge">
+          <span class="partner-badge-label">TRUSTED BY</span>
+          <span class="partner-badge-name">${partner.name}</span>
+        </div>
       </div>
     `;
   }
 
   function setPartnerLogos(partners) {
-    cards.forEach((card, i) => {
-      card.innerHTML = renderPartner(partners[i]);
+    cards.forEach((card, index) => {
+      if (partners[index]) {
+        card.innerHTML = renderPartner(partners[index]);
+      }
     });
   }
 
-  function swapPartnerLogos() {
+  function fadeOutCards() {
     cards.forEach((card) => {
       card.classList.remove("fade-in");
       card.classList.add("fade-out");
     });
+  }
+
+  function fadeInCards() {
+    cards.forEach((card) => {
+      card.classList.remove("fade-out");
+      card.classList.add("fade-in");
+    });
+  }
+
+  function swapPartnerLogos() {
+    fadeOutCards();
 
     setTimeout(() => {
-      const newSet = showingA ? partnersB : partnersA;
-      setPartnerLogos(newSet);
-
-      cards.forEach((card) => {
-        card.classList.remove("fade-out");
-        card.classList.add("fade-in");
-      });
-
+      const nextSet = showingA ? partnersB : partnersA;
+      setPartnerLogos(nextSet);
+      fadeInCards();
       showingA = !showingA;
-    }, 400);
+    }, 320);
   }
 
   setPartnerLogos(partnersA);
-  setInterval(swapPartnerLogos, 5000);
+  fadeInCards();
+
+  intervalId = setInterval(swapPartnerLogos, 4500);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      clearInterval(intervalId);
+    } else {
+      clearInterval(intervalId);
+      intervalId = setInterval(swapPartnerLogos, 4500);
+    }
+  });
 }
