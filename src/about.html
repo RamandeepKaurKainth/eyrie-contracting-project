@@ -1,196 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Eyrie Contracting Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Eyrie Contracting Inc.</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Shared Site CSS -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/links.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/about.css" />
 
-    <!-- AOS Animations -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <style>
-        html { scroll-behavior: smooth; }
-
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-800">
+  <div id="header-placeholder"></div>
+  <div id="panel-placeholder"></div>
 
-    <!-- HEADER + PANEL -->
-    <div id="header-placeholder"></div>
-    <div id="panel-placeholder"></div>
+  <!-- HERO -->
+  <section class="about-hero flex items-center">
+    <div class="hero-overlay-bottom"></div>
 
-    <!-- HERO -->
-    <section class="relative h-[75vh] parallax"
-        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80');">
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-28">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            About Eyrie Contracting
+          </div>
 
-        <div class="absolute inset-0 bg-black/60"></div>
+          <h1 class="hero-heading">Built on experience. Driven by performance.</h1>
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
-             data-aos="fade-up" data-aos-duration="1200">
-
-            <h1 class="text-white text-5xl md:text-6xl font-extrabold tracking-wide uppercase">
-                About Us
-            </h1>
-
-            <div class="w-24 h-1 bg-orange-500 mt-4"></div>
-
-            <p class="text-gray-200 max-w-xl mt-6 text-lg">
-                Building with integrity, precision, and craftsmanship across British Columbia.
-            </p>
+          <p class="hero-subtext">
+            Commercial and industrial construction expertise delivered with professionalism,
+            safety, and accountability.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- WHO WE ARE -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- MAIN CONTENT -->
+  <section class="content-wrap pb-24">
+    <div class="container mx-auto px-6">
+      <div class="content-card">
+        <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-0">
 
-            <div data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
-                     class="rounded-lg shadow-lg w-full object-cover"
-                     alt="Construction team working">
+          <div class="p-8 md:p-12 lg:p-14" data-aos="fade-right">
+            <h2 class="section-title">About Page</h2>
+            <div class="accent-line"></div>
+
+            <div class="space-y-6 section-copy">
+              <p>
+                Eyrie Contracting Inc. is a commercial and industrial general contractor focused on
+                delivering high-quality construction solutions for complex projects. Our team brings
+                experience across a wide range of sectors, allowing us to adapt to the specific
+                demands of each project.
+              </p>
+
+              <p>
+                We are committed to professionalism, safety, and accountability in every aspect of
+                our work. Our goal is to build long-term relationships by consistently delivering
+                reliable results.
+              </p>
             </div>
+          </div>
 
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold text-gray-800">Who We Are</h2>
-                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
-
-                <p class="text-gray-600 leading-relaxed">
-                    Eyrie Contracting Inc. is a full-service general contracting company delivering high-quality
-                    construction, welding, and fabrication services across British Columbia.
+          <div class="bg-[#f7f6f1] border-t lg:border-t-0 lg:border-l border-[#e7e5df] p-8 md:p-12 lg:p-14">
+            <div class="grid gap-6 h-full">
+              <div class="about-panel" data-aos="fade-left" data-aos-delay="80">
+                <h3>Built on experience.</h3>
+                <p>
+                  Delivering commercial and industrial construction solutions with a disciplined,
+                  client-focused approach.
                 </p>
+              </div>
 
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    With expertise in carpentry, steelwork, HVAC, foundations, roofing, flooring, and project
-                    management, we bring precision and reliability to every project — residential, commercial,
-                    or industrial.
+              <div class="about-panel" data-aos="fade-left" data-aos-delay="140">
+                <h3>Driven by performance.</h3>
+                <p>
+                  Focused on professionalism, safety, accountability, and reliable project outcomes.
                 </p>
+              </div>
+
+              <div class="about-panel" data-aos="fade-left" data-aos-delay="200">
+                <h3>Long-term relationships.</h3>
+                <p>
+                  Committed to consistent delivery and trusted partnerships across every engagement.
+                </p>
+              </div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- MISSION -->
-    <section class="container mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-
-            <div data-aos="fade-right">
-                <h2 class="text-3xl font-bold text-gray-800">Our Mission</h2>
-                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
-
-                <p class="text-gray-600 leading-relaxed">
-                    Our mission is to deliver exceptional construction and fabrication services built on integrity,
-                    quality, and community. We approach every project with craftsmanship, safety, and transparency.
-                </p>
-
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    From planning to execution, we prioritize communication, safety, and excellence — ensuring
-                    every build stands the test of time.
-                </p>
-            </div>
-
-            <div data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
-                     class="rounded-lg shadow-lg w-full object-cover"
-                     alt="Our mission">
-            </div>
+          </div>
 
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- HISTORY -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- Q&A -->
+  <section class="qa-section py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+        <h2 class="section-title text-white">Q&amp;A Section</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
 
-            <div data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&w=900&q=80"
-                     class="rounded-lg shadow-lg w-full object-cover"
-                     alt="Company history">
-            </div>
-
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold text-gray-800">Our History</h2>
-                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
-
-                <p class="text-gray-600 leading-relaxed">
-                    Founded in 2018, Eyrie Contracting has grown into a trusted provider of construction,
-                    welding, and fabrication services across BC.
-                </p>
-
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    With over <span class="font-semibold">25 years of combined experience</span>, our team brings
-                    deep industry knowledge and a commitment to excellence.
-                </p>
-
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    Our reputation is built on precision, safety, and craftsmanship — values that guide every
-                    project we take on.
-                </p>
-            </div>
-
+      <div class="max-w-4xl mx-auto">
+        <div class="qa-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Q: What types of projects does Eyrie Contracting handle?</h3>
+          <p>
+            <strong>A:</strong> We specialize in commercial and industrial construction projects ranging
+          </p>
         </div>
-    </section>
-
-    <!-- CORE VALUES -->
-    <section class="container mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold text-gray-800 text-center" data-aos="fade-up">
-            Our Core Values
-        </h2>
-        <div class="w-20 h-1 bg-orange-500 mx-auto mt-3 mb-10"></div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500"
-                 data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-xl font-bold text-gray-900">Quality</h3>
-                <p class="text-gray-600 mt-2">Every project meets the highest standards.</p>
-            </div>
-
-            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500"
-                 data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-xl font-bold text-gray-900">Integrity</h3>
-                <p class="text-gray-600 mt-2">Honest communication and dependable service.</p>
-            </div>
-
-            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500"
-                 data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-xl font-bold text-gray-900">Safety</h3>
-                <p class="text-gray-600 mt-2">Strict safety standards on every site.</p>
-            </div>
-
-            <div class="bg-white shadow p-6 rounded-lg border-t-4 border-orange-500"
-                 data-aos="fade-up" data-aos-delay="400">
-                <h3 class="text-xl font-bold text-gray-900">Commitment</h3>
-                <p class="text-gray-600 mt-2">We deliver results that last.</p>
-            </div>
-
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
   <div id="footer-placeholder"></div>
 
-    <!-- SCRIPTS -->
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+  <script src="js/header.js"></script>
+  <script type="module" src="js/footer.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900
+    });
+  </script>
 </body>
 </html>
