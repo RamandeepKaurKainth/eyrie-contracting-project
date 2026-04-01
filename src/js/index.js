@@ -5,22 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initCounters() {
   const counters = document.querySelectorAll(".counter");
-  if (!counters.length) return;
+  const metricsSection = document.getElementById("metricsSection");
 
-  const counterSection = counters[0].closest("section");
-  if (!counterSection) return;
+  if (!counters.length || !metricsSection) return;
 
   let hasAnimated = false;
 
-  function animateValue(counter, target, suffix, isDecimal, duration = 1800) {
+  function animateValue(counter, target, suffix = "", isDecimal = false, duration = 1800) {
     let startTimestamp = null;
 
     function step(timestamp) {
       if (!startTimestamp) startTimestamp = timestamp;
 
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-
-      // easeOutCubic
       const easedProgress = 1 - Math.pow(1 - progress, 3);
       const currentValue = target * easedProgress;
 
@@ -54,16 +51,16 @@ function initCounters() {
             animateValue(counter, target, suffix, isDecimal);
           });
 
-          obs.unobserve(counterSection);
+          obs.unobserve(metricsSection);
         }
       });
     },
     {
-      threshold: 0.3
+      threshold: 0.25
     }
   );
 
-  observer.observe(counterSection);
+  observer.observe(metricsSection);
 }
 
 function initPartnerLogos() {
@@ -89,14 +86,24 @@ function initPartnerLogos() {
 
   const partnersB = [
     { name: "Saputo" },
-    { name: "HTEC" },
+    { name: "McAsphalt Industries" },
     { name: "Dorigo Systems Ltd." },
-    { name: "McAsphalt Industries Limited" },
     { name: "Columbia Fuels" },
-    { name: "Top Producers Realty Property Management" }
+    { name: "Top Producers Realty" },
+    { name: "HTEC" }
   ];
 
-  let showingA = true;
+  const partnersC = [
+    { name: "NextGen Integrated Systems" },
+    { name: "NextLeaf Solutions" },
+    { name: "Glass Tech" },
+    { name: "City of Vancouver Parks Board" },
+    { name: "Progressive Steel Industries" },
+    { name: "SeaGate Mass Timber" }
+  ];
+
+  const partnerSets = [partnersA, partnersB, partnersC];
+  let currentSetIndex = 0;
   let intervalId = null;
 
   function renderPartner(partner) {
@@ -136,23 +143,21 @@ function initPartnerLogos() {
     fadeOutCards();
 
     setTimeout(() => {
-      const nextSet = showingA ? partnersB : partnersA;
-      setPartnerLogos(nextSet);
+      currentSetIndex = (currentSetIndex + 1) % partnerSets.length;
+      setPartnerLogos(partnerSets[currentSetIndex]);
       fadeInCards();
-      showingA = !showingA;
     }, 320);
   }
 
-  setPartnerLogos(partnersA);
+  setPartnerLogos(partnerSets[currentSetIndex]);
   fadeInCards();
 
   intervalId = setInterval(swapPartnerLogos, 4500);
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      clearInterval(intervalId);
-    } else {
-      clearInterval(intervalId);
+    clearInterval(intervalId);
+
+    if (!document.hidden) {
       intervalId = setInterval(swapPartnerLogos, 4500);
     }
   });

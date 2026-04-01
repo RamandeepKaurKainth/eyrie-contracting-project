@@ -5,13 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eyrie Contracting Inc. | Commercial & Industrial General Contractor</title>
+
   <meta name="description"
     content="Eyrie Contracting Inc. is a commercial and industrial general contractor serving British Columbia. We specialize in construction management, design-build, and general contracting for a wide range of project types.">
 
   <meta name="keywords"
     content="commercial general contracting, industrial construction, construction management services, design-build construction, pre-construction services, tenant improvements, building renovations, BC contractor">
 
-  <meta property="og:title" content="Eyrie Contracting Inc. – Commercial & Industrial General Contractor">
+  <meta property="og:title" content="Eyrie Contracting Inc. | Commercial & Industrial General Contractor">
   <meta property="og:description"
     content="Trusted partnerships. Exceptional construction. Serving commercial, industrial, and institutional sectors across British Columbia.">
   <meta property="og:image" content="images/designbuild.png">
@@ -30,145 +31,184 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-[#f5f5f3] text-gray-800">
+<body class="bg-[#f3f3ef] text-slate-800">
 
   <div id="header-placeholder"></div>
   <div id="panel-placeholder"></div>
 
-  <!-- HERO VIDEO -->
-  <section class="relative min-h-[88vh] overflow-hidden flex items-center">
+  <!-- HERO -->
+  <section class="hero-shell relative min-h-[94vh] flex items-center">
     <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
       <source src="videos/construction.mp4" type="video/mp4">
     </video>
 
-    <div class="absolute inset-0 hero-overlay-gradient"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-lines"></div>
 
-    <div class="relative z-10 w-full px-6 py-20">
-      <div class="hero-content-wrap" data-aos="fade-up" data-aos-duration="1200">
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-36">
+        <div class="hero-layout" data-aos="fade-up" data-aos-duration="1200">
 
-        <div class="hero-eyebrow mb-6">
-          <span class="hero-eyebrow-dot"></span>
-          Commercial • Industrial • Institutional
-        </div>
+          <div class="hero-copy">
+            <div class="hero-pill mb-6">
+              <span class="hero-pill-dot"></span>
+              Commercial • Industrial • Institutional
+            </div>
 
-        <h1 class="hero-title">
-          Trusted partnerships.
-          <span>Exceptional construction.</span>
-        </h1>
-
-        <p class="hero-subcopy">
-          Eyrie Contracting Inc. delivers commercial and industrial construction solutions with
-          precision, coordination, and long-term reliability across British Columbia.
-        </p>
-
-        <div class="hero-actions">
-          <button onclick="openPanel(event)" class="btn btn-primary btn-lg hover-grow">
-            Start Your Project
-          </button>
-
-          <a href="contact.html" class="hero-secondary-btn">
-            Request a Quote
-          </a>
-        </div>
-
-        <div class="hero-stats-strip mt-10">
-          <div class="hero-stat-card">
-            <div class="hero-stat-value">21</div>
-            <div class="hero-stat-label">Years of Service</div>
-          </div>
-
-          <div class="hero-stat-card">
-            <div class="hero-stat-value">112+</div>
-            <div class="hero-stat-label">Projects Delivered</div>
-          </div>
-
-          <div class="hero-stat-card">
-            <div class="hero-stat-value">4.9★</div>
-            <div class="hero-stat-label">Google Rating</div>
-          </div>
-
-          <div class="hero-stat-card">
-            <div class="hero-stat-value">BC</div>
-            <div class="hero-stat-label">Serving British Columbia</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MODERN INTRO + COUNTERS -->
-  <section class="py-20 md:py-24 bg-[#f5f5f3]">
-    <div class="container mx-auto px-6">
-      <div class="grid xl:grid-cols-[1.08fr_0.92fr] gap-8 xl:gap-10 items-stretch">
-
-        <!-- LEFT FEATURE CARD -->
-        <div data-aos="fade-right">
-          <div class="modern-feature-card h-full">
-            <p class="eyrie-kicker">
-              Eyrie Contracting Inc.
-            </p>
-
-            <h2 class="feature-heading">
+            <h1 class="hero-heading">
               Trusted partnerships.
               <span>Exceptional construction.</span>
-            </h2>
+            </h1>
 
-            <p class="feature-copy">
-              Eyrie Contracting Inc. delivers fully integrated construction services across commercial,
-              industrial, and institutional sectors. From early-stage planning through to final completion,
-              our approach is structured to reduce risk, improve coordination, and ensure consistent project outcomes.
+            <p class="hero-text">
+              Eyrie Contracting Inc. delivers fully integrated construction services across
+              commercial, industrial, and institutional sectors. From early-stage planning through
+              to final completion, our approach is structured to reduce risk, improve coordination,
+              and ensure consistent project outcomes.
             </p>
 
-            <div class="mt-10 flex flex-wrap gap-4">
+            <div class="hero-buttons">
               <button onclick="openPanel(event)" class="btn btn-primary btn-lg hover-grow">
                 Start Your Project
               </button>
 
-              <a href="contact.html" class="modern-secondary-btn">
-                Request a Quote
+              <a href="#services-overview" class="hero-outline-btn">
+                Explore Services
               </a>
             </div>
           </div>
+
+          <div class="hero-side-card hidden xl:flex" data-aos="fade-left" data-aos-delay="150">
+            <div class="hero-side-inner">
+              <img
+                src="images/"
+                alt="Clean project image"
+                class="hero-project-image"
+              >
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAP COUNTERS / CREDENTIALS -->
+    <div class="hero-metrics-wrap">
+      <div class="container mx-auto px-6">
+        <div class="hero-metrics" id="metricsSection">
+
+          <div class="metric-card">
+            <div class="metric-number">
+              <span class="counter" data-target="21" data-suffix="">0</span>
+            </div>
+            <div class="metric-label">Years of Service</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">
+              <span class="counter" data-target="112" data-suffix="+">0</span>
+            </div>
+            <div class="metric-label">Projects Finished</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">
+              <span class="counter" data-target="4.9" data-decimal="true" data-suffix="*">0</span>
+            </div>
+            <div class="metric-label">Google Reviews</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">
+              <span class="counter" data-target="100" data-suffix="%">0</span>
+            </div>
+            <div class="metric-label">Customer Satisfaction</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar-section">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-8" data-aos="fade-up">
+        <!-- <p class="section-kicker">Project Types</p> -->
+        <h2 class="section-title-main text-slate-900">Services across key sectors.</h2>
+      </div>
+
+      <div class="trust-bar" data-aos="fade-up" data-aos-delay="100">
+        <span>Commercial</span>
+        <span>Industrial</span>
+        <span>Institutional</span>
+        <span>Renovations &amp; Retrofits</span>
+        <span>New Construction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPOSITION -->
+  <section class="py-24 bg-[#f3f3ef]">
+    <div class="container mx-auto px-6">
+      <div class="value-grid">
+
+        <div data-aos="fade-right">
+          <!-- <p class="section-kicker">Value Proposition</p> -->
+          <h2 class="value-heading">
+            Comprehensive construction services, built for performance.
+          </h2>
+
+          <p class="value-copy">
+            Eyrie Contracting Inc. delivers commercial and industrial construction projects.
+            We specialize in complex, high-value projects requiring disciplined planning,
+            technical expertise, and reliable execution.
+          </p>
+
+          <div class="value-bullets mt-8">
+            <div>Ability to manage complex, high-risk projects</div>
+            <div>Strong cost and schedule control</div>
+            <div>Transparent communication and reporting</div>
+            <div>Experienced across multiple sectors</div>
+            <div>Scalable solutions for diverse project types</div>
+          </div>
         </div>
 
-        <!-- RIGHT COUNTERS -->
-        <div data-aos="fade-left">
-          <div class="modern-counter-panel h-full">
-            <div class="counter-panel-top">
-              <p class="counter-panel-kicker">Built on experience</p>
-              <h3 class="counter-panel-title">Measured by results.</h3>
-            </div>
+        <div class="value-cards" data-aos="fade-left">
+          <div class="value-card">
+            <!-- <p class="value-card-number">01</p> -->
+            <h3>Risk + Execution Capability</h3>
+            <p>
+              Structured systems and planning that support project control,
+              coordination, and reliable delivery.
+            </p>
+          </div>
 
-            <div class="counter-grid-modern">
-              <div class="counter-cell">
-                <div class="counter-number">
-                  <span class="counter" data-target="21" data-suffix="">0</span>
-                </div>
-                <p class="counter-label-modern">Years of Service</p>
-              </div>
+          <div class="value-card">
+            <!-- <p class="value-card-number">02</p> -->
+            <h3>Project Size + Complexity</h3>
+            <p>
+              Scalable delivery across commercial, industrial, institutional,
+              retrofit, and new construction environments.
+            </p>
+          </div>
 
-              <div class="counter-cell">
-                <div class="counter-number">
-                  <span class="counter" data-target="112" data-suffix="+">0</span>
-                </div>
-                <p class="counter-label-modern">Projects Finished</p>
-              </div>
+          <div class="value-card">
+            <!-- <p class="value-card-number">03</p> -->
+            <h3>Communication + Reporting</h3>
+            <p>
+              Clear project visibility through disciplined coordination,
+              responsiveness, and transparent reporting.
+            </p>
+          </div>
 
-              <div class="counter-cell">
-                <div class="counter-number">
-                  <span class="counter" data-target="4.9" data-decimal="true" data-suffix="*">0</span>
-                </div>
-                <p class="counter-label-modern">Google Reviews</p>
-              </div>
-
-              <div class="counter-cell">
-                <div class="counter-number">
-                  <span class="counter" data-target="100" data-suffix="%">0</span>
-                </div>
-                <p class="counter-label-modern">Customer Satisfaction</p>
-              </div>
-            </div>
+          <div class="value-card">
+            <!-- <p class="value-card-number">04</p> -->
+            <h3>Multi-Sector Experience</h3>
+            <p>
+              Experience across a wide range of project types with a focus on
+              planning, technical execution, and dependable outcomes.
+            </p>
           </div>
         </div>
 
@@ -180,9 +220,8 @@
   <section class="py-14 bg-white border-y border-gray-200">
     <div class="container mx-auto px-6">
       <div class="text-center mb-10" data-aos="fade-up">
-        <p class="text-lg md:text-2xl text-gray-500 font-medium">
-          Certifications, compliance, and industry credentials
-        </p>
+        <!-- <p class="section-kicker">Credentials</p> -->
+        <h2 class="section-title-main text-slate-900">Compliance, certification, and trusted standards.</h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
@@ -204,13 +243,13 @@
 
         <div class="credential-card credential-text" data-aos="fade-up" data-aos-delay="180">
           <p>
-            EYRIE CONTRACTING INC. is registered and in good standing with WorkSafeBC
+            Eyrie Contracting Inc. is registered and in good standing with WorkSafeBC.
           </p>
         </div>
 
         <div class="credential-card credential-text muted" data-aos="fade-up" data-aos-delay="230">
           <p>
-            Technical Safety BC credential pending logo approval
+            Technical Safety BC credential pending logo approval.
           </p>
         </div>
       </div>
@@ -218,11 +257,14 @@
   </section>
 
   <!-- PARTNERS -->
-  <section class="py-16 bg-[#f5f5f3]">
+  <section class="py-18 bg-[#f3f3ef]">
     <div class="container mx-auto px-6">
       <div class="text-center mb-10" data-aos="fade-up">
-        <p class="text-lg md:text-2xl text-gray-500 font-medium">
-          Trusted by organizations, institutions, and industry partners across British Columbia
+        <!-- <p class="section-kicker">Expertise</p> -->
+        <h2 class="section-title-main text-slate-900">Trusted by partners, clients, and organizations across multiple sectors.</h2>
+        <p class="section-copy max-w-3xl mx-auto">
+          Selected past clients, partners, and projects across commercial, industrial,
+          and institutional environments.
         </p>
       </div>
 
@@ -237,97 +279,112 @@
     </div>
   </section>
 
-  <!-- WHY EYRIE -->
-  <section class="why-eyrie-strip">
+  <!-- EXECUTION -->
+  <section class="execution-section">
     <div class="container mx-auto px-6">
-      <div class="why-eyrie-grid">
-        <div data-aos="fade-right">
-          <p class="why-kicker">Why Eyrie</p>
-          <h2>
-            Built on coordination, safety, and long-term relationships.
-          </h2>
+      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+        <!-- <p class="section-kicker text-orange-400">Execution</p> -->
+        <h2 class="section-title-main text-white">Built around coordination, safety, and reliable delivery.</h2>
+      </div>
+
+      <div class="execution-grid">
+        <div class="execution-card" data-aos="fade-up" data-aos-delay="50">
+          <h3>Risk Mitigation</h3>
+          <p>
+            We implement proactive safety protocols and rigorous contingency planning.
+            This dedicated approach ensures a secure job site, prevents budget overruns,
+            and keeps each project on schedule.
+          </p>
         </div>
 
-        <div class="why-points" data-aos="fade-left">
-          <div>Commercial, industrial, and institutional project expertise</div>
-          <div>Transparent planning and construction coordination</div>
-          <div>Safety-first execution with quality workmanship</div>
-          <div>Reliable project delivery across British Columbia</div>
+        <div class="execution-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Project Coordination</h3>
+          <p>
+            We unify stakeholders, contractors, and clients ensuring project success.
+          </p>
+        </div>
+
+        <div class="execution-card" data-aos="fade-up" data-aos-delay="150">
+          <h3>Technical Execution</h3>
+          <p>
+            Engineered for superior results, we focus on safety, punctuality,
+            and long-term durability in every project.
+          </p>
+        </div>
+
+        <div class="execution-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Stakeholder Alignment</h3>
+          <p>
+            Ensuring clear communication between architects, engineers, and subcontractors
+            to resolve conflicts and optimize the construction schedule.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title" data-aos="fade-up">
-        Our Services
-      </h2>
+  <section id="services-overview" class="py-24 bg-[#f3f3ef]">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+        <!-- <p class="section-kicker">Services</p> -->
+        <h2 class="section-title-main text-slate-900">Strategically scaled solutions for every build.</h2>
+        <p class="section-copy">
+          We provide fully customized project solutions, strategically scaled to meet the
+          specific demands of every build.
+        </p>
+      </div>
 
-      <p class="text-gray-600 max-w-3xl mx-auto mt-6 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-        We provide fully customized project solutions, strategically scaled to meet the specific
-        demands of every build.
-      </p>
+      <div class="services-grid">
+        <a href="preconstruction.html" class="service-box" data-aos="fade-up" data-aos-delay="50">
+          <div class="service-box-image">
+            <img src="images/preconstruction.jpg" alt="Pre-Construction">
+          </div>
+          <div class="service-box-content">
+            <p class="service-tag">Pre-Construction</p>
+            <h3>Early planning, value engineering, constructability reviews, and strategic procurement support.</h3>
+          </div>
+        </a>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-12">
+        <a href="constructionmanagement.html" class="service-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-box-image">
+            <img src="images/construction-management.jpg" alt="Construction Management">
+          </div>
+          <div class="service-box-content">
+            <p class="service-tag">Construction Management</p>
+            <h3>Clear communication, accountability, and real-time coordination across schedule, cost, and progress.</h3>
+          </div>
+        </a>
 
-        <div class="service-card group" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-image-wrap">
-            <img src="images/Untitled design(7).png" alt="Commercial Construction" class="service-image">
+        <a href="designbuild.html" class="service-box" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-box-image">
+            <img src="images/designbuild.png" alt="Design-Build">
           </div>
-          <div class="service-content">
-            <p class="service-kicker">Commercial</p>
-            <h3>Built for business environments.</h3>
-            <p>
-              Professional construction solutions for offices, retail spaces, tenant improvements, and commercial facilities.
-            </p>
-            <a href="projectmanagement.html" class="service-link">Explore Service →</a>
+          <div class="service-box-content">
+            <p class="service-tag">Design-Build</p>
+            <h3>Integrated delivery from concept through completion with tighter alignment on cost, timeline, and quality.</h3>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card group" data-aos="fade-up" data-aos-delay="150">
-          <div class="service-image-wrap">
-            <img src="images/Untitled design(8).png" alt="Industrial Construction" class="service-image">
+        <a href="generalcontracting.html" class="service-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-box-image">
+            <img src="images/general-contracting.jpg" alt="General Contracting">
           </div>
-          <div class="service-content">
-            <p class="service-kicker">Industrial</p>
-            <h3>Designed for operational performance.</h3>
-            <p>
-              Reliable construction and upgrade solutions for industrial sites, operational facilities, and specialized workspaces.
-            </p>
-            <a href="construction.html" class="service-link">Explore Service →</a>
+          <div class="service-box-content">
+            <p class="service-tag">General Contracting</p>
+            <h3>Reliable execution across commercial, industrial, and institutional projects with disciplined reporting.</h3>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card group" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-image-wrap">
-            <img src="images/Untitled design(9).png" alt="Renovations and Expansions" class="service-image">
+        <a href="masterserviceagreements.html" class="service-box" data-aos="fade-up" data-aos-delay="250">
+          <div class="service-box-image">
+            <img src="images/master-service-agreement.jpg" alt="Master Service Agreements">
           </div>
-          <div class="service-content">
-            <p class="service-kicker">Renovations</p>
-            <h3>Upgrades that add value and function.</h3>
-            <p>
-              Thoughtfully managed renovations and expansion projects designed to improve function, efficiency, and long-term value.
-            </p>
-            <a href="renovationexpansion.html" class="service-link">Explore Service →</a>
+          <div class="service-box-content">
+            <p class="service-tag">Master Service Agreements</p>
+            <h3>Consistent delivery across ongoing project needs, upgrades, retrofits, repairs, and portfolio work.</h3>
           </div>
-        </div>
-
-        <div class="service-card group" data-aos="fade-up" data-aos-delay="250">
-          <div class="service-image-wrap">
-            <img src="images/designbuild.png" alt="Welding and Fabrication" class="service-image">
-          </div>
-          <div class="service-content">
-            <p class="service-kicker">Fabrication</p>
-            <h3>Precision-driven fabrication and welding.</h3>
-            <p>
-              Precision fabrication and welding services delivered with quality workmanship, safety, and attention to detail.
-            </p>
-            <a href="welding.html" class="service-link">Explore Service →</a>
-          </div>
-        </div>
-
+        </a>
       </div>
     </div>
   </section>
