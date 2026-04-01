@@ -1,187 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design-Build | Eyrie Contracting Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design-Build | Eyrie Contracting Inc.</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Shared Site CSS -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/links.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/designbuild.css" />
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-800">
+  <div id="header-placeholder"></div>
+  <div id="panel-placeholder"></div>
 
-    <!-- HEADER INCLUDE -->
-    <div id="header-placeholder"></div>
+  <!-- HERO -->
+  <section class="db-hero flex items-center">
+    <div class="hero-overlay-bottom"></div>
 
-    <!-- PANEL INCLUDE -->
-    <div id="panel-placeholder"></div>
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-28">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Design-Build
+          </div>
 
-  
-    <section class="relative h-[85vh] overflow-hidden">
+          <h1 class="hero-heading">
+            Integrated delivery.
+            <span>Streamlined results.</span>
+          </h1>
 
-        <!-- BG VIDEO -->
-        <video 
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay 
-            muted 
-            loop 
-            playsinline>
-            <source src="videos/placeholder_video1.mp4" type="video/mp4">
-        </video>
+          <p class="hero-subtext">
+            One unified approach from concept through completion with tighter control over quality, coordination, and delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/50"></div>
+  <!-- MAIN CONTENT -->
+  <section class="content-wrap pb-24">
+    <div class="container mx-auto px-6">
+      <div class="content-card">
+        <div class="grid lg:grid-cols-[1.12fr_0.88fr] gap-0">
 
-        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10"
-             data-aos="fade-up" data-aos-duration="1200">
+          <!-- LEFT -->
+          <div class="p-8 md:p-12 lg:p-14" data-aos="fade-right">
+            <h2 class="section-title">Design-Build</h2>
+            <div class="accent-line"></div>
 
+            <div class="space-y-6 section-copy">
+              <p>
+                Our design-build approach provides a single point of responsibility from concept
+                through completion. By integrating design and construction, we improve
+                coordination, reduce timelines, and maintain tighter control over cost and quality.
+              </p>
 
- 
-            <h1 class="text-white text-5xl md:text-6xl font-bold max-w-3xl leading-tight">
-                Integrated Design & Build Solutions
-            </h1>
-
-            <p class="text-gray-200 mt-4 max-w-xl text-lg">
-                Where vision becomes structure — one unified team delivering design, planning, and construction with
-                precision.
-            </p>
-
-            <div class="mt-6">
-                <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
-                    Start Your Project
-                </button>
+              <p>
+                We begin with a structured planning phase to define project vision, scope, and
+                feasibility. From there, we manage the full lifecycle of the project, ensuring
+                alignment at every stage.
+              </p>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- INTRO SECTION -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="text-4xl font-bold text-gray-800">Design & Build</h2>
-            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
-
-            <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                At Eyrie Contracting Inc., we combine expert architectural design with flawless construction execution.
-                Our integrated design-build model gives you a seamless experience from the first sketch to the final
-                walkthrough —
-                faster decisions, tighter coordination, and exceptional results.
-            </p>
-        </div>
-    </section>
-
-    <!-- THREE-COLUMN SERVICES -->
-    <section class="container mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Design</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Architectural layouts, 3D concepts, interior detailing, and complete blueprint packages tailored to your
-                project.
-            </p>
-        </div>
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Planning</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Engineering coordination, drafting, permitting, compliance, scheduling, and resource planning — handled
-                start to finish.
-            </p>
-        </div>
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-            data-aos="fade-up" data-aos-delay="300">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Build</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Seamless construction delivery backed by skilled trades, fabrication capabilities, and strict quality
-                control.
-            </p>
-        </div>
-
-    </section>
-
-    <!-- WHY DESIGN-BUILD WORKS -->
-    <section class="bg-gray-100 py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-800">Why Design-Build Works</h2>
-            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-gray-700 text-lg">
-                <div data-aos="zoom-in" data-aos-delay="100">Faster Timelines</div>
-                <div data-aos="zoom-in" data-aos-delay="200">Cost-Controlled Execution</div>
-                <div data-aos="zoom-in" data-aos-delay="300">Unified Communication</div>
-                <div data-aos="zoom-in" data-aos-delay="400">No Gaps Between Design & Construction</div>
-                <div data-aos="zoom-in" data-aos-delay="500">Full Accountability</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR APPROACH -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-            <div data-aos="fade-right">
-                <img src="images/designbuild.png" class="rounded-lg shadow-lg w-full object-cover"
-                    alt="Design and planning">
-            </div>
-
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold text-gray-800">Our Approach</h2>
-                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
-
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    We manage every detail of your project with precision — from structural elements to interior
-                    finishes.
-                    Our team collaborates with talented interior designers to refine every aspect, including materials,
-                    colors,
-                    furniture, and staging.
+          <!-- RIGHT -->
+          <div class="content-side p-8 md:p-12 lg:p-14">
+            <div class="grid gap-6 h-full">
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="80">
+                <h3>Single Point of Responsibility</h3>
+                <p>
+                  One integrated team overseeing the full project lifecycle from concept to completion.
                 </p>
+              </div>
 
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    Whether you need full project management or support for specific phases, we tailor our services to
-                    your needs.
-                    We thrive on creative, unique, and technically demanding projects — delivering craftsmanship,
-                    innovation,
-                    and care at every step.
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="140">
+                <h3>Improved Coordination</h3>
+                <p>
+                  Better alignment between planning, design, and construction for smoother delivery.
                 </p>
+              </div>
+
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="200">
+                <h3>Cost + Quality Control</h3>
+                <p>
+                  Tighter management across scope, execution, and decision-making at every stage.
+                </p>
+              </div>
             </div>
+          </div>
 
         </div>
-    </section>
-    <div id="footer-placeholder"></div>
-    <!-- SCRIPTS -->
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+      </div>
+    </div>
+  </section>
 
+  <!-- SUPPORT STRIP -->
+  <section class="db-band py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+        <h2 class="section-title text-white">A fully aligned process from early vision to final delivery.</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="band-grid">
+        <div class="band-card" data-aos="fade-up" data-aos-delay="60">
+          <h3>Project Vision</h3>
+          <p>
+            Structured planning that helps define project direction, priorities, and feasibility from the outset.
+          </p>
+        </div>
+
+        <div class="band-card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Lifecycle Management</h3>
+          <p>
+            End-to-end oversight that supports continuity, coordination, and better project flow.
+          </p>
+        </div>
+
+        <div class="band-card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Aligned Delivery</h3>
+          <p>
+            A streamlined process that keeps design intent, execution, and outcomes working together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/header.js"></script>
+  <script type="module" src="js/footer.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900
+    });
+  </script>
 </body>
-
 </html>
