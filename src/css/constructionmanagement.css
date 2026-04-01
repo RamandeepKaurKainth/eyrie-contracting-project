@@ -10,19 +10,19 @@ body {
 }
 
 /* HERO */
-.about-hero {
+.cm-hero {
   position: relative;
   min-height: 72vh;
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(8, 15, 28, 0.84) 0%, rgba(8, 15, 28, 0.58) 48%, rgba(8, 15, 28, 0.82) 100%),
-    url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80");
+    url("images/project-management-approach.png");
   background-size: cover;
   background-position: center;
   isolation: isolate;
 }
 
-.about-hero::before {
+.cm-hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -35,7 +35,7 @@ body {
   pointer-events: none;
 }
 
-.about-hero::after {
+.cm-hero::after {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
@@ -121,6 +121,11 @@ body {
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
 }
 
+.content-side {
+  background: #f7f6f1;
+  border-top: 1px solid #e7e5df;
+}
+
 .section-title {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.02;
@@ -144,7 +149,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.about-panel {
+.feature-panel {
   height: 100%;
   padding: 1.6rem;
   border-radius: 1.5rem;
@@ -154,12 +159,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.about-panel:hover {
+.feature-panel:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 42px rgba(15, 23, 42, 0.08);
 }
 
-.about-panel h3 {
+.feature-panel h3 {
   font-size: 1.2rem;
   font-weight: 800;
   color: #111827;
@@ -167,19 +172,19 @@ body {
   letter-spacing: -0.02em;
 }
 
-.about-panel p {
+.feature-panel p {
   color: #5d6674;
   line-height: 1.85;
 }
 
-/* QA */
-.qa-section {
+/* DARK BAND */
+.cm-band {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0b1220 0%, #111827 100%);
 }
 
-.qa-section::before {
+.cm-band::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -187,9 +192,15 @@ body {
   pointer-events: none;
 }
 
-.qa-card {
+.band-grid {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.band-card {
   padding: 1.65rem;
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.05);
@@ -199,12 +210,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.qa-card:hover {
+.band-card:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.06);
 }
 
-.qa-card h3 {
+.band-card h3 {
   color: #ffffff;
   font-size: 1.15rem;
   font-weight: 800;
@@ -212,14 +223,18 @@ body {
   line-height: 1.5;
 }
 
-.qa-card p {
+.band-card p {
   color: #d1d5db;
   line-height: 1.9;
   font-size: 1rem;
 }
 
-.qa-card strong {
-  color: #ffffff;
+/* DESKTOP BORDER FIX */
+@media (min-width: 1024px) {
+  .content-side {
+    border-top: 0;
+    border-left: 1px solid #e7e5df;
+  }
 }
 
 /* RESPONSIVE */
@@ -231,10 +246,14 @@ body {
   .content-wrap {
     margin-top: -58px;
   }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  .about-hero {
+  .cm-hero {
     min-height: 64vh;
     background-position: center;
   }
@@ -257,11 +276,8 @@ body {
     border-radius: 1.45rem;
   }
 
-  .about-panel {
-    padding: 1.3rem;
-  }
-
-  .qa-card {
+  .feature-panel,
+  .band-card {
     padding: 1.35rem;
   }
 }

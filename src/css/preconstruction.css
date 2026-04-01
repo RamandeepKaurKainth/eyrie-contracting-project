@@ -83,21 +83,32 @@ body {
 .hero-heading {
   margin-top: 1.4rem;
   font-size: clamp(3rem, 7vw, 5.8rem);
-  line-height: 0.92;
+  line-height: 0.9;
   font-weight: 800;
   letter-spacing: -0.06em;
   color: #ffffff;
   max-width: 11ch;
   text-wrap: balance;
-  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero-heading span {
+  display: block;
+  color: #f97316;
+}
+
+.hero-heading span {
+  display: block;
+  color: #f97316;
+  text-shadow: 0 4px 18px rgba(249, 115, 22, 0.35);
 }
 
 .hero-subtext {
   margin-top: 1.5rem;
   max-width: 42rem;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.06rem;
-  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 /* MAIN WRAP */
