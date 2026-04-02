@@ -16,7 +16,7 @@ body {
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(8, 15, 28, 0.84) 0%, rgba(8, 15, 28, 0.58) 48%, rgba(8, 15, 28, 0.82) 100%),
-    url("images/masterserviceagreements.jpg");
+    url("../images/project-management-approach.png");
   background-size: cover;
   background-position: center;
   isolation: isolate;
