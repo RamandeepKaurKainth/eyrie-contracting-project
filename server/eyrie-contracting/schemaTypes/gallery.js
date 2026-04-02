@@ -4,33 +4,45 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'page_name',          // fixed: replaced space with underscore
+      name: 'page_name',
       type: 'string',
       title: 'Title'
     },
     {
-      name: 'hero_image',         // fixed
-      type: 'image',
-      title: 'Hero Image',
-      options: { hotspot: true }
+      name: 'hero_media',
+      title: 'Hero Media',
+      type: 'object',      // single hero media
+      fields: [
+        { name: 'image', type: 'image', title: 'Image', options: { hotspot: true } },
+        { name: 'video', type: 'file', title: 'Video', options: { accept: 'video/*' } }
+      ]
     },
     {
-      name: 'images_project1',    // fixed
-      title: 'Project1 Images',
+      name: 'project1_media',
+      title: 'Project1 Media',
       type: 'array',
-      of: [{ type: 'image' }]
+      of: [
+        { type: 'image', options: { hotspot: true } },
+        { type: 'file', options: { accept: 'video/*' } }
+      ]
     },
     {
-      name: 'images_project2',    // fixed
-      title: 'Project2 Images',
+      name: 'project2_media',
+      title: 'Project2 Media',
       type: 'array',
-      of: [{ type: 'image' }]
+      of: [
+        { type: 'image', options: { hotspot: true } },
+        { type: 'file', options: { accept: 'video/*' } }
+      ]
     },
     {
-      name: 'images_project3',    // fixed
-      title: 'Project3 Images',
+      name: 'project3_media',
+      title: 'Project3 Media',
       type: 'array',
-      of: [{ type: 'image' }]
+      of: [
+        { type: 'image', options: { hotspot: true } },
+        { type: 'file', options: { accept: 'video/*' } }
+      ]
     }
   ]
 }

@@ -6,13 +6,26 @@ export default {
     {
       name: 'page_name',
       type: 'string',
-      title: 'Title'
+      title: 'Page Name'
     },
     {
-      name: 'hero_image',
-      type: 'image',
-      title: 'Hero Image',
-      options: { hotspot: true }
+      name: 'hero_media',
+      title: 'Hero Media',
+      type: 'object',
+      fields: [  // <-- must be an array of fields
+        {
+          name: 'image',
+          type: 'image',
+          title: 'Image',
+          options: { hotspot: true }
+        },
+        {
+          name: 'video',
+          type: 'file',
+          title: 'Video',
+          options: { accept: 'video/*' }
+        }
+      ]
     }
   ]
 }
