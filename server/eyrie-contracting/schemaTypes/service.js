@@ -1,17 +1,17 @@
 export default {
-  name: 'about',
-  title: 'About',
+  name: 'service',
+  title: 'Service',
   type: 'document',
   fields: [
     {
-      name: 'title',
+      name: 'page_name',
       type: 'string',
       title: 'Title'
     },
     {
-      name: 'image',
+      name: 'hero_image',
       type: 'image',
-      title: 'Image',
+      title: 'Hero Image',
       options: { hotspot: true }
     }
   ]
