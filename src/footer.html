@@ -1,97 +1,314 @@
-<footer>
-    <!-- CTA -->
-    <section class="relative h-[55vh] bg-cover bg-center mt-12 parallax"
-             style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+<style>
+  /* SAME BLUE AS HEADER */
+  .footer-wrap {
+    background: linear-gradient(135deg, #071224 0%, #0b1a34 55%, #102446 100%);
+    color: #e5e7eb;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
 
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
+  /* CTA */
+  .footer-cta {
+    padding: 68px 0 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
 
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+  .footer-cta-label {
+    color: #ea580c;
+    letter-spacing: 0.2em;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
 
-            <h2 class="text-white text-4xl md:text-5xl font-extrabold tracking-wide uppercase">
-                Ready to Bring Your Vision to Life?
-            </h2>
+  .footer-cta-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
 
-            <div class="w-24 h-1 bg-orange-500 mt-4 mb-6"></div>
+  .footer-divider {
+    width: 72px;
+    height: 4px;
+    background: #ea580c;
+    margin: 16px auto 22px;
+    border-radius: 999px;
+  }
 
-            <p class="text-gray-200 max-w-xl leading-relaxed text-lg">
-                Let’s design, plan, and build something exceptional together.
-            </p>
+  .footer-cta-text {
+    color: #d4dbe7;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.75;
+    font-size: 1.04rem;
+  }
 
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <button onclick="openPanel(event)"
-                        class="btn btn-primary btn-shadow hover-grow">
-                    Start Your Project
-                </button>
+  .footer-cta-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-                <a href="contact.html"
-                   class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-300 transition">
-                    Request a Quote
-                </a>
-            </div>
+  .footer-secondary-btn {
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.14);
+    transition: all 0.25s ease;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    backdrop-filter: blur(4px);
+  }
 
-        </div>
-    </section>
+  .footer-secondary-btn:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+  }
 
-      <footer class="bg-gray-900 text-gray-300">
+  /* FOOTER */
+  .site-footer {
+    padding: 42px 0 18px;
+  }
 
-    <!-- ===== MAIN FOOTER ===== -->
-    <section class="pt-8 pb-1 border-gray-800">
-      <div class="container mx-auto px-6 grid md:grid-cols-4 mb-2">
+  .footer-grid {
+    display: grid;
+    gap: 28px;
+    align-items: start;
+  }
 
-        <!-- Logo -->
-        <div class="flex flex-col items-center mb-2">
-          <img src="images/logo/footerLogo.png" alt="Logo" class="h-20">
-          <p class="text-gray-400 text-sm font-semibold" id="companyName"></p>
-        </div>
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1.4fr 1fr 1fr;
+    }
+  }
 
-        <div class="text-gray-400 text-sm leading-relaxed mb-2">
-          <!-- Address -->
-          <h4 class="font-semibold mb-2" id="country"></h4>
-          <p class="mb-1"><span id="city"></span>, <span id="province"></span></p>
-          <p class="mb-1" id="address1"></p>
-          <p id="postalCode"></p>
-        </div>
+  .footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
 
-        <!-- Quick Links -->
-        <div class="text-gray-400 text-sm leading-relaxed mb-2">
-          <h4 class="font-semibold mb-2">Quick Links</h4>
-          <ul class="list-none m-0 p-0">
-            <li class="mb-1"><a href="renovationexpansion.html" class="hover:text-orange-400">Residential</a></li>
-            <li class="mb-1"><a href="designbuild.html" class="hover:text-orange-400">Commercial</a></li>
-            <li class="mb-1"><a href="welding.html" class="hover:text-orange-400">Industrial</a></li>
+  .footer-logo {
+    height: 65px;
+    margin-bottom: 18px;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+    color: #d4dbe7;
+    line-height: 1.8;
+    margin-bottom: 0;
+    max-width: 460px;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-list li {
+    color: #d4dbe7;
+    margin-bottom: 10px;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .footer-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ea580c;
+    font-size: 1rem;
+    top: 0;
+  }
+
+  .footer-col a {
+    color: #d4dbe7;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .footer-col a:hover {
+    color: #ea580c;
+  }
+
+  .footer-contact-btn {
+    margin-top: 14px;
+  }
+
+  /* QUICK LINKS */
+  .footer-links-wrap {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .footer-quick-links a {
+    font-size: 0.95rem;
+    color: #d4dbe7;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .footer-quick-links a:hover {
+    color: #ea580c;
+  }
+
+  /* BOTTOM */
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 24px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: #9caec4;
+  }
+
+  .footer-bottom a {
+    color: #9caec4;
+    text-decoration: none;
+  }
+
+  .footer-bottom a:hover {
+    color: #ea580c;
+  }
+
+  @media (max-width: 767px) {
+    .footer-cta {
+      padding: 54px 0 38px;
+    }
+
+    .site-footer {
+      padding: 34px 0 18px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="footer-wrap">
+
+  <!-- FINAL CTA -->
+  <div class="footer-cta">
+    <div class="container mx-auto px-6 text-center max-w-4xl">
+      <p class="footer-cta-label">Build With Confidence</p>
+
+      <h2 class="footer-cta-title">
+        High-Performance Construction Solutions
+      </h2>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-cta-text">
+        Eyrie Contracting is committed to delivering high-performance construction
+        solutions with professionalism, reliability, and precision.
+      </p>
+
+      <div class="footer-cta-actions">
+        <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
+          Start Your Project
+        </button>
+
+        <a href="contact.html" class="footer-secondary-btn">
+          Contact Our Team
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container mx-auto px-6">
+
+      <div class="footer-grid">
+
+        <!-- COMPANY -->
+        <div class="footer-col">
+          <img src="images/logo/footerLogo.png" alt="Eyrie Contracting Logo" class="footer-logo">
+
+          <ul class="footer-list">
+            <li>Commercial & Industrial General Contractor</li>
+            <li>Structured Construction Solutions</li>
+            <li>Professionalism, Reliability & Precision</li>
           </ul>
         </div>
 
-        <!-- Contact -->
-        <div class="text-gray-400 text-sm leading-relaxed">
-          <h4 class="font-semibold mb-2">Contact</h4>
-          <p class="mb-1"><a id="phone" class="hover:text-orange-400"></a></p>
-          <p><a id="email" class="hover:text-orange-400"></a></p>
+        <!-- SERVING -->
+        <div class="footer-col">
+          <h4>Serving</h4>
+          <ul class="footer-list">
+            <li>British Columbia</li>
+            <li>Lower Mainland</li>
+            <li>Select Markets Across the United States</li>
+          </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-list">
+            <li><a id="phone"></a></li>
+            <li><a id="email"></a></li>
+          </ul>
+
+          <button onclick="openPanel(event)" class="btn btn-primary btn-sm footer-contact-btn hover-grow">
+            Request a Quote
+          </button>
+        </div>
+
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="footer-links-wrap">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-quick-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="preconstruction.html">Pre-Construction</a>
+            <a href="projectmanagement.html">Project Management</a>
+            <a href="designbuild.html">Design-Build</a>
+            <a href="welding.html">Welding</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== NAV LINKS ===== -->
-    <section class="pt-6 pb-4 border-t border-gray-800 text-center">
-      <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-        <a href="index.html" class="hover:text-orange-400">Home</a>
-        <a href="about.html" class="hover:text-orange-400">About</a>
-        <a href="projectmanagement.html" class="hover:text-orange-400">Service</a>
-        <a href="renovationexpansion.html" class="hover:text-orange-400">Renovation</a>
-        <a href="gallery.html" class="hover:text-orange-400">Gallery</a>
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <p>© 2026 Eyrie Contracting Inc. All Rights Reserved.</p>
+
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          ↑ Back to top
+        </a>
       </div>
-    </section>
 
-    <!-- ===== BOTTOM BAR ===== -->
-    <section
-      class="py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center px-6 text-sm text-gray-500">
-
-      <p>© 2026 Eyrie Contracting Inc. All Rights Reserved.</p>
-
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="mt-3 md:mt-0 hover:text-orange-400">
-        ↑ Back to top
-      </a>
-    </section>
-
+    </div>
   </footer>
-</footer>
+</section>

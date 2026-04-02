@@ -5,7 +5,6 @@ Promise.all([fetch("footer.html").then(res => res.text())])
     // Now update footer info
     const { companyInfo } = await import("./company.js");
 
-    document.getElementById("companyName").innerText = companyInfo.name;
     document.getElementById("country").innerText = companyInfo.country;
     document.getElementById("address1").innerText = companyInfo.address1;
     document.getElementById("city").innerText = companyInfo.city;
@@ -17,6 +16,15 @@ Promise.all([fetch("footer.html").then(res => res.text())])
 
     document.getElementById("email").innerText = companyInfo.email;
     document.getElementById("email").href = "mailto:" + companyInfo.email;
+
+    // Fix comma between city and province
+    const city = document.getElementById("city")?.innerText.trim();
+    const province = document.getElementById("province")?.innerText.trim();
+    const cityComma = document.getElementById("cityComma");
+
+    if (cityComma) {
+      cityComma.innerText = city && province ? ", " : "";
+    }
 
     // Refresh AOS for animations
     if (AOS) AOS.refresh();
