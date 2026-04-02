@@ -5,12 +5,6 @@ Promise.all([fetch("footer.html").then(res => res.text())])
     // Now update footer info
     const { companyInfo } = await import("./company.js");
 
-    document.getElementById("country").innerText = companyInfo.country;
-    document.getElementById("address1").innerText = companyInfo.address1;
-    document.getElementById("city").innerText = companyInfo.city;
-    document.getElementById("province").innerText = companyInfo.Province;
-    document.getElementById("postalCode").innerText = companyInfo.postalCode;
-
     document.getElementById("phone").innerText = companyInfo.phone;
     document.getElementById("phone").href = "tel:" + companyInfo.phoneHref;
 
