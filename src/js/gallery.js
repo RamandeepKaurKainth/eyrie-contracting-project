@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const data = [
     new GalleryItem(
-      "Project 1",
-      "Example with just images.",
+      "Commercial Office Fit-Out",
+      "Interior tenant improvement project delivering a modern office environment with coordinated finishes, mechanical upgrades, and efficient space planning.",
       [
         { type: "image", src: "gallery-projects/project1-a/gallery1.jpg" },
         { type: "image", src: "gallery-projects/project1-a/gallery2.jpg" },
@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     ),
     new GalleryItem(
-      "Project 2",
-      "Example with video, clickable to pause and play, it will always be first and not switch to other pictures unless user manually does so.",
+      "Industrial Facility Upgrade",
+      "Structural upgrades and equipment integration completed within an active industrial environment while maintaining operational continuity.",
       [
         { type: "image", src: "gallery-projects/project2-b/gallery8.jpg" },
         { type: "video", src: "gallery-projects/project2-b/placeholder_video1.mp4" },
@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     ),
     new GalleryItem(
-      "Project 3",
-      "Example with 360 video, can click and drag to look around, it will always be first and not switch to other pictures unless user manually does so.",
+      "Retail Space Renovation",
+      "Full renovation including demolition, rebuild, and finish installation aligned with operational needs, brand standards, and overall project functionality.",
       [
         { type: "image", src: "gallery-projects/project3-c/main.jpg" },
         { type: "video360", src: "gallery-projects/project3-c/360 video example.mp4" },
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image.src = src;
 
       if (typeof image.decode === "function") {
-        image.decode().catch(() => { });
+        image.decode().catch(() => {});
       }
     });
   }
@@ -275,8 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
     video.dataset.galleryVideoKind = "360";
     video.tabIndex = 0;
 
-    // A-Frame asset videos are hidden DOM nodes; set media properties directly
-    // so autoplay is honored before the videosphere binds the texture.
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
@@ -309,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       video.muted = false;
-      video.play().catch(() => { });
+      video.play().catch(() => {});
     };
 
     video.addEventListener("focus", muteOthersAndUnmuteCurrent);
@@ -330,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           if (entry.isIntersecting) {
-            video.play().catch(() => { });
+            video.play().catch(() => {});
           } else {
             video.pause();
             video.muted = true;
@@ -508,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
       video.className = "max-h-[80vh] max-w-[80vw] object-contain bg-black";
       registerManagedVideo(video);
       lightboxMedia.appendChild(video);
-      video.play().catch(() => { });
+      video.play().catch(() => {});
       return;
     }
 
@@ -563,7 +561,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Let users interact with videos directly (unmute/controls) without opening the lightbox.
     if (event.target.closest("video") || event.target.closest(".gallery-360")) {
       return;
     }
