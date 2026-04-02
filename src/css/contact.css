@@ -1,20 +1,173 @@
-.contact-hero {
-  background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80');
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.05), transparent 26%),
+    linear-gradient(180deg, #f7f6f1 0%, #f3f3ef 55%, #efeee8 100%);
+  color: #1f2937;
+}
+
+/* =========================
+   HERO
+========================= */
+.contact-hero-shell {
+  position: relative;
+  min-height: 72vh;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(8, 15, 28, 0.84) 0%, rgba(8, 15, 28, 0.58) 48%, rgba(8, 15, 28, 0.82) 100%),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  isolation: isolate;
 }
 
+.contact-hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.18;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.18));
+  pointer-events: none;
+}
+
+.contact-hero-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 180px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-overlay-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.28), transparent);
+  pointer-events: none;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f8fafc;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.hero-pill-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #f97316;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.82);
+}
+
+.hero-heading {
+  margin-top: 1.4rem;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: #ffffff;
+  max-width: 10ch;
+  text-wrap: balance;
+  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero-heading span {
+  display: block;
+  color: #f97316;
+  text-shadow: 0 4px 18px rgba(249, 115, 22, 0.35);
+}
+
+.hero-subtext {
+  margin-top: 1.5rem;
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+/* =========================
+   MAIN WRAP
+========================= */
+.contact-wrap {
+  position: relative;
+  z-index: 20;
+  margin-top: -78px;
+}
+
+.contact-card-shell {
+  overflow: hidden;
+  border-radius: 1.9rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(250, 250, 248, 0.97) 100%);
+  border: 1px solid #e7e5df;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.contact-side {
+  background: #f7f6f1;
+  border-top: 1px solid #e7e5df;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #0f172a;
+}
+
+.section-copy {
+  color: #5b6472;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.accent-line {
+  width: 84px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   FORM
+========================= */
 .contact-input,
 .contact-select,
 .contact-textarea {
   width: 100%;
   border: 1px solid #d1d5db;
-  border-radius: 0.75rem;
-  padding: 0.9rem 1rem;
+  border-radius: 0.95rem;
+  padding: 0.95rem 1rem;
   outline: none;
   transition: all 0.2s ease;
   background: #ffffff;
+  color: #111827;
 }
 
 .contact-input:focus,
@@ -24,18 +177,102 @@
   box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.12);
 }
 
-.info-card {
-  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+.contact-textarea {
+  resize: vertical;
+  min-height: 160px;
 }
 
-.contact-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+/* =========================
+   SIDE PANELS
+========================= */
+.info-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  border: 1px solid #e8e5de;
+  border-radius: 1.5rem;
+  padding: 1.6rem;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.info-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.08);
+}
+
+.info-panel-dark {
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.info-panel h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.info-panel-dark h3 {
+  color: #ffffff;
+}
+
+.info-label {
+  color: #fb923c;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
 }
 
 .contact-check {
   color: #ea580c;
   font-size: 1.125rem;
   line-height: 1;
+  margin-top: 0.1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (min-width: 1024px) {
+  .contact-side {
+    border-top: 0;
+    border-left: 1px solid #e7e5df;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-heading {
+    max-width: 12ch;
+  }
+
+  .contact-wrap {
+    margin-top: -58px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-shell {
+    min-height: 64vh;
+  }
+
+  .hero-heading {
+    max-width: none;
+    font-size: clamp(2.5rem, 10vw, 4.2rem);
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .contact-wrap {
+    margin-top: -36px;
+  }
+
+  .contact-card-shell {
+    border-radius: 1.45rem;
+  }
+
+  .info-panel {
+    padding: 1.3rem;
+  }
 }

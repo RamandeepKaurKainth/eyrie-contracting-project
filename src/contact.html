@@ -3,252 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Eyrie Contracting Inc.</title>
+  <title>Contact | Eyrie Contracting Inc.</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/links.css">
-  <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/header.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- HEADER + PANEL -->
+<body class="text-slate-800">
   <div id="header-placeholder"></div>
   <div id="panel-placeholder"></div>
 
   <!-- HERO -->
-  <section class="relative contact-hero min-h-[55vh] flex items-center">
-    <div class="absolute inset-0 bg-black/65"></div>
+  <section class="contact-hero-shell flex items-center">
+    <div class="hero-overlay-bottom"></div>
 
-    <div class="container mx-auto px-6 relative z-10 text-center">
-      <h1 class="text-white text-4xl md:text-5xl font-bold">
-        Request a Quote
-      </h1>
-
-      <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
-
-      <p class="text-gray-200 mt-6 max-w-2xl mx-auto text-lg">
-        Tell us about your project and our team will contact you shortly.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="py-20">
-    <div class="container mx-auto px-6">
-      <div class="grid lg:grid-cols-3 gap-10">
-
-        <!-- FORM -->
-        <div class="lg:col-span-2 contact-card p-8 md:p-10">
-
-          <h2 class="text-3xl font-bold text-gray-800 mb-6">
-            Let’s Talk About Your Project
-          </h2>
-
-          <!-- SUCCESS MESSAGE -->
-          <div id="formSuccess"
-               class="hidden mb-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800 font-medium">
-            ✔ Your inquiry has been submitted successfully. Our team will contact you soon.
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-28">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Contact Us
           </div>
 
-          <form id="contactForm" enctype="multipart/form-data" class="space-y-5">
+          <h1 class="hero-heading">
+            Start your project
+            <span>with confidence.</span>
+          </h1>
 
-            <div class="grid md:grid-cols-2 gap-5">
-
-              <div>
-                <label class="block text-sm font-medium mb-2">Inquiry Type*</label>
-                <select class="contact-select" required>
-                  <option value="">Select</option>
-                  <option>Request a Quote</option>
-                  <option>General Inquiry</option>
-                  <option>Support</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium mb-2">Project Category*</label>
-                <select class="contact-select" required>
-                  <option value="">Select</option>
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                  <option>Industrial</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-5">
-
-              <div>
-                <label class="block text-sm font-medium mb-2">First Name*</label>
-                <input type="text"
-                       class="contact-input"
-                       placeholder="e.g. John"
-                       required>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium mb-2">Last Name*</label>
-                <input type="text"
-                       class="contact-input"
-                       placeholder="e.g. Smith"
-                       required>
-              </div>
-
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-5">
-
-              <div>
-                <label class="block text-sm font-medium mb-2">Phone*</label>
-                <input type="tel"
-                       class="contact-input"
-                       placeholder="+1 234 567 8901"
-                       required>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium mb-2">Email*</label>
-                <input type="email"
-                       class="contact-input"
-                       placeholder="john@email.com"
-                       required>
-              </div>
-
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium mb-2">Project Description*</label>
-              <textarea rows="6"
-                        class="contact-textarea"
-                        placeholder="Tell us about your project..."
-                        required></textarea>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium mb-2">Attachment (optional)</label>
-              <input type="file"
-                     class="contact-input"
-                     accept=".jpg,.png,.pdf,.doc,.docx">
-              <p class="text-sm text-gray-500 mt-2">
-                Accepted formats: JPG, PNG, PDF, DOC, DOCX
-              </p>
-            </div>
-
-            <button id="submitBtn"
-                    type="submit"
-                    class="btn btn-primary btn-lg w-full">
-              Submit Request
-            </button>
-
-          </form>
+          <p class="hero-subtext">
+            Connect with our team to discuss your upcoming project. We provide clear
+            guidance, responsive communication, and a structured approach from the outset.
+          </p>
         </div>
-
-        <!-- OFFICE INFO -->
-        <div class="space-y-8">
-
-          <div class="info-card text-white rounded-2xl shadow-xl p-8">
-
-            <h3 class="text-2xl font-bold mb-6">
-              Our Office
-            </h3>
-
-            <div class="space-y-4 text-sm md:text-base">
-
-              <div>
-                <p class="text-orange-400 font-semibold">Company</p>
-                <p id="companyName"></p>
-              </div>
-
-              <div>
-                <p class="text-orange-400 font-semibold">Address</p>
-                <span id="address1"></span><br>
-              <span id="city"></span>, <span id="province"></span><br>
-              <span id="postalCode"></span>
-              </div>
-
-              <div>
-                <p class="text-orange-400 font-semibold">Phone</p>
-                <a class="hover:text-orange-300 transition" id = "phone">
-                </a>
-              </div>
-
-              <div>
-                <p class="text-orange-400 font-semibold">Email</p>
-                <a id="email"
-                   class="hover:text-orange-300 transition break-all">
-
-                </a>
-              </div>
-
-              <div>
-                <p class="text-orange-400 font-semibold">Business Hours</p>
-                <p id="officeHour"></p>
-              </div>
-
-            </div>
-
-            <div class="mt-8 space-y-4">
-
-              <a id ="phoneLink"
-                 class="block bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition">
-                Call Us
-              </a>
-
-              <a id = "emailLink"
-                 class="block bg-white/10 text-white text-center py-3 rounded-lg font-semibold hover:bg-white/20 transition">
-                Email Us
-              </a>
-
-            </div>
-
-          </div>
-
-          <!-- WHY US -->
-          <div class="contact-card p-8">
-
-            <h3 class="text-2xl font-bold mb-5">
-              Why Work With Eyrie?
-            </h3>
-
-            <div class="space-y-4 text-gray-600">
-
-              <div class="flex gap-3">
-                <span class="contact-check">✔</span>
-                <p>Reliable residential & commercial experience</p>
-              </div>
-
-              <div class="flex gap-3">
-                <span class="contact-check">✔</span>
-                <p>Precision and craftsmanship</p>
-              </div>
-
-              <div class="flex gap-3">
-                <span class="contact-check">✔</span>
-                <p>Clear communication throughout the project</p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
       </div>
     </div>
   </section>
 
-<div id="footer-placeholder"></div>
+  <!-- CONTACT SECTION -->
+  <section class="contact-wrap pb-24">
+    <div class="container mx-auto px-6">
+      <div class="contact-card-shell">
+        <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-0">
+
+          <!-- LEFT: FORM -->
+          <div class="p-8 md:p-12 lg:p-14" data-aos="fade-right">
+            <h2 class="section-title">CTA Form</h2>
+            <div class="accent-line"></div>
+
+            <p class="section-copy mb-8">
+              Tell us about your project and our team will follow up with clear next steps.
+            </p>
+
+            <div id="formSuccess"
+                 class="hidden mb-6 p-4 rounded-xl bg-green-100 border border-green-300 text-green-800 font-medium">
+              ✔ Your inquiry has been submitted successfully. Our team will contact you soon.
+            </div>
+
+            <form id="contactForm" enctype="multipart/form-data" class="space-y-5">
+
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-medium mb-2">Inquiry Type*</label>
+                  <select class="contact-select" required>
+                    <option value="">Select</option>
+                    <option>Request a Quote</option>
+                    <option>General Inquiry</option>
+                    <option>Support</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2">Project Category*</label>
+                  <select class="contact-select" required>
+                    <option value="">Select</option>
+                    <option>Commercial</option>
+                    <option>Industrial</option>
+                    <option>Institutional</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-medium mb-2">First Name*</label>
+                  <input type="text" class="contact-input" placeholder="e.g. John" required>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2">Last Name*</label>
+                  <input type="text" class="contact-input" placeholder="e.g. Smith" required>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-medium mb-2">Phone*</label>
+                  <input type="tel" class="contact-input" placeholder="+1 234 567 8901" required>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2">Email*</label>
+                  <input type="email" class="contact-input" placeholder="john@email.com" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Project Description*</label>
+                <textarea rows="6"
+                          class="contact-textarea"
+                          placeholder="Tell us about your project..."
+                          required></textarea>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">Attachment (optional)</label>
+                <input type="file"
+                       class="contact-input"
+                       accept=".jpg,.png,.pdf,.doc,.docx">
+                <p class="text-sm text-gray-500 mt-2">
+                  Accepted formats: JPG, PNG, PDF, DOC, DOCX
+                </p>
+              </div>
+
+              <button id="submitBtn" type="submit" class="btn btn-primary btn-lg w-full">
+                Submit Request
+              </button>
+
+            </form>
+          </div>
+
+          <!-- RIGHT: INFO -->
+          <div class="contact-side p-8 md:p-12 lg:p-14">
+            <div class="grid gap-6 h-full">
+
+              <div class="info-panel info-panel-dark" data-aos="fade-left" data-aos-delay="80">
+                <h3>Our Office</h3>
+
+                <div class="space-y-4 text-sm md:text-base mt-5">
+                  <div>
+                    <p class="info-label">Company</p>
+                    <p id="companyName"></p>
+                  </div>
+
+                  <div>
+                    <p class="info-label">Address</p>
+                    <span id="address1"></span><br>
+                    <span id="city"></span>, <span id="province"></span><br>
+                    <span id="postalCode"></span>
+                  </div>
+
+                  <div>
+                    <p class="info-label">Phone</p>
+                    <a class="hover:text-orange-300 transition" id="phone"></a>
+                  </div>
+
+                  <div>
+                    <p class="info-label">Email</p>
+                    <a id="email" class="hover:text-orange-300 transition break-all"></a>
+                  </div>
+
+                  <div>
+                    <p class="info-label">Business Hours</p>
+                    <p id="officeHour"></p>
+                  </div>
+                </div>
+
+                <div class="mt-8 space-y-4">
+                  <a id="phoneLink"
+                     class="block bg-orange-500 text-white text-center py-3 rounded-xl font-semibold hover:bg-orange-600 transition">
+                    Call Us
+                  </a>
+
+                  <a id="emailLink"
+                     class="block bg-white/10 text-white text-center py-3 rounded-xl font-semibold hover:bg-white/20 transition">
+                    Email Us
+                  </a>
+                </div>
+              </div>
+
+              <div class="info-panel" data-aos="fade-left" data-aos-delay="140">
+                <h3>Why Work With Eyrie?</h3>
+
+                <div class="space-y-4 text-gray-600 mt-5">
+                  <div class="flex gap-3 items-start">
+                    <span class="contact-check">✔</span>
+                    <p>Clear guidance from the outset</p>
+                  </div>
+
+                  <div class="flex gap-3 items-start">
+                    <span class="contact-check">✔</span>
+                    <p>Responsive communication throughout the process</p>
+                  </div>
+
+                  <div class="flex gap-3 items-start">
+                    <span class="contact-check">✔</span>
+                    <p>A structured approach tailored to your project needs</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
 
   <script src="js/header.js"></script>
-   <script src="js/footer.js"></script>
+  <script src="js/footer.js"></script>
   <script type="module" src="js/contact.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900
+    });
+  </script>
 </body>
 </html>
