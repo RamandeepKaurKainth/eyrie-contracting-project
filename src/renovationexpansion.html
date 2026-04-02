@@ -1,163 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Renovations & Expansions | Eyrie Contracting Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renovations & Expansions | Eyrie Contracting Inc.</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Shared Site CSS -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/links.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/renovationexpansion.css" />
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <style>
-        html { scroll-behavior: smooth; }
-
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-800">
+  <div id="header-placeholder"></div>
+  <div id="panel-placeholder"></div>
 
-    <!-- HEADER INCLUDE -->
-    <div id="header-placeholder"></div>
+  <!-- HERO -->
+  <section class="renovation-hero flex items-center">
+    <div class="hero-overlay-bottom"></div>
 
-    <!-- PANEL INCLUDE -->
-    <div id="panel-placeholder"></div>
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-28">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Renovations & Expansions
+          </div>
 
-    <!-- HERO SECTION -->
-    <section class="relative h-[85vh] parallax"
-        style="background-image: url('images/renovations-hero.jpg');">
-        <div class="absolute inset-0 bg-black/50"></div>
+          <h1 class="hero-heading">
+            Smarter upgrades for
+            <span>evolving spaces.</span>
+          </h1>
 
-        <div class="container mx-auto h-full flex flex-col justify-center px-6 relative z-10"
-             data-aos="fade-up" data-aos-duration="1200">
-            <h1 class="text-white text-5xl md:text-6xl font-bold max-w-3xl leading-tight">
-                Renovations & Expansions Built for How You Live and Work
-            </h1>
+          <p class="hero-subtext">
+            Renovation and expansion work delivered with careful planning, coordinated execution,
+            and practical solutions that improve how spaces perform over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <p class="text-gray-200 mt-4 max-w-xl text-lg">
-                From homes to warehouses, we upgrade, expand, and modernize spaces with precision, safety, and clean execution.
-            </p>
+  <!-- MAIN CONTENT -->
+  <section class="content-wrap pb-24">
+    <div class="container mx-auto px-6">
+      <div class="content-card">
+        <div class="grid lg:grid-cols-[1.12fr_0.88fr] gap-0">
 
-            <div class="mt-6">
-                <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
-                    Start Your Renovation
-                </button>
+          <!-- LEFT -->
+          <div class="p-8 md:p-12 lg:p-14" data-aos="fade-right">
+            <h2 class="section-title">Renovations & Expansions</h2>
+            <div class="accent-line"></div>
+
+            <div class="space-y-6 section-copy">
+              <p>
+                Eyrie Contracting provides renovation and expansion services that help clients
+                modernize, improve, and reconfigure existing spaces. Our approach is built around
+                understanding how the space needs to function, then planning upgrades that support
+                long-term performance, efficiency, and usability.
+              </p>
+
+              <p>
+                From tenant improvements and interior reconfigurations to larger retrofit and
+                expansion work, we coordinate planning, budgeting, and execution with a focus on
+                minimal disruption, clear communication, and dependable delivery.
+              </p>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- INTRO SECTION -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="text-4xl font-bold text-gray-800">Renovations & Expansions</h2>
-            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
-
-            <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                Eyrie Contracting provides renovation and expansion services for residential and commercial spaces,
-                schools, offices, warehouses, and industrial kitchens. We focus on clean, efficient delivery that
-                upgrades your space without unnecessary disruption.
-            </p>
-        </div>
-    </section>
-
-    <!-- THREE-COLUMN SERVICES -->
-    <section class="container mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-             data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Residential Renovations</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Kitchens, bathrooms, additions, full home updates, and layout reconfigurations designed to match how you live today.
-            </p>
-        </div>
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-             data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Commercial & Office Upgrades</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Tenant improvements, office re-planning, accessibility upgrades, and expansions that keep your business moving.
-            </p>
-        </div>
-
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl transition-all duration-300"
-             data-aos="fade-up" data-aos-delay="300">
-            <h3 class="text-2xl font-bold text-gray-800 hover-grow">Industrial & Specialized Spaces</h3>
-            <p class="text-gray-600 mt-3 leading-relaxed">
-                Warehouses, industrial kitchens, production areas, and back-of-house upgrades with a focus on safety and flow.
-            </p>
-        </div>
-
-    </section>
-
-    <!-- WHY RENOVATE WITH EYRIE -->
-    <section class="bg-gray-100 py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-800">Why Renovations & Expansions with Eyrie</h2>
-            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-gray-700 text-lg">
-                <div data-aos="zoom-in" data-aos-delay="100">Minimal Disruption</div>
-                <div data-aos="zoom-in" data-aos-delay="200">Cost-Controlled Planning</div>
-                <div data-aos="zoom-in" data-aos-delay="300">Integrated Design & Build</div>
-                <div data-aos="zoom-in" data-aos-delay="400">Clean, Safe Worksites</div>
-                <div data-aos="zoom-in" data-aos-delay="500">Full Accountability</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR APPROACH -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-            <div data-aos="fade-right">
-                <img src="images/renovations-approach.jpg"
-                     class="rounded-lg shadow-lg w-full object-cover"
-                     alt="Renovation and expansion planning">
-            </div>
-
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold text-gray-800">Our Approach</h2>
-                <div class="w-20 h-1 bg-orange-500 mt-3 mb-6"></div>
-
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    We begin by understanding how your space needs to function—then plan structural changes,
-                    layout improvements, and finishes around that. Our team coordinates design, engineering,
-                    permitting, and construction so every phase moves smoothly.
+          <!-- RIGHT -->
+          <div class="content-side p-8 md:p-12 lg:p-14">
+            <div class="grid gap-6 h-full">
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="80">
+                <h3>Tenant Improvements</h3>
+                <p>
+                  Interior upgrades and reconfigurations designed to support new uses, better flow, and improved function.
                 </p>
+              </div>
 
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    Whether you’re expanding a warehouse, refreshing an office, or modernizing a home,
-                    we manage details, timelines, and trades with precision. You get a clear plan,
-                    predictable progress, and a space that works better from day one.
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="140">
+                <h3>Retrofits + Expansions</h3>
+                <p>
+                  Practical construction solutions for growing operational needs, updated systems, and more efficient space use.
                 </p>
+              </div>
+
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="200">
+                <h3>Coordinated Delivery</h3>
+                <p>
+                  Structured planning and execution that help reduce disruption while maintaining quality and consistency.
+                </p>
+              </div>
             </div>
+          </div>
 
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK BAND -->
+  <section class="renovation-band py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+        <h2 class="section-title text-white">
+          Built to improve existing spaces with clarity, control, and lasting value.
+        </h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="band-grid">
+        <div class="band-card" data-aos="fade-up" data-aos-delay="60">
+          <h3>Space Optimization</h3>
+          <p>
+            Layout changes and upgrades that help spaces work better for current and future needs.
+          </p>
+        </div>
+
+        <div class="band-card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Minimal Disruption</h3>
+          <p>
+            Careful coordination and phased execution to keep projects moving smoothly in active environments.
+          </p>
+        </div>
+
+        <div class="band-card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Long-Term Value</h3>
+          <p>
+            Renovation and expansion work planned with durability, efficiency, and practical performance in mind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="footer-placeholder"></div>
 
-    <!-- SCRIPTS -->
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+  <script src="js/header.js"></script>
+  <script type="module" src="js/footer.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900
+    });
+  </script>
 </body>
 </html>
