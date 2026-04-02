@@ -1,156 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welding & Fabrication | Eyrie Contracting Inc.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welding & Fabrication | Eyrie Contracting Inc.</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Shared Site CSS -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/links.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/welding.css" />
 
-    <!-- AOS Animations -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-800">
+  <div id="header-placeholder"></div>
+  <div id="panel-placeholder"></div>
 
-    <!-- HEADER + PANEL -->
-    <div id="header-placeholder"></div>
-    <div id="panel-placeholder"></div>
+  <!-- HERO -->
+  <section class="welding-hero flex items-center">
+    <div class="hero-overlay-bottom"></div>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-[60vh] md:min-h-[85vh] parallax flex items-center"
-        style="background-image: url('images/designbuild.png');">
+    <div class="relative z-10 w-full">
+      <div class="container mx-auto px-6 pt-28 pb-28">
+        <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Welding & Fabrication
+          </div>
 
-        <div class="absolute inset-0 bg-black/50"></div>
+          <h1 class="hero-heading">
+            Precision fabrication for
+            <span>demanding environments.</span>
+          </h1>
 
-        <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full max-w-4xl"
-            data-aos="fade-up" data-aos-duration="1200">
-
-            <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Welding & Fabrication
-            </h1>
-
-            <p class="text-gray-200 mt-4 text-base sm:text-lg md:text-xl leading-relaxed">
-                Precision-driven welding and fabrication solutions for structural, industrial, and sanitary
-                applications.
-            </p>
-
-            <div class="mt-6">
-                <button onclick="openPanel(event)" class="btn btn-primary btn-shadow hover-grow">
-                    Request a Quote
-                </button>
-            </div>
+          <p class="hero-subtext">
+            Welding and fabrication services delivered with a focus on quality,
+            precision, safety, and dependable execution across structural,
+            industrial, and specialty applications.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- INTRO SECTION -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+  <!-- MAIN CONTENT -->
+  <section class="content-wrap pb-24">
+    <div class="container mx-auto px-6">
+      <div class="content-card">
+        <div class="grid lg:grid-cols-[1.12fr_0.88fr] gap-0">
 
-            <h2 class="text-4xl font-bold text-gray-800">Our Approach</h2>
-            <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 mb-10"></div>
+          <!-- LEFT -->
+          <div class="p-8 md:p-12 lg:p-14" data-aos="fade-right">
+            <h2 class="section-title">Welding & Fabrication</h2>
+            <div class="accent-line"></div>
 
-            <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                At Eyrie Contracting, we take a meticulous and client-focused approach to every welding and fabrication
-                project.
-                From concept to completion, we focus on safety, quality, precision, and dependable execution across
-                every stage of work.
-            </p>
-        </div>
-    </section>
+            <div class="space-y-6 section-copy">
+              <p>
+                Eyrie Contracting provides welding and fabrication services that
+                support structural, industrial, and specialty project requirements.
+                Our team approaches each scope with careful planning, technical
+                precision, and a commitment to consistent workmanship.
+              </p>
 
-    <!-- ALTERNATING SERVICES -->
-    <section class="container mx-auto px-4 md:px-6 py-16 space-y-20">
-
-        <!-- Process Piping -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-right">
-                <img src="images/welding/process-piping-placeholder.webp" alt="Process Piping"
-                    class="w-full h-full object-cover">
+              <p>
+                From shop fabrication to on-site installation, we focus on safety,
+                quality control, and dependable coordination throughout the process.
+                Our goal is to deliver durable, well-executed solutions that meet
+                project needs and perform reliably over time.
+              </p>
             </div>
+          </div>
 
-            <div data-aos="fade-left">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Process Piping</h2>
-                <div class="w-16 h-1 bg-orange-500 mt-3 mb-5"></div>
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    We provide high-quality process piping solutions tailored to demanding industrial environments,
-                    with a focus on durability, precision, and compliance.
+          <!-- RIGHT -->
+          <div class="content-side p-8 md:p-12 lg:p-14">
+            <div class="grid gap-6 h-full">
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="80">
+                <h3>Process Piping</h3>
+                <p>
+                  Fabrication and welding solutions tailored to demanding systems that require precision, durability, and consistent execution.
                 </p>
-            </div>
-        </div>
+              </div>
 
-        <!-- Structural Steel -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-            <div class="md:order-2 h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-left">
-                <img src="images/welding/structural-steel-placeholder.webp" alt="Structural Steel"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="md:order-1" data-aos="fade-right">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Structural Steel</h2>
-                <div class="w-16 h-1 bg-orange-500 mt-3 mb-5"></div>
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    We specialize in the fabrication and installation of structural steel for commercial and industrial
-                    projects,
-                    delivering strength, reliability, and clean workmanship.
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="140">
+                <h3>Structural Steel</h3>
+                <p>
+                  Reliable structural fabrication and installation supporting commercial and industrial construction requirements.
                 </p>
-            </div>
-        </div>
+              </div>
 
-        <!-- Sanitary Stainless -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-            <div class="h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg" data-aos="fade-right">
-                <img src="images/welding/sanitary-stainless-placeholder.webp" alt="Sanitary Stainless"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div data-aos="fade-left">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Sanitary Stainless</h2>
-                <div class="w-16 h-1 bg-orange-500 mt-3 mb-5"></div>
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    We deliver custom stainless steel fabrication for sanitary and high-purity applications,
-                    with close attention to finish quality, hygiene, and performance.
+              <div class="feature-panel" data-aos="fade-left" data-aos-delay="200">
+                <h3>Sanitary Stainless</h3>
+                <p>
+                  Detail-oriented fabrication for specialty applications where finish quality, performance, and cleanliness matter.
                 </p>
+              </div>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK BAND -->
+  <section class="welding-band py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-aos="fade-up">
+        <h2 class="section-title text-white">
+          Built for accuracy, durability, and dependable execution from fabrication to installation.
+        </h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="band-grid">
+        <div class="band-card" data-aos="fade-up" data-aos-delay="60">
+          <h3>Quality Workmanship</h3>
+          <p>
+            Precision-focused execution that supports structural integrity, performance, and long-term reliability.
+          </p>
         </div>
 
-    </section>
+        <div class="band-card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Safety + Control</h3>
+          <p>
+            Careful planning, controlled execution, and disciplined quality standards across each stage of work.
+          </p>
+        </div>
 
-    <div id="footer-placeholder"></div>
+        <div class="band-card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Specialized Capability</h3>
+          <p>
+            Welding and fabrication services adapted to industrial, structural, and specialty application requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <div id="footer-placeholder"></div>
 
-    <!-- SCRIPTS -->
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+  <script src="js/header.js"></script>
+  <script type="module" src="js/footer.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900
+    });
+  </script>
 </body>
-
 </html>
