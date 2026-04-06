@@ -23,7 +23,7 @@ fetch(`https://${projectId}.api.sanity.io/v2026-04-02/data/query/${dataset}?quer
        const [id, format] = ref.replace('file-', '').split('-');
       const url = `https://cdn.sanity.io/files/${projectId}/${dataset}/${id}.${format}`;
       const container = document.querySelector('.about-hero');
-      console.log(url);
+      //console.log(url);
       container.innerHTML = `<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
         <source src="${url}" type="video/${format}">
       </video>`;
