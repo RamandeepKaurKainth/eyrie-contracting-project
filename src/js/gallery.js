@@ -1,4 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
+  const projectId = 'eko1zm8z';
+  const dataset = 'production';
+
+  // Convert Sanity image _ref to real URL
+  function urlFor(ref) {
+    const [id, dimensions, format] = ref.replace('image-', '').split('-');
+    return `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${dimensions}.${format}`;
+  }
+
+  // Fetch Sanity data
+  const sanityData = await fetch(`https://${projectId}.api.sanity.io/v2026-04-02/data/query/${dataset}?query=*[_type=="projects"][0]`)
+    .then(res => res.json())
+    .then(res => res.result);
+
   const MEDIA_PRIORITY = {
     video360: 0,
     video: 1,
@@ -147,32 +161,26 @@ document.addEventListener("DOMContentLoaded", () => {
     new GalleryItem(
       "Commercial Office Fit-Out",
       "Interior tenant improvement project delivering a modern office environment with coordinated finishes, mechanical upgrades, and efficient space planning.",
-      [
-        { type: "image", src: "gallery-projects/project1-a/gallery1.jpg" },
-        { type: "image", src: "gallery-projects/project1-a/gallery2.jpg" },
-        { type: "image", src: "gallery-projects/project1-a/gallery3.jpg" },
-        { type: "image", src: "gallery-projects/project1-a/gallery4.jpg" }
-      ]
+      sanityData.project1_media.map(item => ({
+      type: "image",
+      src: urlFor(item.asset._ref) // converts _ref to real URL
+    }))
     ),
     new GalleryItem(
       "Industrial Facility Upgrade",
       "Structural upgrades and equipment integration completed within an active industrial environment while maintaining operational continuity.",
-      [
-        { type: "image", src: "gallery-projects/project2-b/gallery8.jpg" },
-        { type: "video", src: "gallery-projects/project2-b/placeholder_video1.mp4" },
-        { type: "image", src: "gallery-projects/project2-b/gallery6.jpg" },
-        { type: "image", src: "gallery-projects/project2-b/gallery7.jpg" }
-      ]
+      sanityData.project2_media.map(item => ({
+      type: "image",
+      src: urlFor(item.asset._ref) // converts _ref to real URL
+    }))
     ),
     new GalleryItem(
       "Retail Space Renovation",
       "Full renovation including demolition, rebuild, and finish installation aligned with operational needs, brand standards, and overall project functionality.",
-      [
-        { type: "image", src: "gallery-projects/project3-c/main.jpg" },
-        { type: "video360", src: "gallery-projects/project3-c/360 video example.mp4" },
-        { type: "image", src: "gallery-projects/project3-c/gallery9.jpg" },
-        { type: "image", src: "gallery-projects/project3-c/gallery10.jpg" }
-      ]
+      sanityData.project3_media.map(item => ({
+      type: "image",
+      src: urlFor(item.asset._ref) // converts _ref to real URL
+    }))
     )
   ];
 

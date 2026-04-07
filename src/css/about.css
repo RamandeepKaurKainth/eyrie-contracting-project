@@ -15,7 +15,7 @@ body {
   min-height: 72vh;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(8, 15, 28, 0.84) 0%, rgba(8, 15, 28, 0.58) 48%, rgba(8, 15, 28, 0.82) 100%);
+  url("../images/aboutus.webp");
   background-size: cover;
   background-position: center;
   isolation: isolate;
@@ -25,12 +25,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 70px 70px;
   opacity: 0.18;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.18));
   pointer-events: none;
 }
 
@@ -39,7 +35,6 @@ body {
   position: absolute;
   inset: auto 0 0 0;
   height: 180px;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
   pointer-events: none;
   z-index: 1;
 }
@@ -50,7 +45,6 @@ body {
   right: 0;
   bottom: 0;
   height: 160px;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.28), transparent);
   pointer-events: none;
 }
 
