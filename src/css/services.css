@@ -1,0 +1,226 @@
+/* SERVICES PAGE */
+
+#services-overview {
+  position: relative;
+}
+
+.section-title-main {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.section-copy {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #475569;
+  margin-top: 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.service-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
+  border-color: rgba(234, 88, 12, 0.22);
+}
+
+.service-box-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.service-box-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.service-box:hover .service-box-image img {
+  transform: scale(1.06);
+}
+
+.service-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+  padding: 1.45rem 1.35rem 1.55rem;
+}
+
+.service-tag {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ea580c;
+}
+
+.service-box-content h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.service-arrow {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0b1a34;
+  transition: color 0.25s ease;
+}
+
+.service-box:hover .service-arrow {
+  color: #ea580c;
+}
+
+.services-band {
+  background: linear-gradient(135deg, #0b1a34, #111827);
+}
+
+.services-band .section-title-main {
+  color: #ffffff;
+}
+
+.services-band .section-copy {
+  color: #cbd5e1;
+}
+
+.band-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.band-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.35rem;
+  padding: 1.5rem;
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.band-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.band-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.band-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .band-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .service-box-image {
+    height: 250px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  #services-overview {
+    padding-top: 3.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  .section-title-main {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .section-copy {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .services-grid {
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .service-box {
+    border-radius: 1.1rem;
+  }
+
+  .service-box-image {
+    height: 215px;
+  }
+
+  .service-box-content {
+    padding: 1.2rem 1.1rem 1.3rem;
+  }
+
+  .service-box-content h3 {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .service-arrow {
+    font-size: 0.9rem;
+  }
+
+  .services-band {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .band-card {
+    padding: 1.2rem;
+    border-radius: 1.1rem;
+  }
+}
