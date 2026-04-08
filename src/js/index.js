@@ -111,11 +111,11 @@ function initPartnerRow() {
       "Dorigo Systems Ltd.",
       "Columbia Fuels",
       "Top Producers Realty",
-      "HTEC"
+      "NextLeaf Solutions"
     ],
     [
       "NextGen Integrated Systems",
-      "NextLeaf Solutions",
+      "HTEC",
       "Glass Tech",
       "City of Vancouver Parks Board",
       "Progressive Steel Industries",
