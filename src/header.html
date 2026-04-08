@@ -1,70 +1,61 @@
 <header class="site-header">
 
-  <!-- TOP BRAND BAR -->
-  <div class="brand-bar">
-    <div class="container mx-auto px-4 flex items-center justify-between">
+  <div class="container mx-auto px-6 lg:px-8">
+    <div class="header-row">
 
-      <!-- Logo + Brand -->
-      <div class="flex items-center brand-wrap">
-        <img src="images/logo/logo.png" alt="Eyrie Contracting Logo">
-        <div class="brand-title cursor-pointer" onclick="window.location.href='index.html'">
-          EYRIE CONTRACTING INC.
-        </div>
+      <!-- LEFT LOGO -->
+      <div class="header-left">
+        <a href="index.html" class="header-logo-link">
+          <img src="images/logo/footerLogo.png" alt="Eyrie Contracting Logo" class="header-logo">
+        </a>
       </div>
 
-      <!-- CTA -->
-      <div class="hidden md:block">
+      <!-- CENTER NAV -->
+      <nav class="header-nav hidden md:flex" aria-label="Main navigation">
+        <ul class="nav-list">
+
+          <li><a href="index.html" class="header-link">Home</a></li>
+          <li><a href="aboutus.html" class="header-link">About Us</a></li>
+
+          <li class="group relative">
+            <button class="header-link services-btn" type="button">Services</button>
+
+            <div class="dropdown-menu dropdown-services dropdown-services-two-col">
+              <div class="dropdown-col">
+                <div class="dropdown-heading">Core Services</div>
+                <a href="preconstruction.html" class="nav-link-block">Pre-Construction</a>
+                <a href="constructionmanagement.html" class="nav-link-block">Construction Management</a>
+                <a href="designbuild.html" class="nav-link-block">Design-Build</a>
+                <a href="generalcontracting.html" class="nav-link-block">General Contracting</a>
+                <a href="masterserviceagreements.html" class="nav-link-block">Master Service Agreements</a>
+              </div>
+
+              <div class="dropdown-col">
+                <div class="dropdown-heading">More Services</div>
+                <a href="renovationexpansion.html" class="nav-link-block">Renovations &amp; Expansions</a>
+                <a href="welding.html" class="nav-link-block">Welding &amp; Fabrication</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="projects.html" class="header-link">Projects</a></li>
+          <li><a href="contact.html" class="header-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- RIGHT CTA -->
+      <div class="header-right hidden md:flex">
         <button onclick="openPanel(event)" class="btn btn-primary btn-sm hover-grow header-cta-btn">
           Get in Touch
         </button>
       </div>
 
-      <!-- Mobile Hamburger -->
+      <!-- MOBILE TOGGLE -->
       <button class="md:hidden mobile-toggle-btn" onclick="toggleMenu()" aria-label="Open menu">
         &#9776;
       </button>
-
     </div>
   </div>
-
-  <!-- DECORATIVE SHAPE -->
-  <div class="header-shape"></div>
-
-  <!-- DESKTOP NAV -->
-  <nav class="hidden md:block">
-    <div class="container mx-auto px-4 flex items-center justify-center">
-      <ul class="flex items-center space-x-10 text-white font-semibold nav-list">
-
-        <li><a href="index.html" class="header-link">Home</a></li>
-        <li><a href="aboutus.html" class="header-link">About Us</a></li>
-
-        <li class="group relative">
-          <button class="header-link" type="button">Services</button>
-
-          <div class="dropdown-menu dropdown-services dropdown-services-two-col">
-            <div class="dropdown-col">
-              <div class="dropdown-heading">Core Services</div>
-              <a href="preconstruction.html" class="nav-link-block">Pre-Construction</a>
-              <a href="constructionmanagement.html" class="nav-link-block">Construction Management</a>
-              <a href="designbuild.html" class="nav-link-block">Design-Build</a>
-              <a href="generalcontracting.html" class="nav-link-block">General Contracting</a>
-              <a href="masterserviceagreements.html" class="nav-link-block">Master Service Agreements</a>
-            </div>
-
-            <div class="dropdown-col">
-              <div class="dropdown-heading">Additional Services</div>
-              <a href="renovationexpansion.html" class="nav-link-block">Renovations &amp; Expansions</a>
-              <a href="welding.html" class="nav-link-block">Welding &amp; Fabrication</a>
-            </div>
-          </div>
-        </li>
-
-        <li><a href="projects.html" class="header-link">Projects</a></li>
-        <li><a href="contact.html" class="header-link">Contact</a></li>
-
-      </ul>
-    </div>
-  </nav>
 
   <!-- MOBILE MENU -->
   <div id="mobileMenu" class="hidden md:hidden">
@@ -88,7 +79,7 @@
             </div>
 
             <div>
-              <div class="mobile-services-heading">Additional Services</div>
+              <div class="mobile-services-heading">More Services</div>
               <a href="renovationexpansion.html">Renovations &amp; Expansions</a>
               <a href="welding.html">Welding &amp; Fabrication</a>
             </div>
@@ -97,7 +88,6 @@
 
         <li><a href="projects.html" class="header-link">Projects</a></li>
         <li><a href="contact.html" class="header-link">Contact</a></li>
-
       </ul>
     </div>
   </div>
