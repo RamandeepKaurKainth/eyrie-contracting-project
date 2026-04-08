@@ -8,6 +8,6 @@ export const companyInfo = {
 
     phone: "604-996-7586",
     phoneHref: "6049967586",
-    email: "admin@eyriecontracting.com",
+    email: "info@eyriecontracting.com",
     bussinessHour:"Mon-Fri: 8:00 AM - 5:00 PM"
 };

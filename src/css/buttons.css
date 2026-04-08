@@ -64,3 +64,32 @@
 .btn-close {
   margin-top: 2rem;
 }
+
+.service-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.75rem;
+  padding: 0.95rem 1.7rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.96rem;
+  text-decoration: none;
+  box-shadow: 0 16px 38px rgba(234, 88, 12, 0.22);
+  transition: all 0.28s ease;
+}
+
+.service-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px rgba(234, 88, 12, 0.3);
+}
+
+@media (max-width: 640px) {
+  .service-cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.4rem;
+  }
+}
