@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initCounters();
-  initPartnerLogos();
+  initSectorCards();
+  initPartnerRow();
 });
 
 function initCounters() {
@@ -63,102 +64,103 @@ function initCounters() {
   observer.observe(metricsSection);
 }
 
-function initPartnerLogos() {
-  const cards = [
-    document.getElementById("partner1"),
-    document.getElementById("partner2"),
-    document.getElementById("partner3"),
-    document.getElementById("partner4"),
-    document.getElementById("partner5"),
-    document.getElementById("partner6")
+function initSectorCards() {
+  const cards = document.querySelectorAll(".interactive-sector-card");
+
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.addEventListener(
+      "touchstart",
+      () => {
+        cards.forEach((c) => {
+          if (c !== card) c.classList.remove("is-active");
+        });
+
+        card.classList.toggle("is-active");
+      },
+      { passive: true }
+    );
+
+    card.addEventListener("mouseenter", () => {
+      card.classList.add("is-active");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.classList.remove("is-active");
+    });
+  });
+}
+
+function initPartnerRow() {
+  const partnerRow = document.getElementById("partnerRow");
+  if (!partnerRow) return;
+
+  const partnerSets = [
+    [
+      "Amazon",
+      "FedEx",
+      "Royal Columbian Hospital",
+      "City of Vancouver",
+      "Starbucks",
+      "Chevron"
+    ],
+    [
+      "Saputo",
+      "McAsphalt Industries",
+      "Dorigo Systems Ltd.",
+      "Columbia Fuels",
+      "Top Producers Realty",
+      "HTEC"
+    ],
+    [
+      "NextGen Integrated Systems",
+      "NextLeaf Solutions",
+      "Glass Tech",
+      "City of Vancouver Parks Board",
+      "Progressive Steel Industries",
+      "SeaGate Mass Timber"
+    ]
   ];
 
-  if (cards.some((card) => !card)) return;
-
-  const partnersA = [
-    { name: "Amazon" },
-    { name: "FedEx" },
-    { name: "Royal Columbian Hospital" },
-    { name: "City of Vancouver" },
-    { name: "Starbucks" },
-    { name: "Chevron" }
-  ];
-
-  const partnersB = [
-    { name: "Saputo" },
-    { name: "McAsphalt Industries" },
-    { name: "Dorigo Systems Ltd." },
-    { name: "Columbia Fuels" },
-    { name: "Top Producers Realty" },
-    { name: "HTEC" }
-  ];
-
-  const partnersC = [
-    { name: "NextGen Integrated Systems" },
-    { name: "NextLeaf Solutions" },
-    { name: "Glass Tech" },
-    { name: "City of Vancouver Parks Board" },
-    { name: "Progressive Steel Industries" },
-    { name: "SeaGate Mass Timber" }
-  ];
-
-  const partnerSets = [partnersA, partnersB, partnersC];
   let currentSetIndex = 0;
   let intervalId = null;
 
-  function renderPartner(partner) {
-    return `
-      <div class="partner-tile premium-partner-tile">
-        <div class="partner-badge">
-          <span class="partner-badge-label">TRUSTED BY</span>
-          <span class="partner-badge-name">${partner.name}</span>
-        </div>
-      </div>
-    `;
+  function renderRow(items) {
+    partnerRow.innerHTML = items
+      .map(
+        (name) => `
+          <div class="partner-tile">
+            <span class="partner-name">${name}</span>
+          </div>
+        `
+      )
+      .join("");
   }
 
-  function setPartnerLogos(partners) {
-    cards.forEach((card, index) => {
-      if (partners[index]) {
-        card.innerHTML = renderPartner(partners[index]);
-      }
-    });
-  }
-
-  function fadeOutCards() {
-    cards.forEach((card) => {
-      card.classList.remove("fade-in");
-      card.classList.add("fade-out");
-    });
-  }
-
-  function fadeInCards() {
-    cards.forEach((card) => {
-      card.classList.remove("fade-out");
-      card.classList.add("fade-in");
-    });
-  }
-
-  function swapPartnerLogos() {
-    fadeOutCards();
+  function swapRow() {
+    partnerRow.classList.remove("is-fading-in");
+    partnerRow.classList.add("is-fading-out");
 
     setTimeout(() => {
       currentSetIndex = (currentSetIndex + 1) % partnerSets.length;
-      setPartnerLogos(partnerSets[currentSetIndex]);
-      fadeInCards();
-    }, 320);
+      renderRow(partnerSets[currentSetIndex]);
+
+      partnerRow.classList.remove("is-fading-out");
+      partnerRow.classList.add("is-fading-in");
+    }, 300);
   }
 
-  setPartnerLogos(partnerSets[currentSetIndex]);
-  fadeInCards();
+  renderRow(partnerSets[currentSetIndex]);
+  partnerRow.classList.add("is-fading-in");
 
-  intervalId = setInterval(swapPartnerLogos, 4500);
+  intervalId = setInterval(swapRow, 4000);
 
   document.addEventListener("visibilitychange", () => {
     clearInterval(intervalId);
 
     if (!document.hidden) {
-      intervalId = setInterval(swapPartnerLogos, 4500);
+      intervalId = setInterval(swapRow, 4000);
     }
   });
 }

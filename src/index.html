@@ -37,7 +37,7 @@
   <div id="panel-placeholder"></div>
 
   <!-- HERO -->
- <section class="hero-shell relative h-[70vh] min-h-[500px] max-h-[85vh] flex items-center">
+  <section class="hero-shell relative min-h-[760px] lg:min-h-[840px] flex items-center">
     <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
       <source src="videos/index.mp4" type="video/mp4">
     </video>
@@ -46,23 +46,21 @@
     <div class="hero-grid-lines"></div>
 
     <div class="relative z-10 w-full">
-      <div class="container mx-auto px-6 pt-28 pb-36">
+      <div class="container mx-auto px-6 hero-container">
         <div class="hero-layout" data-aos="fade-up" data-aos-duration="1200">
-
           <div class="hero-copy">
+            <h1 class="hero-heading">
+              Eyrie Contracting Inc
+            </h1>
+
+            <p class="hero-text">
+              Trusted partnerships. Exceptional construction.
+            </p>
+
             <div class="hero-pill mb-6">
               <span class="hero-pill-dot"></span>
               Commercial • Industrial • Institutional
             </div>
-
-            <h1 class="hero-heading">
-              Eyrie Contracting.
-            </h1>
-
-            <p class="hero-text">
-              We delivers fully integrated construction services across
-              lower mainland area in BC.
-            </p>
 
             <div class="hero-buttons">
               <button onclick="openPanel(event)" class="btn btn-primary btn-lg hover-grow">
@@ -78,7 +76,7 @@
       </div>
     </div>
 
-    <!-- OVERLAP COUNTERS / CREDENTIALS -->
+    <!-- OVERLAP COUNTERS -->
     <div class="hero-metrics-wrap">
       <div class="container mx-auto px-6">
         <div class="hero-metrics" id="metricsSection">
@@ -116,31 +114,101 @@
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <section class="trust-bar-section">
+  <!-- SECTORS -->
+  <section id="services-overview" class="trust-bar-section">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-8" data-aos="fade-up">
-        <!-- <p class="section-kicker">Project Types</p> -->
-        <h2 class="section-title-main text-slate-900">Services across key sectors.</h2>
-      </div>
+      <div class="sector-cards" data-aos="fade-up" data-aos-delay="100">
 
-      <div class="trust-bar" data-aos="fade-up" data-aos-delay="100">
-        <span>Commercial</span>
-        <span>Industrial</span>
-        <span>Institutional</span>
-        <span>Renovations &amp; Retrofits</span>
-        <span>New Construction</span>
+        <a href="services.html" class="sector-card interactive-sector-card">
+          <div class="sector-card-image">
+            <img
+              class="sector-img sector-img-primary"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+              alt="Commercial construction exterior"
+              loading="lazy">
+            <img
+              class="sector-img sector-img-secondary"
+              src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80"
+              alt="Commercial construction interior"
+              loading="lazy">
+            <div class="sector-card-overlay"></div>
+          </div>
+          <div class="sector-card-content">
+            <h3>Commercial</h3>
+            <span class="sector-card-cta">Explore Services</span>
+          </div>
+        </a>
+
+        <a href="services.html" class="sector-card interactive-sector-card">
+          <div class="sector-card-image">
+            <img
+              class="sector-img sector-img-primary"
+              src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80"
+              alt="Industrial construction systems"
+              loading="lazy">
+            <img
+              class="sector-img sector-img-secondary"
+              src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=80"
+              alt="Industrial construction facility"
+              loading="lazy">
+            <div class="sector-card-overlay"></div>
+          </div>
+          <div class="sector-card-content">
+            <h3>Industrial</h3>
+            <span class="sector-card-cta">Explore Services</span>
+          </div>
+        </a>
+
+        <a href="services.html" class="sector-card interactive-sector-card">
+          <div class="sector-card-image">
+            <img
+              class="sector-img sector-img-primary"
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+              alt="Residential exterior"
+              loading="lazy">
+            <img
+              class="sector-img sector-img-secondary"
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+              alt="Residential interior"
+              loading="lazy">
+            <div class="sector-card-overlay"></div>
+          </div>
+          <div class="sector-card-content">
+            <h3>Residential</h3>
+            <span class="sector-card-cta">Explore Services</span>
+          </div>
+        </a>
+
+        <a href="services.html" class="sector-card interactive-sector-card">
+          <div class="sector-card-image">
+            <img
+              class="sector-img sector-img-primary"
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+              alt="Institutional hallway"
+              loading="lazy">
+            <img
+              class="sector-img sector-img-secondary"
+              src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80"
+              alt="Institutional building"
+              loading="lazy">
+            <div class="sector-card-overlay"></div>
+          </div>
+          <div class="sector-card-content">
+            <h3>Institutional</h3>
+            <span class="sector-card-cta">Explore Services</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
   <!-- VALUE PROPOSITION -->
-  <section class="py-24 bg-[#f3f3ef]">
+  <section class="value-section py-24">
     <div class="container mx-auto px-6">
       <div class="value-grid">
 
         <div data-aos="fade-right">
-          <!-- <p class="section-kicker">Value Proposition</p> -->
           <h2 class="value-heading">
             Comprehensive construction services, built for performance.
           </h2>
@@ -162,7 +230,6 @@
 
         <div class="value-cards" data-aos="fade-left">
           <div class="value-card">
-            <!-- <p class="value-card-number">01</p> -->
             <h3>Risk + Execution Capability</h3>
             <p>
               Structured systems and planning that support project control,
@@ -171,7 +238,6 @@
           </div>
 
           <div class="value-card">
-            <!-- <p class="value-card-number">02</p> -->
             <h3>Project Size + Complexity</h3>
             <p>
               Scalable delivery across commercial, industrial, institutional,
@@ -180,7 +246,6 @@
           </div>
 
           <div class="value-card">
-            <!-- <p class="value-card-number">03</p> -->
             <h3>Communication + Reporting</h3>
             <p>
               Clear project visibility through disciplined coordination,
@@ -189,7 +254,6 @@
           </div>
 
           <div class="value-card">
-            <!-- <p class="value-card-number">04</p> -->
             <h3>Multi-Sector Experience</h3>
             <p>
               Experience across a wide range of project types with a focus on
@@ -202,11 +266,57 @@
     </div>
   </section>
 
+  <!-- PARTNERS -->
+  <section class="py-18 bg-[#f3f3ef]">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <h2 class="section-title-main text-slate-900">Trusted across multiple sectors.</h2>
+        <p class="section-copy max-w-3xl mx-auto">
+          Selected past clients, partners, and projects across commercial, industrial,
+          and institutional environments.
+        </p>
+      </div>
+
+      <div class="partner-row-wrap" data-aos="fade-up">
+        <div class="partner-row" id ="partnerRow">
+        </div>
+      </div>
+      <!-- <div class="partner-scroll-wrapper" data-aos="fade-up">
+        <div class="partner-scroll">
+          <div class="partner-tile"><span class="partner-name">Amazon</span></div>
+          <div class="partner-tile"><span class="partner-name">FedEx</span></div>
+          <div class="partner-tile"><span class="partner-name">Royal Columbian Hospital</span></div>
+          <div class="partner-tile"><span class="partner-name">City of Vancouver</span></div>
+          <div class="partner-tile"><span class="partner-name">Starbucks</span></div>
+          <div class="partner-tile"><span class="partner-name">Chevron</span></div>
+          <div class="partner-tile"><span class="partner-name">Saputo</span></div>
+          <div class="partner-tile"><span class="partner-name">McAsphalt Industries</span></div>
+          <div class="partner-tile"><span class="partner-name">Dorigo Systems Ltd.</span></div>
+          <div class="partner-tile"><span class="partner-name">Columbia Fuels</span></div>
+          <div class="partner-tile"><span class="partner-name">Top Producers Realty</span></div>
+          <div class="partner-tile"><span class="partner-name">HTEC</span></div>
+
+          <div class="partner-tile"><span class="partner-name">Amazon</span></div>
+          <div class="partner-tile"><span class="partner-name">FedEx</span></div>
+          <div class="partner-tile"><span class="partner-name">Royal Columbian Hospital</span></div>
+          <div class="partner-tile"><span class="partner-name">City of Vancouver</span></div>
+          <div class="partner-tile"><span class="partner-name">Starbucks</span></div>
+          <div class="partner-tile"><span class="partner-name">Chevron</span></div>
+          <div class="partner-tile"><span class="partner-name">Saputo</span></div>
+          <div class="partner-tile"><span class="partner-name">McAsphalt Industries</span></div>
+          <div class="partner-tile"><span class="partner-name">Dorigo Systems Ltd.</span></div>
+          <div class="partner-tile"><span class="partner-name">Columbia Fuels</span></div>
+          <div class="partner-tile"><span class="partner-name">Top Producers Realty</span></div>
+          <div class="partner-tile"><span class="partner-name">HTEC</span></div>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
   <!-- CREDENTIALS -->
   <section class="py-14 bg-white border-y border-gray-200">
     <div class="container mx-auto px-6">
       <div class="text-center mb-10" data-aos="fade-up">
-        <!-- <p class="section-kicker">Credentials</p> -->
         <h2 class="section-title-main text-slate-900">Compliance, certification, and trusted standards.</h2>
       </div>
 
@@ -215,22 +325,21 @@
           <img
             src="https://seal-mbc.bbb.org/logo/ruvtbul/bbb-2437700.png"
             alt="BBB Business Review"
-            class="bbb-big-logo"
-          >
+            class="bbb-big-logo">
         </div>
 
         <div class="credential-card" data-aos="fade-up" data-aos-delay="130">
           <img
             src="images/471CertMark.jpg"
             alt="CWB Certification Mark"
-            class="cwb-logo"
-          >
+            class="cwb-logo">
         </div>
 
-        <div class="credential-card credential-text" data-aos="fade-up" data-aos-delay="180">
-          <p>
-            Eyrie Contracting Inc. is registered and in good standing with WorkSafeBC.
-          </p>
+        <div class="credential-card credential-brand-light" data-aos="fade-up" data-aos-delay="180">
+          <div class="credential-brand-box">
+            <span class="credential-brand-top">Safety Standard</span>
+            <p class="worksafe-wordmark">WorkSafeBC<span class="tm">™</span></p>
+          </div>
         </div>
 
         <div class="credential-card credential-text muted" data-aos="fade-up" data-aos-delay="230">
@@ -242,34 +351,22 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  <section class="py-18 bg-[#f3f3ef]">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-10" data-aos="fade-up">
-        <!-- <p class="section-kicker">Expertise</p> -->
-        <h2 class="section-title-main text-slate-900">Trusted by partners, clients, and organizations across multiple sectors.</h2>
-        <p class="section-copy max-w-3xl mx-auto">
-          Selected past clients, partners, and projects across commercial, industrial,
-          and institutional environments.
-        </p>
-      </div>
-
-      <div class="partner-strip" data-aos="fade-up">
-        <div id="partner1" class="partner-strip-item fade-in"></div>
-        <div id="partner2" class="partner-strip-item fade-in"></div>
-        <div id="partner3" class="partner-strip-item fade-in"></div>
-        <div id="partner4" class="partner-strip-item fade-in"></div>
-        <div id="partner5" class="partner-strip-item fade-in"></div>
-        <div id="partner6" class="partner-strip-item fade-in"></div>
-      </div>
-    </div>
-  </section>
-
   <!-- EXECUTION -->
   <section class="execution-section">
-    <div class="container mx-auto px-6">
+    <video
+      class="execution-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80">
+      <source src="videos/execution.mp4" type="video/mp4">
+    </video>
+
+    <div class="execution-overlay"></div>
+
+    <div class="container mx-auto px-6 execution-content">
       <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
-        <!-- <p class="section-kicker text-orange-400">Execution</p> -->
         <h2 class="section-title-main text-white">Built around coordination, safety, and reliable delivery.</h2>
       </div>
 
@@ -305,72 +402,6 @@
             to resolve conflicts and optimize the construction schedule.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services-overview" class="py-24 bg-[#f3f3ef]">
-    <div class="container mx-auto px-6">
-      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
-        <!-- <p class="section-kicker">Services</p> -->
-        <h2 class="section-title-main text-slate-900">Strategically scaled solutions for every build.</h2>
-        <p class="section-copy">
-          We provide fully customized project solutions, strategically scaled to meet the
-          specific demands of every build.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <a href="preconstruction.html" class="service-box" data-aos="fade-up" data-aos-delay="50">
-          <div class="service-box-image">
-            <img src="images/preconstruction.webp" alt="Pre-Construction">
-          </div>
-          <div class="service-box-content">
-            <p class="service-tag">Pre-Construction</p>
-            <h3>Early planning, value engineering, constructability reviews, and strategic procurement support.</h3>
-          </div>
-        </a>
-
-        <a href="constructionmanagement.html" class="service-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-box-image">
-            <img src="images/constructionmanagement.webp" alt="Construction Management">
-          </div>
-          <div class="service-box-content">
-            <p class="service-tag">Construction Management</p>
-            <h3>Clear communication, accountability, and real-time coordination across schedule, cost, and progress.</h3>
-          </div>
-        </a>
-
-        <a href="designbuild.html" class="service-box" data-aos="fade-up" data-aos-delay="150">
-          <div class="service-box-image">
-            <img src="images/designbuild.webp" alt="Design-Build">
-          </div>
-          <div class="service-box-content">
-            <p class="service-tag">Design-Build</p>
-            <h3>Integrated delivery from concept through completion with tighter alignment on cost, timeline, and quality.</h3>
-          </div>
-        </a>
-
-        <a href="generalcontracting.html" class="service-box" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-box-image">
-            <img src="images/commercial construction project 1.webp" alt="General Contracting">
-          </div>
-          <div class="service-box-content">
-            <p class="service-tag">General Contracting</p>
-            <h3>Reliable execution across commercial, industrial, and institutional projects with disciplined reporting.</h3>
-          </div>
-        </a>
-
-        <a href="masterserviceagreements.html" class="service-box" data-aos="fade-up" data-aos-delay="250">
-          <div class="service-box-image">
-            <img src="images/project-management-approach.webp" alt="Master Service Agreements">
-          </div>
-          <div class="service-box-content">
-            <p class="service-tag">Master Service Agreements</p>
-            <h3>Consistent delivery across ongoing project needs, upgrades, retrofits, repairs, and portfolio work.</h3>
-          </div>
-        </a>
       </div>
     </div>
   </section>
