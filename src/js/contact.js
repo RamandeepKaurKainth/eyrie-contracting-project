@@ -1,39 +1,42 @@
-
 import { companyInfo } from "./company.js";
 
-document.getElementById("companyName").innerText = companyInfo.name;
-//document.getElementById("country").innerText = companyInfo.country;
-document.getElementById("address1").innerText = companyInfo.address1;
-document.getElementById("city").innerText = companyInfo.city;
-document.getElementById("province").innerText = companyInfo.Province;
-document.getElementById("postalCode").innerText = companyInfo.postalCode;
+function fillContactInfo() {
+  const companyName = document.getElementById("companyName");
+  const phone = document.getElementById("phone");
+  const phoneLink = document.getElementById("phoneLink");
+  const email = document.getElementById("email");
+  const emailLink = document.getElementById("emailLink");
+  const officeHour = document.getElementById("officeHour");
 
-document.getElementById("phone").innerText = companyInfo.phone;
-document.getElementById("phone").href ="tel:" + companyInfo.phoneHref;
-document.getElementById("phoneLink").href = "tel:" + companyInfo.phoneHref;
+  if (companyName) companyName.innerText = companyInfo.name;
 
-document.getElementById("email").innerText = companyInfo.email;
-document.getElementById("email").href = "mailto:" + companyInfo.email;
-document.getElementById("emailLink").href = "mailto:" + companyInfo.email;
-
-document.getElementById("officeHour").innerText = companyInfo.bussinessHour;
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(e.target);
-  console.log(formData);
-
-  const response = await fetch("http://localhost:3000/send-email", {
-    method: "POST",
-    body: formData
-  });
-
-  const result = await response.json();
-  if (result.success) {
-    alert("Your request has been sent!");
-  } else {
-    alert("Error sending message");
+  if (phone) {
+    phone.innerText = companyInfo.phone;
+    phone.href = `tel:${companyInfo.phoneHref}`;
   }
+
+  if (phoneLink) {
+    phoneLink.href = `tel:${companyInfo.phoneHref}`;
+  }
+
+  if (email) {
+    email.innerText = companyInfo.email;
+    email.href = `mailto:${companyInfo.email}`;
+  }
+
+  if (emailLink) {
+    emailLink.href = `mailto:${companyInfo.email}`;
+  }
+
+  if (officeHour) {
+    officeHour.innerText = companyInfo.businessHours;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fillContactInfo();
+
+  setTimeout(() => {
+    fillContactInfo();
+  }, 300);
 });
-
-

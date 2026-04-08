@@ -2,25 +2,28 @@ Promise.all([fetch("footer.html").then(res => res.text())])
   .then(async ([footerHtml]) => {
     document.getElementById("footer-placeholder").innerHTML = footerHtml;
 
-    // Now update footer info
     const { companyInfo } = await import("./company.js");
 
-    document.getElementById("phone").innerText = companyInfo.phone;
-    document.getElementById("phone").href = "tel:" + companyInfo.phoneHref;
+    const footerPhone = document.getElementById("footer-phone");
+    const footerEmail = document.getElementById("footer-email");
+    const footerOfficeHour = document.getElementById("footer-officeHour");
 
-    document.getElementById("email").innerText = companyInfo.email;
-    document.getElementById("email").href = "mailto:" + companyInfo.email;
-
-    // Fix comma between city and province
-    const city = document.getElementById("city")?.innerText.trim();
-    const province = document.getElementById("province")?.innerText.trim();
-    const cityComma = document.getElementById("cityComma");
-
-    if (cityComma) {
-      cityComma.innerText = city && province ? ", " : "";
+    if (footerPhone) {
+      footerPhone.innerText = companyInfo.phone;
+      footerPhone.href = `tel:${companyInfo.phoneHref}`;
     }
 
-    // Refresh AOS for animations
-    if (AOS) AOS.refresh();
+    if (footerEmail) {
+      footerEmail.innerText = companyInfo.email;
+      footerEmail.href = `mailto:${companyInfo.email}`;
+    }
+
+    if (footerOfficeHour) {
+      footerOfficeHour.innerText = companyInfo.businessHours;
+    }
+
+    if (typeof AOS !== "undefined") {
+      AOS.refresh();
+    }
   })
   .catch(err => console.error("Error loading footer:", err));
