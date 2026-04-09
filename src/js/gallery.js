@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       this.seo = seo;
     }
 
+    
     render(projectIndex, onCreateVideo) {
       const wrapper = document.createElement("article");
       wrapper.className =
