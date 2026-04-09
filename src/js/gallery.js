@@ -35,14 +35,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   class GalleryItem {
-    constructor(title, description, media = [], seo = []) {
+    constructor(title, description, media = []) {
       this.title = title;
       this.description = description;
       this.media = prioritizeMedia(media);
-      this.seo = seo;
     }
 
-    
     render(projectIndex, onCreateVideo) {
       const wrapper = document.createElement("article");
       wrapper.className =
@@ -123,10 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const content = document.createElement("div");
       content.className = "md:col-span-1";
 
-      const kicker = document.createElement("div");
-      kicker.className = "project-kicker";
-      kicker.textContent = "Project Category";
-
       const heading = document.createElement("h3");
       heading.className = "text-2xl font-bold text-gray-800";
       heading.textContent = this.title;
@@ -135,23 +129,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       text.className = "text-gray-600 mt-3 leading-relaxed";
       text.textContent = this.description;
 
-      content.appendChild(kicker);
       content.appendChild(heading);
       content.appendChild(text);
-
-      if (this.seo.length) {
-        const tagWrap = document.createElement("div");
-        tagWrap.className = "project-tag-wrap";
-
-        this.seo.forEach((tag) => {
-          const pill = document.createElement("span");
-          pill.className = "project-tag";
-          pill.textContent = tag;
-          tagWrap.appendChild(pill);
-        });
-
-        content.appendChild(tagWrap);
-      }
 
       viewport.appendChild(track);
 
@@ -197,41 +176,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     new GalleryItem(
       "Design Concepts",
       "Our Design Concepts represent the strategic foundation of successful construction projects, integrating architectural vision, constructability, and cost planning from the outset. This section highlights conceptual designs, feasibility studies, and pre-construction planning for commercial, industrial, and institutional developments. We collaborate closely with clients, consultants, and stakeholders to develop buildable, code-compliant, and budget-aligned solutions, ensuring each concept is optimized for municipal approvals and long-term performance.",
-      buildImageMedia(sanityData?.project1_media || []),
-      [
-        "Design-Build Contractor Vancouver",
-        "Construction Planning Services",
-        "Commercial Design Development",
-        "Pre-Construction Services BC",
-        "Feasibility Studies Construction",
-        "Cost Planning Contractor Vancouver"
-      ]
+      buildImageMedia(sanityData?.project1_media || [])
     ),
     new GalleryItem(
       "Commercial Tenant Improvements",
       "Our Commercial Tenant Improvement projects demonstrate our expertise in delivering high-quality interior construction and fit-outs across office, retail, hospitality, and institutional environments. We specialize in transforming spaces to meet evolving operational needs while maintaining strict adherence to schedule, budget, and regulatory compliance. With experience working within occupied buildings, we prioritize phased construction, minimal disruption, and coordinated delivery.",
-      buildImageMedia(sanityData?.project2_media || []),
-      [
-        "Commercial Tenant Improvement Contractor Vancouver",
-        "Office Fit-Out Construction",
-        "Retail Renovation Contractor BC",
-        "Interior Construction Services Vancouver",
-        "Commercial Renovations Vancouver BC",
-        "Tenant Improvement Specialists"
-      ]
+      buildImageMedia(sanityData?.project2_media || [])
     ),
     new GalleryItem(
       "Industrial Expansions",
       "Our Industrial Expansions showcase complex projects focused on facility growth, operational efficiency, and infrastructure upgrades within active industrial environments. This includes structural expansions, equipment integration, and system modernization tailored to manufacturing, logistics, and processing facilities. We deliver these projects with a strong emphasis on safety, sequencing, and operational continuity, supporting clients with scalable long-term expansion strategies.",
-      buildImageMedia(sanityData?.project3_media || []),
-      [
-        "Industrial Construction Contractor Vancouver",
-        "Warehouse Expansion Contractor",
-        "Manufacturing Facility Upgrades BC",
-        "Industrial Project Management Canada",
-        "Plant Expansion Construction",
-        "Heavy Commercial Contractor Vancouver"
-      ]
+      buildImageMedia(sanityData?.project3_media || [])
     )
   ];
 

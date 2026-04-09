@@ -292,39 +292,6 @@ body {
   font-size: 1rem;
 }
 
-.project-kicker {
-  display: inline-block;
-  margin-bottom: 0.9rem;
-  padding: 0.42rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(249, 115, 22, 0.09);
-  color: #c2410c;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.project-tag-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 1.1rem;
-}
-
-.project-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.58rem 0.9rem;
-  border-radius: 999px;
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
-  color: #9a3412;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
 @media (max-width: 1024px) {
   .hero-heading {
     max-width: 12ch;
@@ -385,10 +352,5 @@ body {
   .gallery-card p {
     font-size: 0.98rem;
     line-height: 1.8;
-  }
-
-  .project-tag {
-    font-size: 0.76rem;
-    padding: 0.52rem 0.78rem;
   }
 }
