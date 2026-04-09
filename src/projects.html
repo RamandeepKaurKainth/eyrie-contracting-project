@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Eyrie Contracting Inc.</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Shared Site CSS -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/links.css" />
   <link rel="stylesheet" href="css/buttons.css" />
@@ -17,26 +15,24 @@
   <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/header.css" />
 
-  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-  <!-- A-Frame for 360 video support -->
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- HEADER -->
   <div id="header-placeholder"></div>
   <div id="panel-placeholder"></div>
 
-  <!-- HERO -->
   <section class="projects-hero flex items-center">
-     <video
-    class="absolute inset-0 w-full h-full object-cover"
-    autoplay muted loop playsinline>
-    <source src="videos/construction_gallery.mp4" type="video/mp4">
-  </video>
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline>
+      <source src="videos/construction_gallery.mp4" type="video/mp4">
+    </video>
 
     <div class="relative z-10 w-full">
       <div class="container mx-auto px-6 pt-28 pb-28">
@@ -64,37 +60,32 @@
     </div>
   </section>
 
-  <!-- PROJECTS GRID -->
   <section class="projects-wrap container mx-auto px-6 pb-20">
     <div id="gallery-list" class="space-y-10" data-aos="fade-up" data-aos-duration="1000"></div>
   </section>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4">
-    <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl" aria-label="Close lightbox">
+  <div id="lightbox" class="fixed inset-0 bg-black/80 hidden z-[9999] flex items-center justify-center p-4">
+    <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl leading-none" aria-label="Close lightbox">
       &times;
     </button>
 
-    <button id="prevBtn" class="absolute left-6 text-white text-4xl" aria-label="Previous media">
+    <button id="prevBtn" class="absolute left-6 text-white text-4xl leading-none" aria-label="Previous media">
       &#10094;
     </button>
 
-    <button id="nextBtn" class="absolute right-6 text-white text-4xl" aria-label="Next media">
+    <button id="nextBtn" class="absolute right-6 text-white text-4xl leading-none" aria-label="Next media">
       &#10095;
     </button>
 
-    <div id="lightboxMedia" class="max-h-[80vh] max-w-[80vw] rounded-xl shadow-2xl overflow-hidden"></div>
+    <div id="lightboxMedia" class="max-h-[80vh] max-w-[88vw] rounded-xl shadow-2xl overflow-hidden"></div>
   </div>
 
-  <!-- FOOTER -->
   <div id="footer-placeholder"></div>
 
-  <!-- JS FILES -->
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/gallery.js"></script>
 
-  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({

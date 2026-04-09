@@ -9,9 +9,7 @@ body {
   color: #1f2937;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .projects-hero {
   position: relative;
   min-height: 72vh;
@@ -19,6 +17,10 @@ body {
   background-size: cover;
   background-position: center;
   isolation: isolate;
+}
+
+.projects-hero video {
+  z-index: 0;
 }
 
 .projects-hero::before {
@@ -42,16 +44,6 @@ body {
   background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
   pointer-events: none;
   z-index: 1;
-}
-
-.hero-overlay-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 160px;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.28), transparent);
-  pointer-events: none;
 }
 
 .hero-pill {
@@ -111,9 +103,7 @@ body {
   z-index: 20;
 }
 
-/* =========================
-   LIGHTBOX
-========================= */
+/* LIGHTBOX */
 #lightboxMedia {
   transform: scale(0.95);
   opacity: 0;
@@ -125,9 +115,7 @@ body {
   opacity: 1;
 }
 
-/* =========================
-   GALLERY CARDS
-========================= */
+/* GALLERY */
 .gallery-card {
   position: relative;
   border-radius: 1.75rem;
@@ -192,22 +180,16 @@ body {
 
 .gallery-slide img {
   transition: transform 0.65s ease;
+  cursor: pointer;
 }
 
 .gallery-card:hover .gallery-slide img {
   transform: scale(1.04);
 }
 
-.gallery-video {
-  background: #111;
-}
-
+.gallery-video,
 .gallery-360 {
   background: #111;
-}
-
-.gallery-360 .a-canvas {
-  outline: none;
 }
 
 .gallery-controls {
@@ -288,7 +270,7 @@ body {
   background: rgba(255, 255, 255, 0.42);
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, width 0.2s ease;
+  transition: background 0.2s ease, width 0.2s ease;
 }
 
 .gallery-dot.is-active {
@@ -310,29 +292,39 @@ body {
   font-size: 1rem;
 }
 
-/* Optional visual polish for text side if using Tailwind col span */
-.gallery-card .md\:col-span-1 {
-  position: relative;
-}
-
-.gallery-card .md\:col-span-1::before {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
+.project-kicker {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.42rem 0.8rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #f97316, #fb923c);
-  margin-bottom: 1rem;
+  background: rgba(249, 115, 22, 0.09);
+  color: #c2410c;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* 360 active state */
-.gallery-viewport.is-360-active {
-  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+.project-tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.58rem 0.9rem;
+  border-radius: 999px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 @media (max-width: 1024px) {
   .hero-heading {
     max-width: 12ch;
@@ -362,8 +354,8 @@ body {
   }
 
   .hero-subtext {
-    font-size: 1.2rem;
-    line-height: 1.85;
+    font-size: 1.08rem;
+    line-height: 1.8;
   }
 
   .projects-wrap {
@@ -386,11 +378,6 @@ body {
     font-size: 1.25rem;
   }
 
-  .gallery-card .md\:col-span-1::before {
-    width: 58px;
-    margin-bottom: 0.85rem;
-  }
-
   .gallery-card h3 {
     font-size: 1.45rem;
   }
@@ -398,5 +385,10 @@ body {
   .gallery-card p {
     font-size: 0.98rem;
     line-height: 1.8;
+  }
+
+  .project-tag {
+    font-size: 0.76rem;
+    padding: 0.52rem 0.78rem;
   }
 }

@@ -1,17 +1,17 @@
-document.addEventListener("DOMContentLoaded", async() => {
-  const projectId = 'eko1zm8z';
-  const dataset = 'production';
+document.addEventListener("DOMContentLoaded", async () => {
+  const projectId = "eko1zm8z";
+  const dataset = "production";
 
-  // Convert Sanity image _ref to real URL
   function urlFor(ref) {
-    const [id, dimensions, format] = ref.replace('image-', '').split('-');
+    const [id, dimensions, format] = ref.replace("image-", "").split("-");
     return `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${dimensions}.${format}`;
   }
 
-  // Fetch Sanity data
-  const sanityData = await fetch(`https://${projectId}.api.sanity.io/v2026-04-02/data/query/${dataset}?query=*[_type=="projects"][0]`)
-    .then(res => res.json())
-    .then(res => res.result);
+  const sanityData = await fetch(
+    `https://${projectId}.api.sanity.io/v2026-04-02/data/query/${dataset}?query=*[_type=="projects"][0]`
+  )
+    .then((res) => res.json())
+    .then((res) => res.result);
 
   const MEDIA_PRIORITY = {
     video360: 0,
@@ -27,16 +27,25 @@ document.addEventListener("DOMContentLoaded", async() => {
     });
   }
 
+  function buildImageMedia(items = []) {
+    return items.map((item) => ({
+      type: "image",
+      src: urlFor(item.asset._ref)
+    }));
+  }
+
   class GalleryItem {
-    constructor(title, description, media = []) {
+    constructor(title, description, media = [], seo = []) {
       this.title = title;
       this.description = description;
       this.media = prioritizeMedia(media);
+      this.seo = seo;
     }
 
     render(projectIndex, onCreateVideo) {
       const wrapper = document.createElement("article");
-      wrapper.className = "gallery-card bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-4 gap-8 items-center p-6";
+      wrapper.className =
+        "gallery-card bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-4 gap-8 items-center p-6";
       wrapper.dataset.projectIndex = projectIndex.toString();
 
       const media = document.createElement("div");
@@ -48,10 +57,12 @@ document.addEventListener("DOMContentLoaded", async() => {
       const track = document.createElement("div");
       track.className = "gallery-track";
       track.dataset.activeIndex = "0";
+
       const imageIndexes = this.media
         .map((mediaItem, idx) => ({ type: mediaItem.type, idx }))
         .filter((item) => item.type === "image")
         .map((item) => item.idx);
+
       track.dataset.imageIndexes = imageIndexes.join(",");
       track.dataset.autoRotate = imageIndexes.length > 1 ? "true" : "false";
 
@@ -111,6 +122,10 @@ document.addEventListener("DOMContentLoaded", async() => {
       const content = document.createElement("div");
       content.className = "md:col-span-1";
 
+      const kicker = document.createElement("div");
+      kicker.className = "project-kicker";
+      kicker.textContent = "Project Category";
+
       const heading = document.createElement("h3");
       heading.className = "text-2xl font-bold text-gray-800";
       heading.textContent = this.title;
@@ -119,14 +134,34 @@ document.addEventListener("DOMContentLoaded", async() => {
       text.className = "text-gray-600 mt-3 leading-relaxed";
       text.textContent = this.description;
 
+      content.appendChild(kicker);
       content.appendChild(heading);
       content.appendChild(text);
+
+      if (this.seo.length) {
+        const tagWrap = document.createElement("div");
+        tagWrap.className = "project-tag-wrap";
+
+        this.seo.forEach((tag) => {
+          const pill = document.createElement("span");
+          pill.className = "project-tag";
+          pill.textContent = tag;
+          tagWrap.appendChild(pill);
+        });
+
+        content.appendChild(tagWrap);
+      }
+
       viewport.appendChild(track);
-      controls.appendChild(dim);
-      controls.appendChild(leftArrow);
-      controls.appendChild(rightArrow);
-      controls.appendChild(dots);
-      viewport.appendChild(controls);
+
+      if (this.media.length > 1) {
+        controls.appendChild(dim);
+        controls.appendChild(leftArrow);
+        controls.appendChild(rightArrow);
+        controls.appendChild(dots);
+        viewport.appendChild(controls);
+      }
+
       media.appendChild(viewport);
 
       if (projectIndex % 2 === 0) {
@@ -159,28 +194,43 @@ document.addEventListener("DOMContentLoaded", async() => {
 
   const data = [
     new GalleryItem(
-      "Commercial Office Fit-Out",
-      "Interior tenant improvement project delivering a modern office environment with coordinated finishes, mechanical upgrades, and efficient space planning.",
-      sanityData.project1_media.map(item => ({
-      type: "image",
-      src: urlFor(item.asset._ref) // converts _ref to real URL
-    }))
+      "Design Concepts",
+      "Our Design Concepts represent the strategic foundation of successful construction projects, integrating architectural vision, constructability, and cost planning from the outset. This section highlights conceptual designs, feasibility studies, and pre-construction planning for commercial, industrial, and institutional developments. We collaborate closely with clients, consultants, and stakeholders to develop buildable, code-compliant, and budget-aligned solutions, ensuring each concept is optimized for municipal approvals and long-term performance.",
+      buildImageMedia(sanityData?.project1_media || []),
+      [
+        "Design-Build Contractor Vancouver",
+        "Construction Planning Services",
+        "Commercial Design Development",
+        "Pre-Construction Services BC",
+        "Feasibility Studies Construction",
+        "Cost Planning Contractor Vancouver"
+      ]
     ),
     new GalleryItem(
-      "Industrial Facility Upgrade",
-      "Structural upgrades and equipment integration completed within an active industrial environment while maintaining operational continuity.",
-      sanityData.project2_media.map(item => ({
-      type: "image",
-      src: urlFor(item.asset._ref) // converts _ref to real URL
-    }))
+      "Commercial Tenant Improvements",
+      "Our Commercial Tenant Improvement projects demonstrate our expertise in delivering high-quality interior construction and fit-outs across office, retail, hospitality, and institutional environments. We specialize in transforming spaces to meet evolving operational needs while maintaining strict adherence to schedule, budget, and regulatory compliance. With experience working within occupied buildings, we prioritize phased construction, minimal disruption, and coordinated delivery.",
+      buildImageMedia(sanityData?.project2_media || []),
+      [
+        "Commercial Tenant Improvement Contractor Vancouver",
+        "Office Fit-Out Construction",
+        "Retail Renovation Contractor BC",
+        "Interior Construction Services Vancouver",
+        "Commercial Renovations Vancouver BC",
+        "Tenant Improvement Specialists"
+      ]
     ),
     new GalleryItem(
-      "Retail Space Renovation",
-      "Full renovation including demolition, rebuild, and finish installation aligned with operational needs, brand standards, and overall project functionality.",
-      sanityData.project3_media.map(item => ({
-      type: "image",
-      src: urlFor(item.asset._ref) // converts _ref to real URL
-    }))
+      "Industrial Expansions",
+      "Our Industrial Expansions showcase complex projects focused on facility growth, operational efficiency, and infrastructure upgrades within active industrial environments. This includes structural expansions, equipment integration, and system modernization tailored to manufacturing, logistics, and processing facilities. We deliver these projects with a strong emphasis on safety, sequencing, and operational continuity, supporting clients with scalable long-term expansion strategies.",
+      buildImageMedia(sanityData?.project3_media || []),
+      [
+        "Industrial Construction Contractor Vancouver",
+        "Warehouse Expansion Contractor",
+        "Manufacturing Facility Upgrades BC",
+        "Industrial Project Management Canada",
+        "Plant Expansion Construction",
+        "Heavy Commercial Contractor Vancouver"
+      ]
     )
   ];
 
@@ -191,17 +241,12 @@ document.addEventListener("DOMContentLoaded", async() => {
   const nextBtn = document.getElementById("nextBtn");
   const prevBtn = document.getElementById("prevBtn");
 
-  const managedVideos = new Set();
   const rotationTimers = new WeakMap();
-  let scrollBeforeFullscreen = null;
-
   let currentProjectIndex = 0;
   let currentMediaIndex = 0;
 
   const view = new GalleryView(data, listElement);
-  view.render((video) => {
-    registerManagedVideo(video);
-  });
+  view.render(() => {});
 
   preloadGalleryImages(data);
 
@@ -213,9 +258,6 @@ document.addEventListener("DOMContentLoaded", async() => {
       scheduleRotation(track, 3500);
     }
   });
-
-  createVideoVisibilityObserver();
-  setupFullscreenScrollLock();
 
   function preloadGalleryImages(items) {
     const imageSources = new Set();
@@ -232,7 +274,6 @@ document.addEventListener("DOMContentLoaded", async() => {
       const image = new Image();
       image.decoding = "async";
       image.src = src;
-
       if (typeof image.decode === "function") {
         image.decode().catch(() => {});
       }
@@ -249,9 +290,6 @@ document.addEventListener("DOMContentLoaded", async() => {
     video.playsInline = true;
     video.controls = true;
     video.preload = "metadata";
-    video.dataset.galleryVideo = "true";
-    video.dataset.galleryVideoKind = "standard";
-    video.tabIndex = 0;
     if (poster) {
       video.poster = poster;
     }
@@ -265,8 +303,6 @@ document.addEventListener("DOMContentLoaded", async() => {
     const scene = document.createElement("a-scene");
     scene.setAttribute("embedded", "");
     scene.setAttribute("vr-mode-ui", "enabled: false");
-    scene.setAttribute("device-orientation-permission-ui", "enabled: false");
-    scene.setAttribute("renderer", "antialias: true; colorManagement: true");
 
     const assets = document.createElement("a-assets");
     const video = document.createElement("video");
@@ -279,20 +315,8 @@ document.addEventListener("DOMContentLoaded", async() => {
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
     video.setAttribute("crossorigin", "anonymous");
-    video.dataset.galleryVideo = "true";
-    video.dataset.galleryVideoKind = "360";
-    video.tabIndex = 0;
-
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-
-    registerManagedVideo(video);
 
     const camera = document.createElement("a-camera");
-    camera.setAttribute("look-controls", "pointerLockEnabled: false; touchEnabled: true; magicWindowTrackingEnabled: true");
-
     const sphere = document.createElement("a-videosphere");
     sphere.setAttribute("src", `#${videoId}`);
 
@@ -305,69 +329,17 @@ document.addEventListener("DOMContentLoaded", async() => {
     return wrapper;
   }
 
-  function registerManagedVideo(video) {
-    managedVideos.add(video);
-
-    const muteOthersAndUnmuteCurrent = () => {
-      managedVideos.forEach((managedVideo) => {
-        if (managedVideo !== video) {
-          managedVideo.muted = true;
-        }
-      });
-      video.muted = false;
-      video.play().catch(() => {});
-    };
-
-    video.addEventListener("focus", muteOthersAndUnmuteCurrent);
-    video.addEventListener("click", muteOthersAndUnmuteCurrent);
-    video.addEventListener("pointerdown", muteOthersAndUnmuteCurrent);
-    video.addEventListener("blur", () => {
-      video.muted = true;
-    });
-  }
-
-  function createVideoVisibilityObserver() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target;
-          if (!(video instanceof HTMLVideoElement)) {
-            return;
-          }
-
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-            video.muted = true;
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    document.querySelectorAll("video[data-gallery-video='true'][data-gallery-video-kind='standard']").forEach((video) => {
-      observer.observe(video);
-    });
-  }
-
   function updateDots(trackElement, activeIndex) {
     const dots = trackElement.parentElement?.querySelectorAll(".gallery-dot") || [];
     dots.forEach((dot) => {
       const dotIndex = parseInt(dot.dataset.dotIndex || "0", 10);
-      if (dotIndex === activeIndex) {
-        dot.classList.add("is-active");
-      } else {
-        dot.classList.remove("is-active");
-      }
+      dot.classList.toggle("is-active", dotIndex === activeIndex);
     });
   }
 
   function rotateTo(trackElement, activeIndex) {
     const slideCount = trackElement.children.length;
-    if (slideCount === 0) {
-      return;
-    }
+    if (slideCount === 0) return;
 
     const safeIndex = ((activeIndex % slideCount) + slideCount) % slideCount;
     trackElement.dataset.activeIndex = safeIndex.toString();
@@ -378,42 +350,15 @@ document.addEventListener("DOMContentLoaded", async() => {
 
   function updateViewportMode(trackElement, activeIndex) {
     const viewport = trackElement.parentElement;
-    if (!viewport) {
-      return;
-    }
-
+    if (!viewport) return;
     const slide = trackElement.children[activeIndex];
     const mediaType = slide?.dataset?.mediaType;
     viewport.classList.toggle("is-360-active", mediaType === "video360");
   }
 
-  function getActiveMediaType(trackElement) {
-    const activeIndex = parseInt(trackElement.dataset.activeIndex || "0", 10);
-    const activeSlide = trackElement.children[activeIndex];
-    return activeSlide?.dataset?.mediaType || "image";
-  }
-
-  function setupFullscreenScrollLock() {
-    document.addEventListener("fullscreenchange", () => {
-      if (document.fullscreenElement) {
-        scrollBeforeFullscreen = window.scrollY;
-        return;
-      }
-
-      if (typeof scrollBeforeFullscreen === "number") {
-        const y = scrollBeforeFullscreen;
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: y, behavior: "auto" });
-        });
-      }
-    });
-  }
-
   function getImageIndexes(trackElement) {
     const raw = trackElement.dataset.imageIndexes || "";
-    if (!raw) {
-      return [];
-    }
+    if (!raw) return [];
     return raw
       .split(",")
       .map((value) => parseInt(value, 10))
@@ -426,15 +371,11 @@ document.addEventListener("DOMContentLoaded", async() => {
 
   function getNextImageIndex(trackElement, currentIndex) {
     const imageIndexes = getImageIndexes(trackElement);
-    if (imageIndexes.length === 0) {
-      return null;
-    }
+    if (imageIndexes.length === 0) return null;
 
     const sorted = [...imageIndexes].sort((a, b) => a - b);
     for (const imageIndex of sorted) {
-      if (imageIndex > currentIndex) {
-        return imageIndex;
-      }
+      if (imageIndex > currentIndex) return imageIndex;
     }
     return sorted[0];
   }
@@ -447,9 +388,7 @@ document.addEventListener("DOMContentLoaded", async() => {
   }
 
   function scheduleRotation(trackElement, delay) {
-    if (trackElement.dataset.autoRotate !== "true") {
-      return;
-    }
+    if (trackElement.dataset.autoRotate !== "true") return;
 
     const current = parseInt(trackElement.dataset.activeIndex || "0", 10);
     if (!isImageIndex(trackElement, current)) {
@@ -458,18 +397,14 @@ document.addEventListener("DOMContentLoaded", async() => {
     }
 
     const imageIndexes = getImageIndexes(trackElement);
-    if (imageIndexes.length <= 1) {
-      return;
-    }
+    if (imageIndexes.length <= 1) return;
 
     clearRotation(trackElement);
 
     const timerId = setTimeout(() => {
-      const current = parseInt(trackElement.dataset.activeIndex || "0", 10);
-      const nextImage = getNextImageIndex(trackElement, current);
-      if (nextImage === null) {
-        return;
-      }
+      const currentIndex = parseInt(trackElement.dataset.activeIndex || "0", 10);
+      const nextImage = getNextImageIndex(trackElement, currentIndex);
+      if (nextImage === null) return;
       rotateTo(trackElement, nextImage);
       scheduleRotation(trackElement, 3500);
     }, delay);
@@ -482,10 +417,6 @@ document.addEventListener("DOMContentLoaded", async() => {
   }
 
   function clearLightboxMedia() {
-    lightboxMedia.querySelectorAll("video").forEach((video) => {
-      video.pause();
-      video.muted = true;
-    });
     lightboxMedia.innerHTML = "";
   }
 
@@ -493,9 +424,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     clearLightboxMedia();
 
     const mediaList = getProjectMediaList(currentProjectIndex);
-    if (mediaList.length === 0) {
-      return;
-    }
+    if (!mediaList.length) return;
 
     const safeIndex = ((currentMediaIndex % mediaList.length) + mediaList.length) % mediaList.length;
     const mediaItem = mediaList[safeIndex];
@@ -504,15 +433,14 @@ document.addEventListener("DOMContentLoaded", async() => {
       const img = document.createElement("img");
       img.src = mediaItem.src;
       img.alt = data[currentProjectIndex]?.title || "Gallery media";
-      img.className = "max-h-[80vh] max-w-[80vw] object-contain";
+      img.className = "w-full h-full max-h-[80vh] object-contain rounded-xl bg-black";
       lightboxMedia.appendChild(img);
       return;
     }
 
     if (mediaItem.type === "video") {
       const video = createVideoElement(mediaItem.src, mediaItem.poster);
-      video.className = "max-h-[80vh] max-w-[80vw] object-contain bg-black";
-      registerManagedVideo(video);
+      video.className = "w-full h-full max-h-[80vh] object-contain rounded-xl bg-black";
       lightboxMedia.appendChild(video);
       video.play().catch(() => {});
       return;
@@ -527,13 +455,12 @@ document.addEventListener("DOMContentLoaded", async() => {
     lightbox.classList.add("hidden");
     lightbox.classList.remove("show");
     clearLightboxMedia();
+    document.body.style.overflow = "";
   }
 
   listElement.addEventListener("click", (event) => {
     const card = event.target.closest(".gallery-card");
-    if (!card) {
-      return;
-    }
+    if (!card) return;
 
     const track = card.querySelector(".gallery-track");
     const action = event.target.dataset.action;
@@ -565,14 +492,6 @@ document.addEventListener("DOMContentLoaded", async() => {
       return;
     }
 
-    if (track && getActiveMediaType(track) !== "image") {
-      return;
-    }
-
-    if (event.target.closest("video") || event.target.closest(".gallery-360")) {
-      return;
-    }
-
     const projectIndex = parseInt(card.dataset.projectIndex || "0", 10);
     const activeIndex = parseInt(track?.dataset.activeIndex || "0", 10);
 
@@ -582,37 +501,33 @@ document.addEventListener("DOMContentLoaded", async() => {
     showLightboxMedia();
     lightbox.classList.remove("hidden");
     lightbox.classList.add("show");
+    document.body.style.overflow = "hidden";
   });
 
   closeBtn.addEventListener("click", closeLightbox);
 
   nextBtn.addEventListener("click", () => {
     const list = getProjectMediaList(currentProjectIndex);
-    if (list.length === 0) {
-      return;
-    }
+    if (!list.length) return;
     currentMediaIndex = (currentMediaIndex + 1) % list.length;
     showLightboxMedia();
   });
 
   prevBtn.addEventListener("click", () => {
     const list = getProjectMediaList(currentProjectIndex);
-    if (list.length === 0) {
-      return;
-    }
+    if (!list.length) return;
     currentMediaIndex = (currentMediaIndex - 1 + list.length) % list.length;
     showLightboxMedia();
   });
 
   lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
+    if (event.target === lightbox) closeLightbox();
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
+    if (lightbox.classList.contains("hidden")) return;
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") nextBtn.click();
+    if (event.key === "ArrowLeft") prevBtn.click();
   });
 });
