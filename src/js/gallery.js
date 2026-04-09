@@ -128,11 +128,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       pill.setAttribute("data-aos-delay", "100");
       pill.textContent = this.title;
 
+      const heading = document.createElement("h3");
+      heading.className = "text-xl font-semibold mt-2";
+      heading.textContent = this.title;
+      
       const text = document.createElement("p");
       text.className = "text-gray-600 mt-4 leading-relaxed";
       text.textContent = this.description;
 
       content.appendChild(pill);
+      content.appendChild(heading);
       content.appendChild(text);
 
       viewport.appendChild(track);
