@@ -121,15 +121,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       const content = document.createElement("div");
       content.className = "md:col-span-1";
 
-      const heading = document.createElement("h3");
-      heading.className = "text-2xl font-bold text-gray-800";
-      heading.textContent = this.title;
+      const pill = document.createElement("div");
+      pill.className = "project-pill";
+      pill.setAttribute("data-aos", "fade-up");
+      pill.setAttribute("data-aos-duration", "900");
+      pill.setAttribute("data-aos-delay", "100");
+      pill.textContent = this.title;
 
       const text = document.createElement("p");
-      text.className = "text-gray-600 mt-3 leading-relaxed";
+      text.className = "text-gray-600 mt-4 leading-relaxed";
       text.textContent = this.description;
 
-      content.appendChild(heading);
+      content.appendChild(pill);
       content.appendChild(text);
 
       viewport.appendChild(track);
