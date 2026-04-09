@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const heading = document.createElement("h2");
       heading.className = "project-title";
-      heading.setAttribute("data-aos", "fade-up");
-      heading.setAttribute("data-aos-duration", "900");
-      heading.setAttribute("data-aos-delay", "100");
+      // heading.setAttribute("data-aos", "fade-up");
+      // heading.setAttribute("data-aos-duration", "900");
+      // heading.setAttribute("data-aos-delay", "100");
       heading.textContent = this.title;
 
       const text = document.createElement("p");
