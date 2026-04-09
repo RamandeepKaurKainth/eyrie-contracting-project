@@ -103,6 +103,22 @@ body {
   z-index: 20;
 }
 
+.project-title {
+  margin-top: 0.5rem;
+  color: #0f172a;
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.project-description {
+  margin-top: 1rem;
+  color: #5b6472;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
 .project-pill {
   display: inline-flex;
   align-items: center;
