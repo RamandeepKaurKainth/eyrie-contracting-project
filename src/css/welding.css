@@ -15,7 +15,7 @@ body {
   min-height: 72vh;
   overflow: hidden;
   background:
-    url("../images/welding.webp");
+    url("../assets/images/welding.webp");
   background-size: cover;
   background-position: center;
   isolation: isolate;

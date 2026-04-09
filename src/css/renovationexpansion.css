@@ -16,7 +16,7 @@ body {
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(8, 15, 28, 0.84) 0%, rgba(9, 39, 94, 0.3) 80%, rgba(8, 15, 28, 0.45) 100%),
-    url("../images/renovations-hero.webp");
+    url("../assets/images/renovations-hero.webp");
   background-size: cover;
   background-position: center;
   isolation: isolate;

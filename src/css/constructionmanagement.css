@@ -15,7 +15,7 @@ body {
   min-height: 72vh;
   overflow: hidden;
   background:
-    url("../images/constructionmanagement.webp");
+    url("../assets/images/constructionmanagement.webp");
   background-size: cover;
   background-position: center;
   isolation: isolate;
