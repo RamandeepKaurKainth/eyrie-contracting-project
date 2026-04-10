@@ -76,17 +76,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           img.src = mediaItem.src;
           img.alt = this.title;
           img.className = "gallery-img";
-          img.loading = "eager";
+          img.loading = "lazy";
           img.decoding = "async";
           slide.appendChild(img);
         } else if (mediaItem.type === "video") {
           const video = createVideoElement(mediaItem.src, mediaItem.poster);
           onCreateVideo(video);
           slide.appendChild(video);
-        } else if (mediaItem.type === "video360") {
-          slide.appendChild(createVideo360Scene(mediaItem.src, projectIndex, mediaIndex));
         }
-
         track.appendChild(slide);
       });
 
