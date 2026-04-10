@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const projectId = "eko1zm8z";
   const dataset = "production";
 
+  const imageObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        obs.unobserve(img);
+      }
+    });
+  });
+
+
   function urlFor(ref) {
     const [id, dimensions, format] = ref.replace("image-", "").split("-");
     return `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${dimensions}.${format}`;
@@ -73,16 +84,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (mediaItem.type === "image") {
           const img = document.createElement("img");
-          img.src = mediaItem.src;
+          img.dataset.src = mediaItem.src;   // store real src
+          img.src = "";                       // don't load immediately
           img.alt = this.title;
           img.className = "gallery-img";
           img.loading = "lazy";
           img.decoding = "async";
+          imageObserver.observe(img);        // 👈 IMPORTANT
           slide.appendChild(img);
-        } else if (mediaItem.type === "video") {
-          const video = createVideoElement(mediaItem.src, mediaItem.poster);
-          onCreateVideo(video);
-          slide.appendChild(video);
         }
         track.appendChild(slide);
       });
@@ -202,9 +211,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   let currentMediaIndex = 0;
 
   const view = new GalleryView(data, listElement);
-  view.render(() => {});
-
-  preloadGalleryImages(data);
+  view.render(() => { });
+  //preloadGalleryImages(data);
 
   const tracks = document.querySelectorAll(".gallery-track");
   tracks.forEach((track) => {
@@ -231,7 +239,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       image.decoding = "async";
       image.src = src;
       if (typeof image.decode === "function") {
-        image.decode().catch(() => {});
+        image.decode().catch(() => { });
       }
     });
   }
@@ -250,39 +258,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       video.poster = poster;
     }
     return video;
-  }
-
-  function createVideo360Scene(src, projectIndex, mediaIndex) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "gallery-360";
-
-    const scene = document.createElement("a-scene");
-    scene.setAttribute("embedded", "");
-    scene.setAttribute("vr-mode-ui", "enabled: false");
-
-    const assets = document.createElement("a-assets");
-    const video = document.createElement("video");
-    const videoId = `video360-${projectIndex}-${mediaIndex}`;
-    video.id = videoId;
-    video.src = src;
-    video.setAttribute("autoplay", "");
-    video.setAttribute("muted", "");
-    video.setAttribute("loop", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
-    video.setAttribute("crossorigin", "anonymous");
-
-    const camera = document.createElement("a-camera");
-    const sphere = document.createElement("a-videosphere");
-    sphere.setAttribute("src", `#${videoId}`);
-
-    assets.appendChild(video);
-    scene.appendChild(assets);
-    scene.appendChild(camera);
-    scene.appendChild(sphere);
-    wrapper.appendChild(scene);
-
-    return wrapper;
   }
 
   function updateDots(trackElement, activeIndex) {
@@ -387,23 +362,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (mediaItem.type === "image") {
       const img = document.createElement("img");
-      img.src = mediaItem.src;
+      img.dataset.src = mediaItem.src;
+      img.src = "";
       img.alt = data[currentProjectIndex]?.title || "Gallery media";
       img.className = "w-full h-full max-h-[80vh] object-contain rounded-xl bg-black";
       lightboxMedia.appendChild(img);
       return;
-    }
-
-    if (mediaItem.type === "video") {
-      const video = createVideoElement(mediaItem.src, mediaItem.poster);
-      video.className = "w-full h-full max-h-[80vh] object-contain rounded-xl bg-black";
-      lightboxMedia.appendChild(video);
-      video.play().catch(() => {});
-      return;
-    }
-
-    if (mediaItem.type === "video360") {
-      lightboxMedia.appendChild(createVideo360Scene(mediaItem.src, currentProjectIndex, safeIndex));
     }
   }
 
